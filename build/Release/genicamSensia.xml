@@ -1,0 +1,4518 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<RegisterDescription xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.genicam.org/GenApi/Version_1_1" xmlns:mstns="http://www.genicam.org/GenApi/Version_1_1" ModelName="Camera" VendorName="U3V" StandardNameSpace="USB" SchemaMajorVersion="1" SchemaMinorVersion="1" SchemaSubMinorVersion="1" MajorVersion="1" MinorVersion="0" SubMinorVersion="0" ToolTip="U3V Vision Camera Interface" ProductGuid="EE4B7E09-DA29-4956-A1EC-212263331CFC" VersionGuid="3a24a9d6-13c7-4690-a90a-06dd73284b5d" xsi:schemaLocation="http://www.genicam.org/GenApi/Version_1_1   GenApiSchema_Version_1_1.xsd">
+	<Category Name="Root" NameSpace="Standard">
+		<pFeature>PeripheralControl</pFeature>
+		<pFeature>SensorParameters</pFeature>
+		<pFeature>CameraInformation</pFeature>
+		<pFeature>ImageProcessing</pFeature>
+		<pFeature>ImageFormatControl</pFeature>
+		<pFeature>DeviceControl</pFeature>
+		<pFeature>AcquisitionControl</pFeature>
+		<pFeature>TransportLayerControl</pFeature>
+		<pFeature>StreamControl</pFeature>
+	</Category>
+	<Category Name="DeviceControl" NameSpace="Standard">
+		<ToolTip>Category for device information and control.</ToolTip>
+		<Description>Category for device information and control.</Description>
+		<DisplayName>Device Control</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<ImposedAccessMode>RO</ImposedAccessMode>
+		<pFeature>DeviceScanType</pFeature>
+		<pFeature>DeviceVendorName</pFeature>
+		<pFeature>DeviceModelName</pFeature>
+		<pFeature>DeviceManufacturerInfo</pFeature>
+		<pFeature>DeviceVersion</pFeature>
+		<pFeature>DeviceFirmwareVersion</pFeature>
+		<pFeature>DeviceUserID</pFeature>
+		<pFeature>MaximumDeviceResponseTime</pFeature>
+		<pFeature>DeviceManifestTableAddress</pFeature>
+		<pFeature>DeviceSBRMAddress</pFeature>
+		<pFeature>DeviceHeartbeatEnable</pFeature>
+		<pFeature>DeviceMessageChannelID</pFeature>
+		<pFeature>DeviceTimestamp</pFeature>
+		<pFeature>DeviceTimestampLatch</pFeature>
+		<pFeature>DeviceTimestampIncrement</pFeature>
+		<pFeature>DeviceAccessPrivilege</pFeature>
+		<pFeature>DeviceProtocolEndianess</pFeature>
+		<pFeature>DeviceImplementationEndianess</pFeature>
+		<pFeature>DeviceUptime</pFeature>
+		<pFeature>BoardDeviceType</pFeature>
+		<pFeature>USBSpeedMode</pFeature>
+		<pFeature>DeviceConnectionStatus</pFeature>
+		<pFeature>DeviceLinkThroughputLimitMode</pFeature>
+		<pFeature>DeviceLinkThroughputLimit</pFeature>
+		<pFeature>DeviceCommandTimeout</pFeature>
+		<pFeature>DeviceStreamChannelCount</pFeature>
+		<pFeature>DeviceReset</pFeature>
+		<pFeature>DeviceTemperatureSelector</pFeature>
+		<pFeature>DeviceTemperature</pFeature>
+		<pFeature>FindMe</pFeature>
+		<pFeature>DeviceMaxThroughput</pFeature>
+	</Category>
+	<Category Name="PeripheralControl" NameSpace="Standard">
+		<pFeature>ShutterPeripheralCategory</pFeature>
+		<pFeature>CoolerPeripheralCategory</pFeature>
+		<pFeature>LensPeripheralCategory</pFeature>
+	</Category>
+	<Category Name="ShutterPeripheralCategory">
+		<Description>Shutter Peripheral system.</Description>
+		<Visibility>Beginner</Visibility>
+		<pFeature>ShutterControl</pFeature>
+		<pFeature>ShutterTemp</pFeature>
+		<pFeature>ControlStatusShutter</pFeature>
+		<pFeature>MotorStatusShutter</pFeature>
+	</Category>
+	<Category Name="ControlStatusShutter">
+		<Description>Control status shutter system.</Description>
+		<Visibility>Beginner</Visibility>
+		<pFeature>DriverStatusShutterDisplay</pFeature>
+	</Category>
+	<Category Name="MotorStatusShutter">
+		<Description>Motor status shutter system.</Description>
+		<Visibility>Beginner</Visibility>
+		<pFeature>MotorShutterInPositionDisplay</pFeature>
+		<pFeature>MotorMotionStateDisplay</pFeature>
+		<pFeature>MotorLowVelocityDisplay</pFeature>
+		<pFeature>MotorTimeOutDisplay</pFeature>
+		<pFeature>MotorCalibrationStateDisplay</pFeature>
+		<pFeature>MotorShutterPositionDisplay</pFeature>
+		<pFeature>MotorFaultRangeDisplay</pFeature>
+	</Category>
+	<Category Name="CoolerPeripheralCategory">
+		<Description>Cooler Peripheral system.</Description>
+		<Visibility>Beginner</Visibility>
+		<pFeature>CoolerControl</pFeature>
+		<pFeature>CoolerTemp</pFeature>
+		<pFeature>CoolerStatus</pFeature>
+	</Category>
+	<Category Name="LensPeripheralCategory">
+		<Description>Lens Peripheral system.</Description>
+		<Visibility>Beginner</Visibility>
+		<pIsImplemented>IsLensImplemented</pIsImplemented>
+		<pFeature>LensZoom</pFeature>
+		<!-- <pFeature>LensFOV</pFeature> -->
+		<pFeature>LensFocus</pFeature>
+		<pFeature>LensTemp</pFeature>
+	</Category>
+	<Category Name="LensZoom">
+		<Description>Lens Peripheral system.</Description>
+		<Visibility>Beginner</Visibility>
+		<pIsImplemented>IsLensImplemented</pIsImplemented>
+		<pFeature>WideZoom</pFeature>
+		<pFeature>MediumZoom</pFeature>
+		<pFeature>NarrowZoom</pFeature>
+		<pFeature>NUCPos</pFeature>
+		<pFeature>ZoomIn</pFeature>
+		<pFeature>ZoomOut</pFeature>
+		<pFeature>CurrentZoom</pFeature>
+	</Category>
+	<!-- 	<Category Name="LensFOV">
+		<Description>Lens Peripheral system.</Description>
+		<Visibility>Beginner</Visibility>
+		<pFeature>WideFOV</pFeature>
+		<pFeature>MediumFOV</pFeature>
+		<pFeature>NarrowFOV</pFeature>
+		<pFeature>CurrentFOV</pFeature>
+	</Category> -->
+	<Category Name="LensFocus">
+		<pIsImplemented>IsLensImplemented</pIsImplemented>
+		<pFeature>FocusToInfinity</pFeature>
+		<pFeature>FocusNear</pFeature>
+		<pFeature>FocusFar</pFeature>
+		<!-- <pFeature>FocusStop</pFeature> -->
+		<pFeature>FocusStatus</pFeature>
+	</Category>
+	<Category Name="CameraInformation">
+		<Description>Camera Information Structure.</Description>
+		<Visibility>Beginner</Visibility>
+		<pFeature>SensorType</pFeature>
+		<pFeature>DeviceSerialNumber</pFeature>
+		<!--<pFeature>CameraCapabilities</pFeature>-->
+		<pFeature>PixelPitch</pFeature>
+		<pFeature>FPSMax</pFeature>
+	</Category>
+	<Category Name="ImageProcessing">
+		<Description>Image Processing Structure.</Description>
+		<Visibility>Beginner</Visibility>
+		<!--<pFeature>OperationMode</pFeature>-->
+		<!--<pFeature>OEMControl</pFeature>-->
+		<pFeature>ProcessingControl</pFeature>
+	</Category>
+	<Category Name="ProcessingControl">
+		<Description>Image Processing Structure.</Description>
+		<Visibility>Beginner</Visibility>
+		<pFeature>VideoProcessing</pFeature>
+		<pFeature>ReferenceStatus</pFeature>
+		<pFeature>Raw</pFeature>
+		<pFeature>1PNUC</pFeature>
+		<pFeature>ColdRef2PNUC</pFeature>
+		<pFeature>TempRef2PNUC</pFeature>
+		<pFeature>2PNUCApply</pFeature>
+		<pFeature>BadPixelsReplacement</pFeature>
+	</Category>
+	<IntReg Name="ShutterCMDRegister">
+		<Address>0x20100</Address>
+		<Length>4</Length>
+		<AccessMode>RW</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<IntSwissKnife Name="ShutterCmdExpr">
+		<pVariable Name="SHUTTER">ShutterCMDRegister</pVariable>
+		<Formula>(SHUTTER)?(0):(1)</Formula>
+	</IntSwissKnife>
+	<Command Name="ShutterControl">
+		<pIsImplemented>IsShutterImplemented</pIsImplemented>
+		<pValue>ShutterCMDRegister</pValue>
+		<pCommandValue>ShutterCmdExpr</pCommandValue>
+	</Command>
+	<IntReg Name="ShutterTempRegister">
+		<Address>0x20104</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="ShutterTemp" NameSpace="Custom">
+		<Description>Shows the temperature of the shutter as an absolute physical value. </Description>
+		<Visibility>Beginner</Visibility>
+		<pIsImplemented>IsShutterImplemented</pIsImplemented>
+		<pValue>ShutterTempRegister</pValue>
+		<Unit>ºC</Unit>
+		<Representation>Linear</Representation>
+	</Integer>
+	<IntSwissKnife Name="StatusDriverShutterValue">
+		<Description>It's an error when the register returns a 0, 2, or more than 4.</Description>
+		<pVariable Name="ERROR_SHUTTER">ControlDriverShutterRegister</pVariable>
+		<Formula> ((ERROR_SHUTTER &gt; 3)||(ERROR_SHUTTER = 0))?(2):(ERROR_SHUTTER) </Formula>
+	</IntSwissKnife>
+	<Enumeration Name="DriverStatusShutterDisplay" NameSpace="Custom">
+		<DisplayName>Shutter Status Enum</DisplayName>
+		<pIsImplemented>IsShutterImplemented</pIsImplemented>
+		<EnumEntry Name="Idle">
+			<Value>1</Value>
+		</EnumEntry>
+		<EnumEntry Name="Error">
+			<Value>2</Value>
+		</EnumEntry>
+		<EnumEntry Name="Busy">
+			<Value>3</Value>
+		</EnumEntry>
+		<pValue>StatusDriverShutterValue</pValue>
+	</Enumeration>
+	<StructReg Comment="Motor Status Structure">
+		<Address>0x20108</Address>
+		<!--TBD-->
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<PollingTime>100</PollingTime>
+		<Endianess>LittleEndian</Endianess>
+		<StructEntry Name="MotorShutterInPositionRegister" NameSpace="Custom">
+			<Bit>8</Bit>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+		<StructEntry Name="MotorMotionStateRegister" NameSpace="Custom">
+			<Bit>9</Bit>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+		<StructEntry Name="MotorLowVelocityRegister" NameSpace="Custom">
+			<Bit>10</Bit>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+		<StructEntry Name="MotorTimeOutRegister" NameSpace="Custom">
+			<Bit>11</Bit>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+		<StructEntry Name="MotorCalibrationStateRegister" NameSpace="Custom">
+			<Bit>12</Bit>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+		<StructEntry Name="MotorShutterPositionRegister" NameSpace="Custom">
+			<Bit>13</Bit>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+		<StructEntry Name="MotorFaultRangeRegister" NameSpace="Custom">
+			<Bit>14</Bit>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+		<StructEntry Name="ControlDriverShutterRegister" NameSpace="Custom">
+			<LSB>0</LSB>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<MSB>8</MSB>
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+	</StructReg>
+	<Enumeration Name="MotorShutterInPositionDisplay" NameSpace="Custom">
+		<DisplayName>Shutter In Position</DisplayName>
+		<pIsImplemented>IsShutterImplemented</pIsImplemented>
+		<EnumEntry Name="Not in position">
+			<Value>0</Value>
+		</EnumEntry>
+		<EnumEntry Name="In position">
+			<Value>1</Value>
+		</EnumEntry>
+		<pValue>MotorShutterInPositionRegister</pValue>
+	</Enumeration>
+	<Enumeration Name="MotorMotionStateDisplay" NameSpace="Custom">
+		<DisplayName>Motion State</DisplayName>
+		<pIsImplemented>IsShutterImplemented</pIsImplemented>
+		<EnumEntry Name="Idle">
+			<Value>0</Value>
+		</EnumEntry>
+		<EnumEntry Name="In motion">
+			<Value>1</Value>
+		</EnumEntry>
+		<pValue>MotorMotionStateRegister</pValue>
+	</Enumeration>
+	<Enumeration Name="MotorLowVelocityDisplay" NameSpace="Custom">
+		<DisplayName>Low Velocity</DisplayName>
+		<pIsImplemented>IsShutterImplemented</pIsImplemented>
+		<EnumEntry Name="False">
+			<Value>0</Value>
+		</EnumEntry>
+		<EnumEntry Name="True">
+			<Value>1</Value>
+		</EnumEntry>
+		<pValue>MotorLowVelocityRegister</pValue>
+	</Enumeration>
+	<Enumeration Name="MotorTimeOutDisplay" NameSpace="Custom">
+		<DisplayName>TimeOut</DisplayName>
+		<pIsImplemented>IsShutterImplemented</pIsImplemented>
+		<EnumEntry Name="False">
+			<Value>0</Value>
+		</EnumEntry>
+		<EnumEntry Name="True">
+			<Value>1</Value>
+		</EnumEntry>
+		<pValue>MotorTimeOutRegister</pValue>
+	</Enumeration>
+	<Enumeration Name="MotorCalibrationStateDisplay" NameSpace="Custom">
+		<DisplayName>Calibration State</DisplayName>
+		<pIsImplemented>IsShutterImplemented</pIsImplemented>
+		<EnumEntry Name="False">
+			<Value>0</Value>
+		</EnumEntry>
+		<EnumEntry Name="True">
+			<Value>1</Value>
+		</EnumEntry>
+		<pValue>MotorCalibrationStateRegister</pValue>
+	</Enumeration>
+	<!--<IntSwissKnife Name="MotorShutterInPositionAvailable">
+		<pVariable Name="SHUTTER_POS">MotorShutterInPositionDisplay</pVariable>
+		<Formula>(SHUTTER_POS = 1)?(0):(1)</Formula>
+	</IntSwissKnife>-->
+	<Enumeration Name="MotorShutterPositionDisplay" NameSpace="Custom">
+		<DisplayName>Shutter Position</DisplayName>
+		<pIsImplemented>IsShutterImplemented</pIsImplemented>
+		<EnumEntry Name="Open">
+			<pIsAvailable>MotorShutterInPositionDisplay</pIsAvailable>
+			<Value>0</Value>
+		</EnumEntry>
+		<EnumEntry Name="Close">
+			<pIsAvailable>MotorShutterInPositionDisplay</pIsAvailable>
+			<Value>1</Value>
+		</EnumEntry>
+		<pValue>MotorShutterPositionRegister</pValue>
+	</Enumeration>
+	<Enumeration Name="MotorFaultRangeDisplay" NameSpace="Custom">
+		<DisplayName>Fault Range</DisplayName>
+		<pIsImplemented>IsShutterImplemented</pIsImplemented>
+		<EnumEntry Name="False">
+			<Value>0</Value>
+		</EnumEntry>
+		<EnumEntry Name="True">
+			<Value>1</Value>
+		</EnumEntry>
+		<pValue>MotorFaultRangeRegister</pValue>
+	</Enumeration>
+	<IntReg Name="CoolerCMDRegister">
+		<Address>0x20200</Address>
+		<Length>4</Length>
+		<AccessMode>RW</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<IntSwissKnife Name="CoolerCmdExpr">
+		<pVariable Name="COOLER">CoolerCMDRegister</pVariable>
+		<Formula>(COOLER)?(0):(1)</Formula>
+	</IntSwissKnife>
+	<Command Name="CoolerControl">
+		<pIsImplemented>IsCooledImplemented</pIsImplemented>
+		<pValue>CoolerCMDRegister</pValue>
+		<pCommandValue>CoolerCmdExpr</pCommandValue>
+	</Command>
+	<Enumeration Name="CoolerStatus" NameSpace="Custom">
+		<DisplayName>Cooler Status</DisplayName>
+		<pIsImplemented>IsCooledImplemented</pIsImplemented>
+		<EnumEntry Name="OFF">
+			<Value>0</Value>
+		</EnumEntry>
+		<EnumEntry Name="ON">
+			<Value>1</Value>
+		</EnumEntry>
+		<pValue>IsCooledImplemented</pValue>
+	</Enumeration>
+	<IntReg Name="CoolerControlDefaultRegister">
+		<Address>0x20204</Address>
+		<Length>4</Length>
+		<AccessMode>RW</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Enumeration Name="CoolerControlDefault" NameSpace="Custom">
+		<DisplayName>Is Cooler Control Default</DisplayName>
+		<pIsImplemented>IsCooledImplemented</pIsImplemented>
+		<EnumEntry Name="No">
+			<Value>0</Value>
+		</EnumEntry>
+		<EnumEntry Name="Yes">
+			<Value>1</Value>
+		</EnumEntry>
+		<pValue>CoolerControlDefaultRegister</pValue>
+	</Enumeration>
+	<IntReg Name="CoolerTempRegister">
+		<Address>0x20208</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="CoolerTemp" NameSpace="Custom">
+		<Description>Shows the temperature of the shutter as an absolute physical value.</Description>
+		<Visibility>Beginner</Visibility>
+		<pIsImplemented>IsCooledImplemented</pIsImplemented>
+		<pValue>CoolerTempRegister</pValue>
+		<Unit>ºC</Unit>
+		<Representation>Linear</Representation>
+	</Integer>
+	<IntReg Name="ZoomRAWRegister">
+		<Address>0x20300</Address>
+		<Length>4</Length>
+		<AccessMode>RW</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="CurrentZoom" NameSpace="Custom">
+		<Visibility>Beginner</Visibility>
+		<pValue>ZoomRAWRegister</pValue>
+		<Representation>Linear</Representation>
+	</Integer>
+	<IntReg Name="ZoomCMDRegister">
+		<Address>0x20304</Address>
+		<Length>4</Length>
+		<AccessMode>WO</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Command Name="WideZoom">
+		<pIsImplemented>IsLensImplemented</pIsImplemented>
+		<pValue>ZoomCMDRegister</pValue>
+		<CommandValue>1</CommandValue>
+	</Command>
+	<Command Name="MediumZoom">
+		<pIsImplemented>IsLensImplemented</pIsImplemented>
+		<pValue>ZoomCMDRegister</pValue>
+		<CommandValue>2</CommandValue>
+	</Command>
+	<Command Name="NarrowZoom">
+		<pIsImplemented>IsLensImplemented</pIsImplemented>
+		<pValue>ZoomCMDRegister</pValue>
+		<CommandValue>3</CommandValue>
+	</Command>
+	<Command Name="NUCPos">
+		<pIsImplemented>IsLensImplemented</pIsImplemented>
+		<pValue>ZoomCMDRegister</pValue>
+		<CommandValue>0</CommandValue>
+	</Command>	
+	<Command Name="ZoomIn">
+		<pIsImplemented>IsLensImplemented</pIsImplemented>
+		<pValue>ZoomCMDRegister</pValue>
+		<CommandValue>4</CommandValue>
+	</Command>
+	<Command Name="ZoomOut">
+		<pIsImplemented>IsLensImplemented</pIsImplemented>
+		<pValue>ZoomCMDRegister</pValue>
+		<CommandValue>5</CommandValue>
+	</Command>
+	<IntReg Name="FocusRAWRegister">
+		<Address>0x20308</Address>
+		<Length>4</Length>
+		<AccessMode>RW</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="FocusStatus" NameSpace="Custom">
+		<Visibility>Beginner</Visibility>
+		<pValue>FocusRAWRegister</pValue>
+		<Representation>Linear</Representation>
+	</Integer>
+	<!-- 	<IntReg Name="FOVCMDRegister">
+		<Address>0x2001E</Address>
+		<Length>2</Length>
+		<AccessMode>RW</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg> -->
+	<!-- 	<Command Name="WideFOV">
+		<pValue>FOVCMDRegister</pValue>
+		<CommandValue>1</CommandValue>
+	</Command>
+	<Command Name="MediumFOV">
+		<pValue>FOVCMDRegister</pValue>
+		<CommandValue>2</CommandValue>
+	</Command>
+	<Command Name="NarrowFOV">
+		<pValue>FOVCMDRegister</pValue>
+		<CommandValue>3</CommandValue>
+	</Command>
+	<Integer Name="CurrentFOV" NameSpace="Custom">
+		<Visibility>Beginner</Visibility>
+		<pValue>FOVCMDRegister</pValue>
+		<Representation>Linear</Representation>
+	</Integer> -->
+	<IntReg Name="FocusCMDRegister">
+		<Address>0x2030C</Address>
+		<Length>4</Length>
+		<AccessMode>WO</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Command Name="FocusToInfinity">
+		<pIsImplemented>IsLensImplemented</pIsImplemented>
+		<pValue>FocusCMDRegister</pValue>
+		<CommandValue>4</CommandValue>
+	</Command>
+	<Command Name="FocusNear">
+		<pIsImplemented>IsLensImplemented</pIsImplemented>
+		<pValue>FocusCMDRegister</pValue>
+		<CommandValue>2</CommandValue>
+	</Command>
+	<Command Name="FocusFar">
+		<pIsImplemented>IsLensImplemented</pIsImplemented>
+		<pValue>FocusCMDRegister</pValue>
+		<CommandValue>1</CommandValue>
+	</Command>
+<!-- 	<Command Name="FocusStop">
+		<pValue>FocusCMDRegister</pValue>
+		<CommandValue>0</CommandValue>
+	</Command> -->
+	<IntReg Name="LensTempRegister">
+		<Address>0x20310</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="LensTemp" NameSpace="Custom">
+		<Description>Shows the temperature of the lens as an absolute physical value.</Description>
+		<Visibility>Beginner</Visibility>
+		<pIsImplemented>IsLensImplemented</pIsImplemented>
+		<pValue>LensTempRegister</pValue>
+		<Unit>ºC</Unit>
+		<Representation>Linear</Representation>
+	</Integer>
+	<IntReg Name="GainRegister">
+		<Address>0x20400</Address>
+		<Length>4</Length>
+		<AccessMode>RW</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<PollingTime>1000</PollingTime>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Enumeration Name="Gain_SensorType8">
+		<DisplayName>Gain</DisplayName>
+		<pIsImplemented>IsSensorType8Implemented</pIsImplemented>
+		<EnumEntry Name="1pF">
+			<Value>0</Value>
+		</EnumEntry>
+		<EnumEntry Name="2pF">
+			<Value>1</Value>
+		</EnumEntry>
+		<EnumEntry Name="3pF">
+			<Value>2</Value>
+		</EnumEntry>
+		<EnumEntry Name="4pF">
+			<Value>3</Value>
+		</EnumEntry>
+		<EnumEntry Name="5pF">
+			<Value>4</Value>
+		</EnumEntry>
+		<EnumEntry Name="6pF">
+			<Value>5</Value>
+		</EnumEntry>
+		<pValue>GainRegister</pValue>
+	</Enumeration>
+	<Enumeration Name="Gain_SensorType2">
+		<DisplayName>Gain</DisplayName>
+		<pIsImplemented>IsSensorType2Implemented</pIsImplemented>
+		<EnumEntry Name="1.5pF">
+			<Value>0</Value>
+		</EnumEntry>
+		<EnumEntry Name="2.5pF">
+			<Value>1</Value>
+		</EnumEntry>
+		<EnumEntry Name="3.5pF">
+			<Value>2</Value>
+		</EnumEntry>
+		<EnumEntry Name="4.5pF">
+			<Value>3</Value>
+		</EnumEntry>
+		<EnumEntry Name="5.5pF">
+			<Value>4</Value>
+		</EnumEntry>
+		<EnumEntry Name="6.5pF">
+			<Value>5</Value>
+		</EnumEntry>
+		<pValue>GainRegister</pValue>
+	</Enumeration>
+	<Enumeration Name="Gain_SensorType6">
+		<DisplayName>Gain</DisplayName>
+		<pIsImplemented>IsSensorType6Implemented</pIsImplemented>
+		<EnumEntry Name="1.3pF">
+			<Value>0</Value>
+		</EnumEntry>
+		<EnumEntry Name="2.3pF">
+			<Value>1</Value>
+		</EnumEntry>
+		<EnumEntry Name="3.3pF">
+			<Value>2</Value>
+		</EnumEntry>
+		<EnumEntry Name="4.3pF">
+			<Value>3</Value>
+		</EnumEntry>
+		<EnumEntry Name="5.3pF">
+			<Value>4</Value>
+		</EnumEntry>
+		<EnumEntry Name="6.3pF">
+			<Value>5</Value>
+		</EnumEntry>
+		<pValue>GainRegister</pValue>
+	</Enumeration>
+	<IntReg Name="GSKRegister">
+		<Address>0x20404</Address>
+		<Length>4</Length>
+		<AccessMode>RW</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<PollingTime>1000</PollingTime>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="GSK_SensorType8" NameSpace="Custom">
+		<Description>Controls the GSK as an absolute physical value. This is an amplification factor applied to he video signal.</Description>
+		<DisplayName>GSK</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<pIsImplemented>IsSensorType8Implemented</pIsImplemented>
+		<pValue>GSKRegister</pValue>
+		<Min>106</Min>
+		<Max>972</Max>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<Converter Name="GSKVConverter_SensorType8" NameSpace="Custom">
+		<FormulaTo> FROM </FormulaTo>
+		<FormulaFrom> TO * 0.0014 + 1.6321 </FormulaFrom>
+		<pValue>GSKRegister</pValue>
+	</Converter>
+	<Float Name="GSKV_SensorType8" NameSpace="Custom">
+		<Description>Controls the GSK as an absolute physical value. </Description>
+		<DisplayName>GSKV</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<pIsImplemented>IsSensorType8Implemented</pIsImplemented>
+		<ImposedAccessMode>RO</ImposedAccessMode>
+		<pValue>GSKVConverter_SensorType8</pValue>
+		<Unit>V</Unit>
+		<Representation>Linear</Representation>
+	</Float>
+	<Integer Name="GSK_SensorType2" NameSpace="Standard">
+		<Extension>
+			<Default>0</Default>
+		</Extension>
+		<Description>Controls the GSK as an absolute physical value. This is an amplification factor applied to he video signal.</Description>
+		<DisplayName>GSK</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<pIsImplemented>IsSensorType2Implemented</pIsImplemented>
+		<pValue>GSKRegister</pValue>
+		<Min>285</Min>
+		<Max>1026</Max>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<Converter Name="GSKVConverter_SensorType2" NameSpace="Custom">
+		<pIsImplemented>IsSensorType2Implemented</pIsImplemented>
+		<FormulaTo> FROM </FormulaTo>
+		<FormulaFrom> TO * 0.00256 + 0.9728 </FormulaFrom>
+		<pValue>GSKRegister</pValue>
+	</Converter>
+	<Float Name="GSKV_SensorType2" NameSpace="Standard">
+		<Description>Controls the GSK as an absolute physical value. </Description>
+		<DisplayName>GSKV</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<pIsImplemented>IsSensorType2Implemented</pIsImplemented>
+		<ImposedAccessMode>RO</ImposedAccessMode>
+		<pValue>GSKVConverter_SensorType2</pValue>
+		<Unit>V</Unit>
+		<Representation>Linear</Representation>
+	</Float>
+	<Integer Name="GSK_SensorType6" NameSpace="Standard">
+		<Extension>
+			<Default>0</Default>
+		</Extension>
+		<Description>Controls the GSK as an absolute physical value. This is an amplification factor applied to he video signal.</Description>
+		<DisplayName>GSK</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<pIsImplemented>IsSensorType6Implemented</pIsImplemented>
+		<pValue>GSKRegister</pValue>
+		<Min>300</Min>
+		<Max>1028</Max>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<Converter Name="GSKVConverter_SensorType6" NameSpace="Custom">
+		<pIsImplemented>IsSensorType6Implemented</pIsImplemented>
+		<FormulaTo> FROM </FormulaTo>
+		<FormulaFrom> TO * 0.00255 + 0.9773 </FormulaFrom>
+		<pValue>GSKRegister</pValue>
+	</Converter>
+	<Float Name="GSKV_SensorType6" NameSpace="Standard">
+		<Description>Controls the GSK as an absolute physical value. </Description>
+		<DisplayName>GSKV</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<pIsImplemented>IsSensorType6Implemented</pIsImplemented>
+		<ImposedAccessMode>RO</ImposedAccessMode>
+		<pValue>GSKVConverter_SensorType6</pValue>
+		<Unit>V</Unit>
+		<Representation>Linear</Representation>
+	</Float>
+	<IntReg Name="GFIDRegister">
+		<Address>0x20408</Address>
+		<Length>4</Length>
+		<AccessMode>RW</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="GFID_SensorType8" NameSpace="Standard">
+		<Extension>
+			<Default>0</Default>
+		</Extension>
+		<Description>Controls the GFID as an absolute physical value. This is an amplification factor applied to he video signal.</Description>
+		<DisplayName>GFID</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<pIsImplemented>IsSensorType8Implemented</pIsImplemented>
+		<pValue>GFIDRegister</pValue>
+		<Min>24</Min>
+		<Max>221</Max>
+		<Representation>Linear</Representation>
+	</Integer>
+	<Integer Name="GFID_SensorType2" NameSpace="Standard">
+		<Extension>
+			<Default>0</Default>
+		</Extension>
+		<Description>Controls the GFID as an absolute physical value. This is an amplification factor applied to he video signal.</Description>
+		<DisplayName>GFID</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<pIsImplemented>IsSensorType2Implemented</pIsImplemented>
+		<pValue>GFIDRegister</pValue>
+		<Min>21</Min>
+		<Max>206</Max>
+		<Representation>Linear</Representation>
+	</Integer>
+	<Integer Name="GFID_SensorType6" NameSpace="Standard">
+		<Extension>
+			<Default>0</Default>
+		</Extension>
+		<Description>Controls the GFID as an absolute physical value. This is an amplification factor applied to he video signal.</Description>
+		<DisplayName>GFID</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<pIsImplemented>IsSensorType6Implemented</pIsImplemented>
+		<pValue>GFIDRegister</pValue>
+		<Min>0</Min>
+		<Max>202</Max>
+		<Representation>Linear</Representation>
+	</Integer>
+	<Converter Name="GFIDVConverter_SensorType8" NameSpace="Custom">
+		<pIsImplemented>IsSensorType8Implemented</pIsImplemented>
+		<FormulaTo> FROM * 10000.0 </FormulaTo>
+		<FormulaFrom> TO * 0.011 + 0.7806 </FormulaFrom>
+		<pValue>GFIDRegister</pValue>
+	</Converter>
+	<Float Name="GFIDV_SensorType8" NameSpace="Standard">
+		<Description>Controls the GSKV as an absolute physical value. </Description>
+		<DisplayName>GFIDV</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<pIsImplemented>IsSensorType8Implemented</pIsImplemented>
+		<ImposedAccessMode>RO</ImposedAccessMode>
+		<pValue>GFIDVConverter_SensorType8</pValue>
+		<Unit>V</Unit>
+		<Representation>Linear</Representation>
+	</Float>
+	<Converter Name="GFIDVConverter_SensorType2" NameSpace="Custom">
+		<pIsImplemented>IsSensorType2Implemented</pIsImplemented>
+		<FormulaTo> FROM * 10000.0 </FormulaTo>
+		<FormulaFrom> TO * 0.01027 + 0.7824 </FormulaFrom>
+		<pValue>GFIDRegister</pValue>
+	</Converter>
+	<Float Name="GFIDV_SensorType2" NameSpace="Custom">
+		<Description>Controls the GSKV as an absolute physical value. </Description>
+		<DisplayName>GFIDV</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<pIsImplemented>IsSensorType2Implemented</pIsImplemented>
+		<ImposedAccessMode>RO</ImposedAccessMode>
+		<pValue>GFIDVConverter_SensorType2</pValue>
+		<Unit>V</Unit>
+		<Representation>Linear</Representation>
+	</Float>
+	<Converter Name="GFIDVConverter_SensorType6" NameSpace="Custom">
+		<pIsImplemented>IsSensorType6Implemented</pIsImplemented>
+		<FormulaTo> FROM * 10000.0 </FormulaTo>
+		<FormulaFrom> TO * 0.01028 + 0.7858 </FormulaFrom>
+		<pValue>GFIDRegister</pValue>
+	</Converter>
+	<Float Name="GFIDV_SensorType6" NameSpace="Custom">
+		<Description>Controls the GSKV as an absolute physical value. </Description>
+		<DisplayName>GFIDV</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<pIsImplemented>IsSensorType6Implemented</pIsImplemented>
+		<ImposedAccessMode>RO</ImposedAccessMode>
+		<pValue>GFIDVConverter_SensorType6</pValue>
+		<Unit>V</Unit>
+		<Representation>Linear</Representation>
+	</Float>
+	<Float Name="MasterClock_SensorType8" NameSpace="Custom">
+		<Value>19.2</Value>
+	</Float>
+	<Float Name="MasterClock_SensorType2" NameSpace="Custom">
+		<Value>40</Value>
+	</Float>
+	<Float Name="MasterClock_SensorType6" NameSpace="Custom">
+		<Value>40</Value>
+	</Float>
+	<IntReg Name="TintRegister">
+		<Address>0x2040C</Address>
+		<Length>4</Length>
+		<AccessMode>RW</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="Tint_SensorType8" NameSpace="Custom">
+		<Extension>
+			<Default>0</Default>
+		</Extension>
+		<ToolTip>Tint</ToolTip>
+		<pIsImplemented>IsSensorType8Implemented</pIsImplemented>
+		<pValue>TintRegister</pValue>
+		<Min>10</Min>
+		<Max>959</Max>
+	</Integer>
+	<Integer Name="Tint_SensorType2" NameSpace="Custom">
+		<Extension>
+			<Default>0</Default>
+		</Extension>
+		<ToolTip>Tint</ToolTip>
+		<pIsImplemented>IsSensorType2Implemented</pIsImplemented>
+		<pValue>TintRegister</pValue>
+		<Min>1</Min>
+		<Max>799</Max>
+	</Integer>
+	<Integer Name="Tint_SensorType6" NameSpace="Custom">
+		<Extension>
+			<Default>0</Default>
+		</Extension>
+		<ToolTip>Tint</ToolTip>
+		<pIsImplemented>IsSensorType6Implemented</pIsImplemented>
+		<pValue>TintRegister</pValue>
+		<Min>10</Min>
+		<Max>1199</Max>
+	</Integer>
+	<Converter Name="TintSConverter_SensorType8" NameSpace="Custom">
+		<pIsImplemented>IsSensorType8Implemented</pIsImplemented>
+		<pVariable Name="MC">MasterClock_SensorType8</pVariable>
+		<FormulaTo>FROM * 10000.0</FormulaTo>
+		<FormulaFrom>TO * 2 / MC</FormulaFrom>
+		<pValue>TintRegister</pValue>
+	</Converter>
+	<Converter Name="TintSConverter_SensorType2" NameSpace="Custom">
+		<pIsImplemented>IsSensorType2Implemented</pIsImplemented>
+		<pVariable Name="MC">MasterClock_SensorType2</pVariable>
+		<FormulaTo>FROM * 10000.0</FormulaTo>
+		<FormulaFrom>TO * 2 / MC</FormulaFrom>
+		<pValue>TintRegister</pValue>
+	</Converter>
+	<Converter Name="TintSConverter_SensorType6" NameSpace="Custom">
+		<pIsImplemented>IsSensorType6Implemented</pIsImplemented>
+		<pVariable Name="MC">MasterClock_SensorType6</pVariable>
+		<FormulaTo>FROM * 10000.0</FormulaTo>
+		<FormulaFrom>TO * 2 / MC</FormulaFrom>
+		<pValue>TintRegister</pValue>
+	</Converter>
+	<Float Name="TintS_SensorType8" NameSpace="Custom">
+		<Description>Tint</Description>
+		<Visibility>Beginner</Visibility>
+		<pIsImplemented>IsSensorType8Implemented</pIsImplemented>
+		<ImposedAccessMode>RO</ImposedAccessMode>
+		<pValue>TintSConverter_SensorType8</pValue>
+		<Unit>us</Unit>
+		<Representation>Linear</Representation>
+	</Float>
+	<Float Name="TintS_SensorType2" NameSpace="Custom">
+		<Description>Tint</Description>
+		<Visibility>Beginner</Visibility>
+		<pIsImplemented>IsSensorType2Implemented</pIsImplemented>
+		<ImposedAccessMode>RO</ImposedAccessMode>
+		<pValue>TintSConverter_SensorType2</pValue>
+		<Unit>us</Unit>
+		<Representation>Linear</Representation>
+	</Float>
+	<Float Name="TintS_SensorType6" NameSpace="Custom">
+		<Description>Tint</Description>
+		<Visibility>Beginner</Visibility>
+		<pIsImplemented>IsSensorType6Implemented</pIsImplemented>
+		<ImposedAccessMode>RO</ImposedAccessMode>
+		<pValue>TintSConverter_SensorType6</pValue>
+		<Unit>us</Unit>
+		<Representation>Linear</Representation>
+	</Float>
+	<IntReg Name="VDETRegister">
+		<Address>0x20410</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="VDET" NameSpace="Custom">
+		<Extension>
+			<Default>0</Default>
+		</Extension>
+		<ToolTip>VDET</ToolTip>
+		<pIsImplemented>IsSensorType2Implemented</pIsImplemented>
+		<pValue>VDETRegister</pValue>
+	</Integer>
+	<IntReg Name="VSKRegister">
+		<Address>0x20414</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="VSK" NameSpace="Custom">
+		<Extension>
+			<Default>0</Default>
+		</Extension>
+		<ToolTip>VSK</ToolTip>
+		<pIsImplemented>IsSensorType2Implemented</pIsImplemented>
+		<pValue>VSKRegister</pValue>
+	</Integer>
+	<IntSwissKnife Name="IsVTEMPImplemented">
+		<pVariable Name="SENSORTYPE">SensorType</pVariable>
+		<Formula>(SENSORTYPE = 0) || (SENSORTYPE = 2) || (SENSORTYPE = 6) || (SENSORTYPE = 8) || (SENSORTYPE = 3) || (SENSORTYPE = 9) </Formula>
+	</IntSwissKnife>
+	<IntReg Name="VTEMPRegister">
+		<Address>0x20418</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<PollingTime>1000</PollingTime>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="VTEMP" NameSpace="Custom">
+		<Extension>
+			<Default>0</Default>
+		</Extension>
+		<ToolTip>VTEMP</ToolTip>
+		<pIsImplemented>IsVTEMPImplemented</pIsImplemented>
+		<pValue>VTEMPRegister</pValue>
+	</Integer>
+	<IntReg Name="TBNUCRegister">
+		<Address>0x2041C</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<PollingTime>1000</PollingTime>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="TBNUC" NameSpace="Custom">
+		<Extension>
+			<Default>0</Default>
+		</Extension>
+		<ToolTip>TBNUC</ToolTip>
+		<pIsImplemented>IsSensorType0Implemented</pIsImplemented>
+		<pValue>TBNUCRegister</pValue>
+	</Integer>
+	<IntReg Name="DetectorSerialNumberRegister">
+		<Address>0x20420</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>Device</pPort>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="DetectorSerialNumber" NameSpace="Custom">
+		<pIsImplemented>IsSensorType0Implemented</pIsImplemented>
+		<pValue>DetectorSerialNumberRegister</pValue>
+	</Integer>
+	<MaskedIntReg Name="SensorTypeRegister">
+		<Address>0x20500</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>Device</pPort>
+		<LSB>0</LSB>
+		<MSB>31</MSB>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</MaskedIntReg>
+	<Integer Name="SensorType" NameSpace="Custom">
+		<ToolTip>Type of detector</ToolTip>
+		<pValue>SensorTypeRegister</pValue>
+	</Integer>
+	<IntSwissKnife Name="IsSensorType0Implemented">
+		<pVariable Name="SENSORTYPE">SensorType</pVariable>
+		<Formula>(SENSORTYPE = 0)</Formula>
+	</IntSwissKnife>
+	<IntSwissKnife Name="IsSensorType1Implemented">
+		<pVariable Name="SENSORTYPE">SensorType</pVariable>
+		<Formula>(SENSORTYPE = 1)</Formula>
+	</IntSwissKnife>
+	<IntSwissKnife Name="IsSensorType2Implemented">
+		<pVariable Name="SENSORTYPE">SensorType</pVariable>
+		<Formula>(SENSORTYPE = 2)</Formula>
+	</IntSwissKnife>
+	<IntSwissKnife Name="IsSensorType4Implemented">
+		<pVariable Name="SENSORTYPE">SensorType</pVariable>
+		<Formula>(SENSORTYPE = 4)</Formula>
+	</IntSwissKnife>
+	<IntSwissKnife Name="IsSensorType5Implemented">
+		<pVariable Name="SENSORTYPE">SensorType</pVariable>
+		<Formula>(SENSORTYPE = 5)</Formula>
+	</IntSwissKnife>
+	<IntSwissKnife Name="IsSensorType6Implemented">
+		<pVariable Name="SENSORTYPE">SensorType</pVariable>
+		<Formula>(SENSORTYPE = 6) || (SENSORTYPE = 9)</Formula>
+	</IntSwissKnife>
+	<IntSwissKnife Name="IsSensorType7Implemented">
+		<pVariable Name="SENSORTYPE">SensorType</pVariable>
+		<Formula>(SENSORTYPE = 7)</Formula>
+	</IntSwissKnife>
+	<IntSwissKnife Name="IsSensorType8Implemented">
+		<pVariable Name="SENSORTYPE">SensorType</pVariable>
+		<Formula>(SENSORTYPE = 3)</Formula>
+	</IntSwissKnife>
+	<IntSwissKnife Name="IsSensorType9Implemented">
+		<pVariable Name="SENSORTYPE">SensorType</pVariable>
+		<Formula>(SENSORTYPE = 9) || (SENSORTYPE = 6)</Formula>
+	</IntSwissKnife>
+	<IntSwissKnife Name="IsUncooledImplemented">
+		<pVariable Name="SensorType8">IsSensorType8Implemented</pVariable>
+		<pVariable Name="SensorType2">IsSensorType2Implemented</pVariable>
+		<pVariable Name="SensorType6">IsSensorType6Implemented</pVariable>
+		<pVariable Name="SensorType0">IsSensorType0Implemented</pVariable>
+		<Formula>SensorType8 || SensorType2 || SensorType6 || SensorType0</Formula>
+	</IntSwissKnife>
+	<IntSwissKnife Name="IsCooledImplemented">
+		<pVariable Name="SensorType1">IsSensorType1Implemented</pVariable>
+		<pVariable Name="SensorType4">IsSensorType4Implemented</pVariable>
+		<pVariable Name="SensorType5">IsSensorType5Implemented</pVariable>
+		<pVariable Name="SensorType7">IsSensorType7Implemented</pVariable>
+		<Formula>SensorType1 || SensorType4 || SensorType5 || SensorType7</Formula>
+	</IntSwissKnife>
+	<StructReg Comment="CameraPn">
+		<Address>0x20504</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>Device</pPort>
+		<Endianess>LittleEndian</Endianess>
+		<StructEntry Name="IsShutterImplementedRegister" NameSpace="Custom">
+			<Bit>0</Bit>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+		<StructEntry Name="IsTemperatureSensorImplementedRegister" NameSpace="Custom">
+			<Bit>1</Bit>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+		<StructEntry Name="IsPleoraExpansorImplementedRegister" NameSpace="Custom">
+			<Bit>2</Bit>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+		<StructEntry Name="IsCompassImplementedRegister" NameSpace="Custom">
+			<Bit>3</Bit>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+		<StructEntry Name="IsSPIMemoryImplementedRegister" NameSpace="Custom">
+			<Bit>4</Bit>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+		<StructEntry Name="IsLensImplementedRegister" NameSpace="Custom">
+			<Bit>5</Bit>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+		<StructEntry Name="TBD1ImplementedRegister" NameSpace="Custom">
+			<Bit>6</Bit>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+		<StructEntry Name="TBD2ImplementedRegister" NameSpace="Custom">
+			<Bit>7</Bit>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+		<StructEntry Name="TBD3ImplementedRegister" NameSpace="Custom">
+			<Bit>8</Bit>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+		<StructEntry Name="TBD4ImplementedRegister" NameSpace="Custom">
+			<Bit>9</Bit>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+		<StructEntry Name="TBD5ImplementedRegister" NameSpace="Custom">
+			<Bit>10</Bit>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+		<StructEntry Name="TBD6ImplementedRegister" NameSpace="Custom">
+			<Bit>11</Bit>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+		<StructEntry Name="TBD7ImplementedRegister" NameSpace="Custom">
+			<Bit>12</Bit>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+		<StructEntry Name="TBD8ImplementedRegister" NameSpace="Custom">
+			<Bit>13</Bit>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+		<StructEntry Name="TBD9ImplementedRegister" NameSpace="Custom">
+			<Bit>14</Bit>
+			<!--CAMBIARLO CUANDO SE PONGA BIEN LO DEL LITTLE ENDIAN-->
+			<Sign>Unsigned</Sign>
+		</StructEntry>
+	</StructReg>
+	<Integer Name="IsShutterImplemented" NameSpace="Custom">
+		<ToolTip>Indicates if camera provide Shutter.</ToolTip>
+		<Description>This is a read only element. 1 when shutter implemented, 0 when not.</Description>
+		<DisplayName>Shutter Implemented</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<pValue>IsShutterImplementedRegister</pValue>
+		<Min>0</Min>
+		<Max>1</Max>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<Integer Name="IsTemperatureSensorImplemented">
+		<ToolTip>Indicates if camera provide Temperature Sensor.</ToolTip>
+		<Description>This is a read only element. 1 when Temperature Sensor implemented, 0 when not.</Description>
+		<DisplayName>Temperature Sensor</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<pValue>IsTemperatureSensorImplementedRegister</pValue>
+		<Min>0</Min>
+		<Max>1</Max>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<Integer Name="IsPleoraExpansorImplemented">
+		<ToolTip>Indicates if camera provide Pleora Expansor.</ToolTip>
+		<Description>This is a read only element. 1 when Pleora Expansor implemented, 0 when not.</Description>
+		<DisplayName>Pleora Expansor</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<pValue>IsPleoraExpansorImplementedRegister</pValue>
+		<Min>0</Min>
+		<Max>1</Max>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<Integer Name="IsCompassImplemented">
+		<ToolTip>Indicates if camera provide Compass.</ToolTip>
+		<Description>This is a read only element. 1 when Compass implemented, 0 when not.</Description>
+		<DisplayName>Compass</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<pValue>IsCompassImplementedRegister</pValue>
+		<Min>0</Min>
+		<Max>1</Max>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<Integer Name="IsSPIMemoryImplemented">
+		<ToolTip>Indicates if camera provide SPI Memory.</ToolTip>
+		<Description>This is a read only element. 1 when SPI Memory implemented, 0 when not.</Description>
+		<DisplayName>SPI Memory</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<pValue>IsSPIMemoryImplementedRegister</pValue>
+		<Min>0</Min>
+		<Max>1</Max>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<Integer Name="IsLensImplemented">
+		<ToolTip>Indicates if camera provide Morotized Lens.</ToolTip>
+		<Description>This is a read only element. 1 when Morotized Lens, 0 when not.</Description>
+		<DisplayName> Morotized Lens</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<pValue>IsLensImplementedRegister</pValue>
+		<Min>0</Min>
+		<Max>1</Max>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<Integer Name="TBD1Implemented">
+		<ToolTip>Indicates if camera provide TBD 1.</ToolTip>
+		<!--Change-->
+		<Description>This is a read only element. 1 when TBD 1 implemented, 0 when not.</Description>
+		<!--Change-->
+		<DisplayName>TBD 1</DisplayName>
+		<!--Change-->
+		<Visibility>Beginner</Visibility>
+		<pValue>TBD1ImplementedRegister</pValue>
+		<!--Change-->
+		<Min>0</Min>
+		<Max>1</Max>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<Integer Name="TBD2Implemented">
+		<ToolTip>Indicates if camera provide TBD 1.</ToolTip>
+		<!--Change-->
+		<Description>This is a read only element. 1 when TBD 2 implemented, 0 when not.</Description>
+		<!--Change-->
+		<DisplayName>TBD 2</DisplayName>
+		<!--Change-->
+		<Visibility>Beginner</Visibility>
+		<pValue>TBD2ImplementedRegister</pValue>
+		<!--Change-->
+		<Min>0</Min>
+		<Max>1</Max>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<Integer Name="TBD3Implemented">
+		<ToolTip>Indicates if camera provide TBD 3.</ToolTip>
+		<!--Change-->
+		<Description>This is a read only element. 1 when TBD 3 implemented, 0 when not.</Description>
+		<!--Change-->
+		<DisplayName>TBD 3</DisplayName>
+		<!--Change-->
+		<Visibility>Beginner</Visibility>
+		<pValue>TBD3ImplementedRegister</pValue>
+		<!--Change-->
+		<Min>0</Min>
+		<Max>1</Max>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<Integer Name="TBD4Implemented">
+		<ToolTip>Indicates if camera provide TBD 4.</ToolTip>
+		<!--Change-->
+		<Description>This is a read only element. 1 when TBD 4 implemented, 0 when not.</Description>
+		<!--Change-->
+		<DisplayName>TBD 4</DisplayName>
+		<!--Change-->
+		<Visibility>Beginner</Visibility>
+		<pValue>TBD4ImplementedRegister</pValue>
+		<!--Change-->
+		<Min>0</Min>
+		<Max>1</Max>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<Integer Name="TBD5Implemented">
+		<ToolTip>Indicates if camera provide TBD 5.</ToolTip>
+		<!--Change-->
+		<Description>This is a read only element. 1 when TBD 5 implemented, 0 when not.</Description>
+		<!--Change-->
+		<DisplayName>TBD 5</DisplayName>
+		<!--Change-->
+		<Visibility>Beginner</Visibility>
+		<pValue>TBD5ImplementedRegister</pValue>
+		<!--Change-->
+		<Min>0</Min>
+		<Max>1</Max>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<Integer Name="TBD6Implemented">
+		<ToolTip>Indicates if camera provide TBD 6.</ToolTip>
+		<!--Change-->
+		<Description>This is a read only element. 1 when TBD 6 implemented, 0 when not.</Description>
+		<!--Change-->
+		<DisplayName>TBD 6</DisplayName>
+		<!--Change-->
+		<Visibility>Beginner</Visibility>
+		<pValue>TBD6ImplementedRegister</pValue>
+		<!--Change-->
+		<Min>0</Min>
+		<Max>1</Max>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<Integer Name="TBD7Implemented">
+		<ToolTip>Indicates if camera provide TBD 7.</ToolTip>
+		<!--Change-->
+		<Description>This is a read only element. 1 when TBD 7 implemented, 0 when not.</Description>
+		<!--Change-->
+		<DisplayName>TBD 7</DisplayName>
+		<!--Change-->
+		<Visibility>Beginner</Visibility>
+		<pValue>TBD7ImplementedRegister</pValue>
+		<!--Change-->
+		<Min>0</Min>
+		<Max>1</Max>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<Integer Name="TBD8Implemented">
+		<ToolTip>Indicates if camera provide TBD 8.</ToolTip>
+		<!--Change-->
+		<Description>This is a read only element. 1 when TBD 8 implemented, 0 when not.</Description>
+		<!--Change-->
+		<DisplayName>TBD 8</DisplayName>
+		<!--Change-->
+		<Visibility>Beginner</Visibility>
+		<pValue>TBD8ImplementedRegister</pValue>
+		<!--Change-->
+		<Min>0</Min>
+		<Max>1</Max>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<Integer Name="TBD9Implemented">
+		<ToolTip>Indicates if camera provide TBD 9.</ToolTip>
+		<!--Change-->
+		<Description>This is a read only element. 1 when TBD 9 implemented, 0 when not.</Description>
+		<!--Change-->
+		<DisplayName>TBD 9</DisplayName>
+		<!--Change-->
+		<Visibility>Beginner</Visibility>
+		<pValue>TBD9ImplementedRegister</pValue>
+		<!--Change-->
+		<Min>0</Min>
+		<Max>1</Max>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<IntReg Name="PixelPitchRegister">
+		<Address>0x2050C</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="PixelPitch" NameSpace="Custom">
+		<Description>Distance between pixel center.</Description>
+		<Visibility>Beginner</Visibility>
+		<pValue>PixelPitchRegister</pValue>
+		<Unit>um</Unit>
+		<Representation>Linear</Representation>
+	</Integer>
+	<IntReg Name="FPSMaxRegister">
+		<Address>0x20510</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>Device</pPort>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Float Name="FPSMax" NameSpace="Standard">
+		<Description>Shows maximum framerate supported.</Description>
+		<Visibility>Beginner</Visibility>
+		<pValue>FPSMaxRegister</pValue>
+		<Unit>fps</Unit>
+		<Representation>Linear</Representation>
+	</Float>
+	<IntReg Name="VideoProcessingRegister">
+		<Address>0x20604</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Enumeration Name="VideoProcessing" NameSpace="Standard">
+		<Visibility>Beginner</Visibility>
+		<pIsLocked>TLParamsLocked</pIsLocked>
+		<Streamable>Yes</Streamable>
+		<EnumEntry Name="Raw">
+			<Value>1</Value>
+		</EnumEntry>
+		<EnumEntry Name="NUC1P">
+			<Value>2</Value>
+		</EnumEntry>
+		<EnumEntry Name="NUC2P">
+			<Value>3</Value>
+		</EnumEntry>
+		<EnumEntry Name="BPR">
+			<Value>4</Value>
+		</EnumEntry>
+		<EnumEntry Name="IMAGE_COMPENSATION">
+			<Value>5</Value>
+		</EnumEntry>
+		<EnumEntry Name="RADIOMETRIC">
+			<Value>6</Value>
+		</EnumEntry>
+		<EnumEntry Name="TECLESS">
+			<Value>7</Value>
+		</EnumEntry>
+		<EnumEntry Name="TBD">
+			<Value>8</Value>
+		</EnumEntry>
+		<pValue>VideoProcessingRegister</pValue>
+	</Enumeration>
+	<IntReg Name="ReferenceStatusRegister">
+		<Address>0x20608</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<PollingTime>100</PollingTime>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Enumeration Name="ReferenceStatus" NameSpace="Standard">
+		<Visibility>Beginner</Visibility>
+		<pIsLocked>TLParamsLocked</pIsLocked>
+		<Streamable>Yes</Streamable>
+		<EnumEntry Name="Free">
+			<Value>0</Value>
+		</EnumEntry>
+		<EnumEntry Name="Busy">
+			<Value>1</Value>
+		</EnumEntry>
+		<pValue>ReferenceStatusRegister</pValue>
+	</Enumeration>
+	<IntReg Name="ProcessingCmdRegister">
+		<Address>0x2060C</Address>
+		<Length>4</Length>
+		<AccessMode>WO</AccessMode>
+		<pPort>Device</pPort>
+		<Cachable>NoCache</Cachable>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Command Name="Raw">
+		<pIsLocked>TLParamsLocked</pIsLocked>
+		<pValue>ProcessingCmdRegister</pValue>
+		<CommandValue>0</CommandValue>
+	</Command>
+	<Command Name="1PNUC">
+		<pIsLocked>TLParamsLocked</pIsLocked>
+		<pValue>ProcessingCmdRegister</pValue>
+		<CommandValue>1</CommandValue>
+	</Command>
+	<Command Name="ColdRef2PNUC">
+		<pIsLocked>TLParamsLocked</pIsLocked>
+		<pValue>ProcessingCmdRegister</pValue>
+		<CommandValue>2</CommandValue>
+	</Command>
+	<Command Name="TempRef2PNUC">
+		<pIsLocked>TLParamsLocked</pIsLocked>
+		<pValue>ProcessingCmdRegister</pValue>
+		<CommandValue>3</CommandValue>
+	</Command>
+	<Command Name="2PNUCApply">
+		<pIsLocked>TLParamsLocked</pIsLocked>
+		<pValue>ProcessingCmdRegister</pValue>
+		<CommandValue>4</CommandValue>
+	</Command>
+	<Command Name="BadPixelsReplacement">
+		<pIsLocked>TLParamsLocked</pIsLocked>
+		<pValue>ProcessingCmdRegister</pValue>
+		<CommandValue>5</CommandValue>
+	</Command>
+	<IntReg Name="HeightRegister">
+		<Address>0x20700</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>Device</pPort>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="Height" NameSpace="Standard">
+		<Description>Controls the GSK as an absolute physical value.</Description>
+		<Visibility>Beginner</Visibility>
+		<pValue>HeightRegister</pValue>
+		<Unit>px</Unit>
+		<Representation>Linear</Representation>
+	</Integer>
+	<IntReg Name="WidthRegister">
+		<Address>0x20704</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>Device</pPort>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="Width" NameSpace="Standard">
+		<Description>Controls the GSK as an absolute physical value.</Description>
+		<Visibility>Beginner</Visibility>
+		<pValue>WidthRegister</pValue>
+		<Unit>px</Unit>
+		<Representation>Linear</Representation>
+	</Integer>
+	<Enumeration Name="PixelFormat" NameSpace="Standard">
+		<ToolTip>Format of the pixels provided by the device.</ToolTip>
+		<Description>Format of the pixels provided by the device. It represents all the information provided by PixelCoding, PixelSize, PixelColorFilter combined in a single feature.</Description>
+		<DisplayName>Pixel Format</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<pIsLocked>TLParamsLocked</pIsLocked>
+		<ImposedAccessMode>RO</ImposedAccessMode>
+		<Streamable>Yes</Streamable>
+		<EnumEntry Name="Mono16" NameSpace="Standard">
+			<Value>17825799</Value>
+		</EnumEntry>
+		<pValue>PixelFormatRegister</pValue>
+	</Enumeration>
+	<IntReg Name="PixelFormatRegister">
+		<Address>0x20708</Address>
+		<Length>4</Length>
+		<AccessMode>RW</AccessMode>
+		<pPort>Device</pPort>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Category Name="SensorParameters" NameSpace="Standard">
+		<pFeature>Gain_SensorType8</pFeature>
+		<pFeature>Gain_SensorType2</pFeature>
+		<pFeature>Gain_SensorType6</pFeature>
+		<pFeature>GSK_SensorType8</pFeature>
+		<pFeature>GSK_SensorType2</pFeature>
+		<pFeature>GSK_SensorType6</pFeature>
+		<pFeature>GSKV_SensorType8</pFeature>
+		<pFeature>GSKV_SensorType2</pFeature>
+		<pFeature>GSKV_SensorType6</pFeature>
+		<pFeature>GFID_SensorType8</pFeature>
+		<pFeature>GFID_SensorType2</pFeature>
+		<pFeature>GFID_SensorType6</pFeature>
+		<pFeature>GFIDV_SensorType8</pFeature>
+		<pFeature>GFIDV_SensorType2</pFeature>
+		<pFeature>GFIDV_SensorType6</pFeature>
+		<pFeature>Tint_SensorType8</pFeature>
+		<pFeature>Tint_SensorType2</pFeature>
+		<pFeature>Tint_SensorType6</pFeature>
+		<pFeature>TintS_SensorType8</pFeature>
+		<pFeature>TintS_SensorType2</pFeature>
+		<pFeature>TintS_SensorType6</pFeature>
+		<pFeature>VDET</pFeature>
+		<pFeature>VSK</pFeature>
+		<pFeature>VTEMP</pFeature>
+		<pFeature>TBNUC</pFeature>
+		<pFeature>DetectorSerialNumber</pFeature>
+	</Category>
+	<Category Name="ImageFormatControl" NameSpace="Standard">
+		<ToolTip>Category for image format control features.</ToolTip>
+		<Description>Category for image format control features.</Description>
+		<DisplayName>Image Format Control</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<ImposedAccessMode>RO</ImposedAccessMode>
+		<pFeature>SensorDigitizationTaps</pFeature>
+		<pFeature>Width</pFeature>
+		<pFeature>Height</pFeature>
+		<pFeature>PixelFormat</pFeature>
+		<pFeature>PixelSize</pFeature>
+		<pFeature>TestPattern</pFeature>
+		<pFeature>VideoMode</pFeature>
+		<pFeature>DecimationHorizontal</pFeature>
+		<pFeature>DecimationVertical</pFeature>
+		<pFeature>PixelDynamicRangeMin</pFeature>
+		<pFeature>PixelDynamicRangeMax</pFeature>
+		<pFeature>Deinterlacing</pFeature>
+		<pFeature>FrameSpecInfoSelector</pFeature>
+		<pFeature>FrameSpecInfo</pFeature>
+	</Category>
+	<Category Name="AcquisitionControl" NameSpace="Standard">
+		<ToolTip>Category for the acquisition features.</ToolTip>
+		<Description>Category for the acquisition features.</Description>
+		<DisplayName>Acquisition Control</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<ImposedAccessMode>RO</ImposedAccessMode>
+		<pFeature>AcquisitionMode</pFeature>
+		<pFeature>AcquisitionStart</pFeature>
+		<pFeature>AcquisitionStop</pFeature>
+	</Category>
+	<Category Name="TransportLayerControl" NameSpace="Standard">
+		<ToolTip>Category that contains the transport layer control features.</ToolTip>
+		<Description>Category that contains the transport layer control features.</Description>
+		<DisplayName>Transport Layer Control</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<ImposedAccessMode>RO</ImposedAccessMode>
+		<pFeature>PayloadSize</pFeature>
+		<pFeature>GenCPVersionMajor</pFeature>
+		<pFeature>GenCPVersionMinor</pFeature>
+		<pFeature>U3VVersionMajor</pFeature>
+		<pFeature>U3VVersionMinor</pFeature>
+		<pFeature>U3VCPSIRMAvailable</pFeature>
+		<pFeature>U3VCPEIRMAvailable</pFeature>
+		<pFeature>U3VCPIIDC2Available</pFeature>
+		<pFeature>U3VMaxCommandTransferLength</pFeature>
+		<pFeature>U3VMaxAcknowledgeTransferLength</pFeature>
+		<pFeature>U3VNumberOfStreamChannels</pFeature>
+		<pFeature>U3VSIRMAddress</pFeature>
+		<pFeature>U3VSIRMLength</pFeature>
+		<pFeature>U3VEIRMAddress</pFeature>
+		<pFeature>U3VEIRMLength</pFeature>
+		<pFeature>U3VIIDC2Address</pFeature>
+		<pFeature>U3VCurrentSpeed</pFeature>
+		<pFeature>TLParamsLocked</pFeature>
+	</Category>
+	<Category Name="StreamControl" NameSpace="Standard">
+		<ToolTip>Category that contains the Stream Control features.</ToolTip>
+		<Description>Category that contains the Stream Control features.</Description>
+		<DisplayName>Stream Control</DisplayName>
+		<Visibility>Beginner</Visibility>
+		<ImposedAccessMode>RO</ImposedAccessMode>
+		<pFeature>U3VSIPayloadTransferSize</pFeature>
+		<pFeature>U3VSIPayloadTransferCount</pFeature>
+		<pFeature>U3VSIPayloadFinalTransfer1Size</pFeature>
+		<pFeature>U3VSIPayloadFinalTransfer2Size</pFeature>
+	</Category>
+	<Port Name="Device" NameSpace="Standard">
+	</Port>
+	<Integer Name="One_Int">
+		<Value>1</Value>
+	</Integer>
+	<Integer Name="Zero_Int">
+		<Value>0</Value>
+	</Integer>
+	<Integer Name="SBRMRegBaseAddress">
+		<Value>0x00050000</Value>
+	</Integer>
+	<Integer Name="SIRMRegBaseAddress">
+		<Value>0x00062000</Value>
+	</Integer>
+	<Group Comment="RegAddr">
+		<Group Comment="Inq RegAddr">
+			<Integer Name="U3VVersion_RegAddrOffset">
+				<Value>0x00000000</Value>
+			</Integer>
+			<Integer Name="U3VCPCapability_RegAddrOffset">
+				<Value>0x00000004</Value>
+			</Integer>
+			<Integer Name="U3VMaxCommandTransferLength_RegAddrOffset">
+				<Value>0x00000014</Value>
+			</Integer>
+			<Integer Name="U3VMaxAcknowledgeTransferLength_RegAddrOffset">
+				<Value>0x00000018</Value>
+			</Integer>
+			<Integer Name="U3VNumberOfStreamChannels_RegAddrOffset">
+				<Value>0x0000001c</Value>
+			</Integer>
+			<Integer Name="U3VSIRMAddress_RegAddrOffset">
+				<Value>0x00000020</Value>
+			</Integer>
+			<Integer Name="U3VSIRMLength_RegAddrOffset">
+				<Value>0x00000028</Value>
+			</Integer>
+			<Integer Name="U3VEIRMAddress_RegAddrOffset">
+				<Value>0x0000002c</Value>
+			</Integer>
+			<Integer Name="U3VEIRMLength_RegAddrOffset">
+				<Value>0x00000034</Value>
+			</Integer>
+			<Integer Name="U3VIIDC2Address_RegAddrOffset">
+				<Value>0x00000038</Value>
+			</Integer>
+			<Integer Name="U3VCurrentSpeed_RegAddrOffset">
+				<Value>0x00000040</Value>
+			</Integer>
+			<Integer Name="U3VSIInfo_RegAddrOffset">
+				<Value>0x00000000</Value>
+			</Integer>
+			<Integer Name="U3VSIControl_RegAddrOffset">
+				<Value>0x00000004</Value>
+			</Integer>
+			<Integer Name="U3VSIRequiredPayloadSize_RegAddrOffset">
+				<Value>0x00000008</Value>
+			</Integer>
+			<Integer Name="U3VSIRequiredLeaderSize_RegAddrOffset">
+				<Value>0x00000010</Value>
+			</Integer>
+			<Integer Name="U3VSIRequiredTrailerSize_RegAddrOffset">
+				<Value>0x00000014</Value>
+			</Integer>
+			<Integer Name="U3VSIMaximumLeaderSize_RegAddrOffset">
+				<Value>0x00000018</Value>
+			</Integer>
+			<Integer Name="U3VSIPayloadTransferSize_RegAddrOffset">
+				<Value>0x0000001c</Value>
+			</Integer>
+			<Integer Name="U3VSIPayloadTransferCount_RegAddrOffset">
+				<Value>0x00000020</Value>
+			</Integer>
+			<Integer Name="U3VSIPayloadFinalTransfer1Size_RegAddrOffset">
+				<Value>0x00000024</Value>
+			</Integer>
+			<Integer Name="U3VSIPayloadFinalTransfer2Size_RegAddrOffset">
+				<Value>0x00000028</Value>
+			</Integer>
+			<Integer Name="U3VSIMaximumTrailerSize_RegAddrOffset">
+				<Value>0x0000002c</Value>
+			</Integer>
+			<Integer Name="AcquisitionStart_RegAddr">
+				<Value>0x00030804</Value>
+			</Integer>
+			<Integer Name="AcquisitionStop_RegAddr">
+				<Value>0x00030808</Value>
+			</Integer>
+			<Integer Name="DeviceTemperature_RegAddr">
+				<Value>0x000301b0</Value>
+			</Integer>
+			<Integer Name="DeviceReset_RegAddr">
+				<Value>0x00030180</Value>
+			</Integer>
+			<Integer Name="FindMe_RegAddr">
+				<Value>0x000302b0</Value>
+			</Integer>
+			<Integer Name="DeviceLinkThroughputLimitMode_RegAddr">
+				<Value>0x00030100</Value>
+			</Integer>
+			<Integer Name="DeviceLinkThroughputLimit_RegAddr">
+				<Value>0x00030110</Value>
+			</Integer>
+			<Integer Name="DeviceLinkHeartbeatMode_RegAddr">
+				<Value>0x00030130</Value>
+			</Integer>
+			<Integer Name="DeviceLinkHeartbeatTimeout_RegAddr">
+				<Value>0x00030140</Value>
+			</Integer>
+			<Integer Name="RegionMode_RegAddr">
+				<Value>0x00030318</Value>
+			</Integer>
+			<Integer Name="RegionDestination_RegAddr">
+				<Value>0x00030320</Value>
+			</Integer>
+			<Integer Name="Width_RegAddr">
+				<Value>0x00030360</Value>
+			</Integer>
+			<Integer Name="Height_RegAddr">
+				<Value>0x000303a0</Value>
+			</Integer>
+			<Integer Name="OffsetX_RegAddr">
+				<Value>0x000303e0</Value>
+			</Integer>
+			<Integer Name="OffsetY_RegAddr">
+				<Value>0x00030420</Value>
+			</Integer>
+			<Integer Name="LinePitch_RegAddr">
+				<Value>0x00030460</Value>
+			</Integer>
+			<Integer Name="Decimation_RegAddr">
+				<Value>0x00030600</Value>
+			</Integer>
+			<Integer Name="TestPattern_RegAddr">
+				<Value>0x00030680</Value>
+			</Integer>
+			<Integer Name="ReverseX_RegAddr">
+				<Value>0x00030608</Value>
+			</Integer>
+			<Integer Name="ReverseY_RegAddr">
+				<Value>0x0003060c</Value>
+			</Integer>
+			<Integer Name="PixelFormat_RegAddr">
+				<Value>0x00030610</Value>
+			</Integer>
+			<Integer Name="PixelCoding_RegAddr">
+				<Value>0x00030660</Value>
+			</Integer>
+			<Integer Name="PixelColorFilter_RegAddr">
+				<Value>0x00030668</Value>
+			</Integer>
+			<Integer Name="VideoMode_RegAddr">
+				<Value>0x000306f0</Value>
+			</Integer>
+			<Integer Name="Deinterlacing_RegAddr">
+				<Value>0x000306c4</Value>
+			</Integer>
+			<Integer Name="PayloadSize_RegAddr">
+				<Value>0x00031900</Value>
+			</Integer>
+			<Integer Name="FrameSpecInfo_RegAddr">
+				<Value>0x000306dc</Value>
+			</Integer>
+			<Integer Name="AcquisitionMode_RegAddr">
+				<Value>0x00030800</Value>
+			</Integer>
+			<Integer Name="HueCtrl_RegAddr">
+				<Value>0x00031324</Value>
+			</Integer>
+			<Integer Name="HueAbsVal_RegAddr">
+				<Value>0x00031320</Value>
+			</Integer>
+			<Integer Name="GainAbsVal_RegAddr">
+				<Value>0x00031200</Value>
+			</Integer>
+			<Integer Name="BlackLevelCtrl_RegAddr">
+				<Value>0x0003124c</Value>
+			</Integer>
+			<Integer Name="BlackLevel_RegAddr">
+				<Value>0x00031250</Value>
+			</Integer>
+			<Integer Name="BlackLevelAuto_RegAddr">
+				<Value>0x00031270</Value>
+			</Integer>
+			<Integer Name="BalanceWhiteAuto_RegAddr">
+				<Value>0x000312e0</Value>
+			</Integer>
+			<Integer Name="BalanceRatio_RegAddr">
+				<Value>0x000312c0</Value>
+			</Integer>
+			<Integer Name="SharpnessCtrl_RegAddr">
+				<Value>0x00031314</Value>
+			</Integer>
+			<Integer Name="SharpnessVal_RegAddr">
+				<Value>0x00031310</Value>
+			</Integer>
+			<Integer Name="SaturationAbsVal_RegAddr">
+				<Value>0x00031330</Value>
+			</Integer>
+			<Integer Name="SaturationCtrl_RegAddr">
+				<Value>0x00031334</Value>
+			</Integer>
+			<Integer Name="GammaAbsVal_RegAddr">
+				<Value>0x00031300</Value>
+			</Integer>
+			<Integer Name="GammaCtrl_RegAddr">
+				<Value>0x00031308</Value>
+			</Integer>
+			<Integer Name="AutoAOIWidth_RegAddr">
+				<Value>0x00031360</Value>
+			</Integer>
+			<Integer Name="AutoAOIHeight_RegAddr">
+				<Value>0x00031380</Value>
+			</Integer>
+			<Integer Name="AutoAOIOffsetX_RegAddr">
+				<Value>0x000313a0</Value>
+			</Integer>
+			<Integer Name="AutoAOIOffsetY_RegAddr">
+				<Value>0x000313c0</Value>
+			</Integer>
+			<Integer Name="AutoAOIUsage_RegAddr">
+				<Value>0x000313f0</Value>
+			</Integer>
+			<Integer Name="DigitalShift_RegAddr">
+				<Value>0x00031244</Value>
+			</Integer>
+			<Integer Name="Brightness_RegAddr">
+				<Value>0x0003133c</Value>
+			</Integer>
+			<Integer Name="GainShutPrior_RegAddr">
+				<Value>0x00031430</Value>
+			</Integer>
+			<Integer Name="AutoExposureTimeLowerLimit_RegAddr">
+				<Value>0x00031400</Value>
+			</Integer>
+			<Integer Name="AutoExposureTimeUpperLimit_RegAddr">
+				<Value>0x00031404</Value>
+			</Integer>
+			<Integer Name="AutoGainLowerLimit_RegAddr">
+				<Value>0x00031408</Value>
+			</Integer>
+			<Integer Name="AutoGainUpperLimit_RegAddr">
+				<Value>0x0003140c</Value>
+			</Integer>
+			<Integer Name="HDREnable_RegAddr">
+				<Value>0x00031450</Value>
+			</Integer>
+			<Integer Name="HDRShuter_RegAddr">
+				<Value>0x00031454</Value>
+			</Integer>
+			<Integer Name="LineDebouncerTime_RegAddr">
+				<Value>0x00030f20</Value>
+			</Integer>
+			<Integer Name="StrobeLineDuration_RegAddr">
+				<Value>0x00030fa0</Value>
+			</Integer>
+			<Integer Name="StrobeLineDelay_RegAddr">
+				<Value>0x00031020</Value>
+			</Integer>
+			<Integer Name="StrobeLinePreDelay_RegAddr">
+				<Value>0x000310a0</Value>
+			</Integer>
+			<Integer Name="UserSetCurrent_RegAddr">
+				<Value>0x00031800</Value>
+			</Integer>
+			<Integer Name="FrameTimeoutTime_RegAddr">
+				<Value>0x00030b18</Value>
+			</Integer>
+			<Integer Name="InputSource_RegAddr">
+				<Value>0x00032810</Value>
+			</Integer>
+			<Integer Name="SignalAlignment_RegAddr">
+				<Value>0x00032814</Value>
+			</Integer>
+			<Integer Name="PreDivider_RegAddr">
+				<Value>0x00032818</Value>
+			</Integer>
+			<Integer Name="Multiplier_RegAddr">
+				<Value>0x0003281c</Value>
+			</Integer>
+			<Integer Name="PostDivider_RegAddr">
+				<Value>0x00032820</Value>
+			</Integer>
+			<Integer Name="PreventOvertrigger_RegAddr">
+				<Value>0x00032824</Value>
+			</Integer>
+			<Integer Name="TestPendingAck_RegAddr">
+				<Value>0x00033000</Value>
+			</Integer>
+			<Integer Name="LogPrint_RegAddr">
+				<Value>0x00033004</Value>
+			</Integer>
+			<Integer Name="LogClear_RegAddr">
+				<Value>0x00033008</Value>
+			</Integer>
+			<!-- RO -->
+			<Integer Name="DeviceFirmwareVersion_RegAddr">
+				<Value>0x00030024</Value>
+			</Integer>
+			<Integer Name="DeviceUptime_RegAddr">
+				<Value>0x00030048</Value>
+			</Integer>
+			<Integer Name="BoardDeviceType_RegAddr">
+				<Value>0x0003004c</Value>
+			</Integer>
+			<Integer Name="DeviceMaxThroughput_RegAddr">
+				<Value>0x0003006c</Value>
+			</Integer>
+			<Integer Name="DeviceConnectionStatus_RegAddr">
+				<Value>0x000300bc</Value>
+			</Integer>
+			<Integer Name="DeviceLinkConnectionCount_RegAddr">
+				<Value>0x00030120</Value>
+			</Integer>
+			<Integer Name="DeviceCommandTimeout_RegAddr">
+				<Value>0x00030150</Value>
+			</Integer>
+			<Integer Name="DeviceStreamChannelCount_RegAddr">
+				<Value>0x0000001c</Value>
+			</Integer>
+			<Integer Name="SensorWidth_RegAddr">
+				<Value>0x00030300</Value>
+			</Integer>
+			<Integer Name="SensorHeight_RegAddr">
+				<Value>0x00030304</Value>
+			</Integer>
+			<Integer Name="SensorTaps_RegAddr">
+				<Value>0x00030308</Value>
+			</Integer>
+			<Integer Name="SensorDigitizationTaps_RegAddr">
+				<Value>0x0003030c</Value>
+			</Integer>
+			<Integer Name="WidthMax_RegAddr">
+				<Value>0x00030310</Value>
+			</Integer>
+			<Integer Name="HeightMax_RegAddr">
+				<Value>0x00030314</Value>
+			</Integer>
+			<Integer Name="LUTValue_RegAddr">
+				<Value>0x00078000</Value>
+			</Integer>
+			<Integer Name="DPCValue_RegAddr">
+				<Value>0x00070000</Value>
+			</Integer>
+			<Integer Name="FPNCValue_RegAddr">
+				<Value>0x00080000</Value>
+			</Integer>
+			<Integer Name="PRNUCValue_RegAddr">
+				<Value>0x00088000</Value>
+			</Integer>
+			<Integer Name="DPCSave_RegAddr">
+				<Value>0x000e1000</Value>
+			</Integer>
+			<Integer Name="DPCEnable_RegAddr">
+				<Value>0x000e1004</Value>
+			</Integer>
+			<Integer Name="FPNCSave_RegAddr">
+				<Value>0x000e1008</Value>
+			</Integer>
+			<Integer Name="FPNCEnable_RegAddr">
+				<Value>0x000e100c</Value>
+			</Integer>
+			<Integer Name="NUCEnable_RegAddr">
+				<Value>0x000312a0</Value>
+			</Integer>
+			<Integer Name="PRNUCSave_RegAddr">
+				<Value>0x000e1010</Value>
+			</Integer>
+			<Integer Name="PRNUCEnable_RegAddr">
+				<Value>0x000e1014</Value>
+			</Integer>
+			<!--  inq -->
+			<Integer Name="Category_Inq_RegAddr">
+				<Value>0x00010004</Value>
+			</Integer>
+			<Integer Name="DeviceControlInq_RegAddr">
+				<Value>0x00010104</Value>
+			</Integer>
+			<Integer Name="GevSCPSMaxInq_RegAddr">
+				<Value>0x00010120</Value>
+			</Integer>
+			<Integer Name="GevSCPSMinInq_RegAddr">
+				<Value>0x00010124</Value>
+			</Integer>
+			<Integer Name="GevSCPDMaxInq_RegAddr">
+				<Value>0x00010130</Value>
+			</Integer>
+			<Integer Name="GevSCPDMinInq_RegAddr">
+				<Value>0x00010134</Value>
+			</Integer>
+			<Integer Name="ReverseInq_RegAddr">
+				<Value>0x00010180</Value>
+			</Integer>
+			<Integer Name="WidthMin_RegAddr">
+				<Value>0x00010184</Value>
+			</Integer>
+			<Integer Name="HeightMin_RegAddr">
+				<Value>0x00010188</Value>
+			</Integer>
+			<Integer Name="Hunit_RegAddr">
+				<Value>0x00010190</Value>
+			</Integer>
+			<Integer Name="Vunit_RegAddr">
+				<Value>0x00010194</Value>
+			</Integer>
+			<Integer Name="HOunit_RegAddr">
+				<Value>0x000101b4</Value>
+			</Integer>
+			<Integer Name="VOunit_RegAddr">
+				<Value>0x000101b8</Value>
+			</Integer>
+			<Integer Name="RegionSelectorInq_RegAddr">
+				<Value>0x00010198</Value>
+			</Integer>
+			<Integer Name="VideoModeInq_RegAddr">
+				<Value>0x0001019c</Value>
+			</Integer>
+			<Integer Name="PixelFormatInq0_RegAddr">
+				<Value>0x000101a0</Value>
+			</Integer>
+			<Integer Name="PixelFormatInq_RegAddr">
+				<Value>0x000101a4</Value>
+			</Integer>
+			<Integer Name="TestPatternInq_RegAddr">
+				<Value>0x000101a8</Value>
+			</Integer>
+			<Integer Name="FrameSpecInfoInq_RegAddr">
+				<Value>0x000101ac</Value>
+			</Integer>
+			<Integer Name="DecimationMax_RegAddr">
+				<Value>0x000101b0</Value>
+			</Integer>
+			<Integer Name="FrameRateControlInq_RegAddr">
+				<Value>0x00010200</Value>
+			</Integer>
+			<Integer Name="AutoExposureInq_RegAddr">
+				<Value>0x00010204</Value>
+			</Integer>
+			<Integer Name="HueInq_RegAddr">
+				<Value>0x00010400</Value>
+			</Integer>
+			<Integer Name="HueAbsMinInq_RegAddr">
+				<Value>0x00010404</Value>
+			</Integer>
+			<Integer Name="HueAbsMaxInq_RegAddr">
+				<Value>0x00010408</Value>
+			</Integer>
+			<Integer Name="BlackLevelInq_RegAddr">
+				<Value>0x00010420</Value>
+			</Integer>
+			<Integer Name="BlackLevelMinInq_RegAddr">
+				<Value>0x00010424</Value>
+			</Integer>
+			<Integer Name="BlackLevelMaxInq_RegAddr">
+				<Value>0x00010428</Value>
+			</Integer>
+			<Integer Name="BalanceWhiteAutoInq_RegAddr">
+				<Value>0x00010430</Value>
+			</Integer>
+			<Integer Name="BalanceRatioSelectorInq_RegAddr">
+				<Value>0x00010434</Value>
+			</Integer>
+			<Integer Name="BalanceRatioMinInq_RegAddr">
+				<Value>0x00010440</Value>
+			</Integer>
+			<Integer Name="BalanceRatioMaxInq_RegAddr">
+				<Value>0x00010460</Value>
+			</Integer>
+			<Integer Name="SharpnessInq_RegAddr">
+				<Value>0x000104a0</Value>
+			</Integer>
+			<Integer Name="SharpnessMinInq_RegAddr">
+				<Value>0x000104a4</Value>
+			</Integer>
+			<Integer Name="SharpnessMaxInq_RegAddr">
+				<Value>0x000104a8</Value>
+			</Integer>
+			<Integer Name="SaturationInq_RegAddr">
+				<Value>0x000104b0</Value>
+			</Integer>
+			<Integer Name="SaturationAbsMinInq_RegAddr">
+				<Value>0x000104b4</Value>
+			</Integer>
+			<Integer Name="SaturationAbsMaxInq_RegAddr">
+				<Value>0x000104b8</Value>
+			</Integer>
+			<Integer Name="GammaInq_RegAddr">
+				<Value>0x000104c0</Value>
+			</Integer>
+			<Integer Name="GammaAbsMinInq_RegAddr">
+				<Value>0x000104c4</Value>
+			</Integer>
+			<Integer Name="GammaAbsMaxInq_RegAddr">
+				<Value>0x000104c8</Value>
+			</Integer>
+			<Integer Name="DigitalShiftInq_RegAddr">
+				<Value>0x000104d0</Value>
+			</Integer>
+			<Integer Name="DigitalShiftMinInq_RegAddr">
+				<Value>0x000104d4</Value>
+			</Integer>
+			<Integer Name="DigitalShiftMaxInq_RegAddr">
+				<Value>0x000104d8</Value>
+			</Integer>
+			<Integer Name="DigitalShiftUintInq_RegAddr">
+				<Value>0x000104dc</Value>
+			</Integer>
+			<Integer Name="BrightnessInq_RegAddr">
+				<Value>0x000104e0</Value>
+			</Integer>
+			<Integer Name="BrightnessMinInq_RegAddr">
+				<Value>0x000104e4</Value>
+			</Integer>
+			<Integer Name="BrightnessMaxInq_RegAddr">
+				<Value>0x000104e8</Value>
+			</Integer>
+			<Integer Name="BrightnessUintInq_RegAddr">
+				<Value>0x000104ec</Value>
+			</Integer>
+			<Integer Name="AutoAOIInq_RegAddr">
+				<Value>0x000104f0</Value>
+			</Integer>
+			<Integer Name="AutoLimitInq_RegAddr">
+				<Value>0x000104f4</Value>
+			</Integer>
+			<Integer Name="AutoExposureTimeLowerLimitMinInq_RegAddr">
+				<Value>0x00010500</Value>
+			</Integer>
+			<Integer Name="AutoExposureTimeLowerLimitMaxInq_RegAddr">
+				<Value>0x00010504</Value>
+			</Integer>
+			<Integer Name="AutoExposureTimeLowerLimitIncInq_RegAddr">
+				<Value>0x00010508</Value>
+			</Integer>
+			<Integer Name="AutoExposureTimeUpperLimitMinInq_RegAddr">
+				<Value>0x00010510</Value>
+			</Integer>
+			<Integer Name="AutoExposureTimeUpperLimitMaxInq_RegAddr">
+				<Value>0x00010514</Value>
+			</Integer>
+			<Integer Name="AutoExposureTimeUpperLimitIncInq_RegAddr">
+				<Value>0x00010518</Value>
+			</Integer>
+			<Integer Name="AutoGainLowerLimitMinInq_RegAddr">
+				<Value>0x00010520</Value>
+			</Integer>
+			<Integer Name="AutoGainLowerLimitMaxInq_RegAddr">
+				<Value>0x00010524</Value>
+			</Integer>
+			<Integer Name="AutoGainLowerLimitIncInq_RegAddr">
+				<Value>0x00010528</Value>
+			</Integer>
+			<Integer Name="AutoGainUpperLimitMinInq_RegAddr">
+				<Value>0x00010530</Value>
+			</Integer>
+			<Integer Name="AutoGainUpperLimitMaxInq_RegAddr">
+				<Value>0x00010534</Value>
+			</Integer>
+			<Integer Name="AutoGainUpperLimitIncInq_RegAddr">
+				<Value>0x00010538</Value>
+			</Integer>
+			<Integer Name="UserSetInq_RegAddr">
+				<Value>0x00010800</Value>
+			</Integer>
+			<Integer Name="NUCInq_RegAddr">
+				<Value>0x00010720</Value>
+			</Integer>
+			<Integer Name="FPNCIndexMinInq_RegAddr">
+				<Value>0x00010730</Value>
+			</Integer>
+			<Integer Name="FPNCIndexMaxInq_RegAddr">
+				<Value>0x00010734</Value>
+			</Integer>
+			<Integer Name="FPNCIndexIncInq_RegAddr">
+				<Value>0x00010738</Value>
+			</Integer>
+			<Integer Name="FPNCValueMinInq_RegAddr">
+				<Value>0x0001073c</Value>
+			</Integer>
+			<Integer Name="FPNCValueMaxInq_RegAddr">
+				<Value>0x00010740</Value>
+			</Integer>
+			<Integer Name="FPNCValueIncInq_RegAddr">
+				<Value>0x00010744</Value>
+			</Integer>
+			<Integer Name="PRNUCIndexMinInq_RegAddr">
+				<Value>0x00010748</Value>
+			</Integer>
+			<Integer Name="PRNUCIndexMaxInq_RegAddr">
+				<Value>0x0001074c</Value>
+			</Integer>
+			<Integer Name="PRNUCIndexIncInq_RegAddr">
+				<Value>0x00010750</Value>
+			</Integer>
+			<Integer Name="PRNUCValueMinInq_RegAddr">
+				<Value>0x00010754</Value>
+			</Integer>
+			<Integer Name="PRNUCValueMaxInq_RegAddr">
+				<Value>0x00010758</Value>
+			</Integer>
+			<Integer Name="PRNUCValueIncInq_RegAddr">
+				<Value>0x0001075c</Value>
+			</Integer>
+			<Integer Name="DPCIndexMinInq_RegAddr">
+				<Value>0x00010760</Value>
+			</Integer>
+			<Integer Name="DPCIndexMaxInq_RegAddr">
+				<Value>0x00010764</Value>
+			</Integer>
+			<Integer Name="DPCIndexIncInq_RegAddr">
+				<Value>0x00010768</Value>
+			</Integer>
+			<Integer Name="AcqStatusSelectorInq_RegAddr">
+				<Value>0x000102c8</Value>
+			</Integer>
+			<Integer Name="SignalAlignmentInq_RegAddr">
+				<Value>0x00010a10</Value>
+			</Integer>
+			<Integer Name="PreDividerMinInq_RegAddr">
+				<Value>0x00010a14</Value>
+			</Integer>
+			<Integer Name="PreDividerMaxInq_RegAddr">
+				<Value>0x00010a18</Value>
+			</Integer>
+			<Integer Name="PreDividerIncInq_RegAddr">
+				<Value>0x00010a1c</Value>
+			</Integer>
+			<Integer Name="MultiplierMinInq_RegAddr">
+				<Value>0x00010a20</Value>
+			</Integer>
+			<Integer Name="MultiplierMaxInq_RegAddr">
+				<Value>0x00010a24</Value>
+			</Integer>
+			<Integer Name="MultiplierIncInq_RegAddr">
+				<Value>0x00010a28</Value>
+			</Integer>
+			<Integer Name="PostDividerMinInq_RegAddr">
+				<Value>0x00010a2c</Value>
+			</Integer>
+			<Integer Name="PostDividerMaxInq_RegAddr">
+				<Value>0x00010a30</Value>
+			</Integer>
+			<Integer Name="PostDividerIncInq_RegAddr">
+				<Value>0x00010a34</Value>
+			</Integer>
+			<Integer Name="FrameTimeoutTimeMinInq_RegAddr">
+				<Value>0x000102cc</Value>
+			</Integer>
+			<Integer Name="FrameTimeoutTimeMaxInq_RegAddr">
+				<Value>0x000102d0</Value>
+			</Integer>
+			<Integer Name="FrameTimeoutTimeIncInq_RegAddr">
+				<Value>0x000102d4</Value>
+			</Integer>
+			<!--for test-->
+			<Integer Name="TestForLineInq_RegAddr">
+				<Value>0x00011000</Value>
+			</Integer>
+		</Group>
+	</Group>
+	<Group Comment="DeviceControl">
+		<StructReg Comment="Device Capability Inq Register">
+			<Visibility>Expert</Visibility>
+			<Address>0x01c4</Address>
+			<Length>8</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Endianess>LittleEndian</Endianess>
+			<StructEntry Name="UserNameAvailable_Inq" NameSpace="Standard">
+				<Bit>0</Bit>
+			</StructEntry>
+			<StructEntry Name="AccessPrivilegeAbailable_Inq" NameSpace="Standard">
+				<Bit>1</Bit>
+			</StructEntry>
+			<StructEntry Name="MessageChannelSupported_Inq" NameSpace="Standard">
+				<Bit>2</Bit>
+			</StructEntry>
+			<StructEntry Name="TimestampSupported_Inq" NameSpace="Standard">
+				<Bit>3</Bit>
+			</StructEntry>
+			<StructEntry Name="StringEncoding_Inq" NameSpace="Standard">
+				<LSB>4</LSB>
+				<MSB>7</MSB>
+				<Sign>Unsigned</Sign>
+			</StructEntry>
+			<StructEntry Name="FamiliyRegisterAvailable_Inq" NameSpace="Standard">
+				<Bit>8</Bit>
+			</StructEntry>
+			<StructEntry Name="SBRMSupported_Inq" NameSpace="Standard">
+				<Bit>9</Bit>
+			</StructEntry>
+			<StructEntry Name="EndianessRegistersSupported_Inq" NameSpace="Standard">
+				<Bit>10</Bit>
+			</StructEntry>
+			<StructEntry Name="WrittenLengthFieldSupported_Inq" NameSpace="Standard">
+				<Bit>11</Bit>
+			</StructEntry>
+		</StructReg>
+		<StructReg Comment="Device Configuration Inq Register">
+			<Visibility>Expert</Visibility>
+			<Address>0x01e0</Address>
+			<Length>8</Length>
+			<AccessMode>RW</AccessMode>
+			<pPort>Device</pPort>
+			<Endianess>LittleEndian</Endianess>
+			<StructEntry Name="HeartbeatEnable_Bit" NameSpace="Standard">
+				<Bit>0</Bit>
+			</StructEntry>
+		</StructReg>
+		<Enumeration Name="DeviceScanType" NameSpace="Standard">
+			<ToolTip>Scan type of the sensor.</ToolTip>
+			<Description>Scan type of the sensor.</Description>
+			<DisplayName>Device Scan Type</DisplayName>
+			<Visibility>Expert</Visibility>
+			<pIsLocked>One_Int</pIsLocked>
+			<EnumEntry Name="Areascan" NameSpace="Standard">
+				<Value>0</Value>
+			</EnumEntry>
+			<EnumEntry Name="Linescan" NameSpace="Standard">
+				<Value>1</Value>
+			</EnumEntry>
+			<Value>0</Value>
+		</Enumeration>
+		<StringReg Name="DeviceVendorName" NameSpace="Standard">
+			<ToolTip>the name of the manufacturer</ToolTip>
+			<Description>the name of the manufacturer</Description>
+			<DisplayName>Device Vendor Name</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<Address>0x0004</Address>
+			<Length>64</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+		</StringReg>
+		<StringReg Name="DeviceModelName" NameSpace="Standard">
+			<ToolTip>Model name of the device</ToolTip>
+			<Description>Model name of the device.</Description>
+			<DisplayName>Device Model Name</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<Address>0x0044</Address>
+			<Length>64</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+		</StringReg>
+		<StringReg Name="DeviceFamilyName" NameSpace="Standard">
+			<!-- Recommended element -->
+			<ToolTip>Family name of the device.</ToolTip>
+			<Description>Family name of the device.</Description>
+			<DisplayName>Family name of the device.</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<pIsImplemented>FamiliyRegisterAvailable_Inq</pIsImplemented>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<Address>0x0084</Address>
+			<Length>64</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+		</StringReg>
+		<StringReg Name="DeviceVersion" NameSpace="Standard">
+			<ToolTip>Version of the device.</ToolTip>
+			<Description>Version of the device.</Description>
+			<DisplayName>Device Version</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<Address>0x00c4</Address>
+			<Length>64</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+		</StringReg>
+		<StringReg Name="DeviceFirmwareVersion" NameSpace="Standard">
+			<ToolTip>Version of the firmware in the device.</ToolTip>
+			<Description>Version of the firmware in the device.</Description>
+			<DisplayName>Device Firmware Version</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<pAddress>DeviceFirmwareVersion_RegAddr</pAddress>
+			<Length>32</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+		</StringReg>
+		<StringReg Name="DeviceManufacturerInfo" NameSpace="Standard">
+			<ToolTip>additional manufacturer specific information.</ToolTip>
+			<Description>additional manufacturer specific information.</Description>
+			<DisplayName>Manufacturer Info</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<Address>0x0104</Address>
+			<Length>64</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+		</StringReg>
+		<StringReg Name="DeviceSerialNumber" NameSpace="Standard">
+			<ToolTip>Device serial number.</ToolTip>
+			<Description>Device serial number.</Description>
+			<DisplayName>Device Serial Number</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<Address>0x0144</Address>
+			<Length>64</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+		</StringReg>
+		<StringReg Name="DeviceUserID" NameSpace="Standard">
+			<ToolTip>User Defined Name.</ToolTip>
+			<Description>User Defined Name.</Description>
+			<DisplayName>Device User ID</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<Address>0x0184</Address>
+			<Length>64</Length>
+			<AccessMode>RW</AccessMode>
+			<pPort>Device</pPort>
+		</StringReg>
+		<Integer Name="MaximumDeviceResponseTime" NameSpace="Standard">
+			<ToolTip>Maximum response time in ms.</ToolTip>
+			<Description>Maximum time until a device sends a response upon a received command not including the time needed to send the response over the link in ms..</Description>
+			<DisplayName>Maximum Device Response Time</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>MaximumDeviceResponseTime_Reg</pValue>
+			<Unit>ms</Unit>
+		</Integer>
+		<IntReg Name="MaximumDeviceResponseTime_Reg" NameSpace="Custom">
+			<Address>0x01cc</Address>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Cachable>NoCache</Cachable>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<Integer Name="DeviceManifestTableAddress" NameSpace="Custom">
+			<ToolTip>Address of the Manifest Table.</ToolTip>
+			<Description>Address of the Manifest Table.</Description>
+			<DisplayName>Device Manifest Table Address</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>DeviceManifestTableAddress_Reg</pValue>
+			<Representation>HexNumber</Representation>
+		</Integer>
+		<IntReg Name="DeviceManifestTableAddress_Reg" NameSpace="Custom">
+			<Address>0x01d0</Address>
+			<Length>8</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Cachable>NoCache</Cachable>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<Integer Name="DeviceSBRMAddress" NameSpace="Custom">
+			<ToolTip>Address of the Technology Specific Bootstrap Register Map.</ToolTip>
+			<Description>Address of the Technology Specific Bootstrap Register Map.</Description>
+			<DisplayName>Device SBRM Address</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<pIsImplemented>SBRMSupported_Inq</pIsImplemented>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>DeviceSBRMAddress_Reg</pValue>
+			<Representation>HexNumber</Representation>
+		</Integer>
+		<IntReg Name="DeviceSBRMAddress_Reg" NameSpace="Custom">
+			<Address>0x01d8</Address>
+			<Length>8</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<Boolean Name="DeviceHeartbeatEnable" NameSpace="Standard">
+			<ToolTip>Enable the heartbeat.</ToolTip>
+			<Description>Disables the heartbeat.</Description>
+			<DisplayName>Device Heartbeat Enable</DisplayName>
+			<Visibility>Expert</Visibility>
+			<pIsImplemented>AccessPrivilegeAbailable_Inq</pIsImplemented>
+			<ImposedAccessMode>RW</ImposedAccessMode>
+			<pValue>HeartbeatEnable_Bit</pValue>
+		</Boolean>
+		<Integer Name="DeviceHeartbeatTimeout" NameSpace="Custom">
+			<ToolTip>Heartbeat Timeout in ms.</ToolTip>
+			<Description>Heartbeat Timeout in ms.</Description>
+			<DisplayName>Device Heartbeat Timeout</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<pIsImplemented>AccessPrivilegeAbailable_Inq</pIsImplemented>
+			<ImposedAccessMode>RW</ImposedAccessMode>
+			<pValue>DeviceHeartbeatTimeout_Reg</pValue>
+		</Integer>
+		<IntReg Name="DeviceHeartbeatTimeout_Reg" NameSpace="Custom">
+			<Address>0x01e8</Address>
+			<Length>4</Length>
+			<AccessMode>RW</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<Integer Name="DeviceMessageChannelID" NameSpace="Custom">
+			<ToolTip>channel_id used for the message channel.</ToolTip>
+			<Description>channel_id used for the message channel.</Description>
+			<DisplayName>Device Message Channel ID</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<pIsImplemented>MessageChannelSupported_Inq</pIsImplemented>
+			<ImposedAccessMode>RW</ImposedAccessMode>
+			<pValue>DeviceMessageChannelID_Reg</pValue>
+		</Integer>
+		<IntReg Name="DeviceMessageChannelID_Reg" NameSpace="Custom">
+			<Address>0x01ec</Address>
+			<Length>4</Length>
+			<AccessMode>RW</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<Integer Name="DeviceTimestamp" NameSpace="Custom">
+			<ToolTip>Current device time in ns.</ToolTip>
+			<Description>Current device time in ns.</Description>
+			<DisplayName>Device Timestamp</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<pIsImplemented>TimestampSupported_Inq</pIsImplemented>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>DeviceTimestamp_Reg</pValue>
+			<Unit>ns</Unit>
+		</Integer>
+		<IntReg Name="DeviceTimestamp_Reg" NameSpace="Custom">
+			<Address>0x01f0</Address>
+			<Length>8</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<pInvalidator>TimestampLatch_Reg</pInvalidator>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<Command Name="DeviceTimestampLatch">
+			<ToolTip>Timestamp Latch.</ToolTip>
+			<Description>Timestamp Latch.</Description>
+			<DisplayName>Device Timestamp Latch</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<pIsImplemented>TimestampSupported_Inq</pIsImplemented>
+			<pValue>TimestampLatch_Reg</pValue>
+			<CommandValue>2</CommandValue>
+		</Command>
+		<IntReg Name="TimestampLatch_Reg" NameSpace="Custom">
+			<Visibility>Expert</Visibility>
+			<Address>0x01f8</Address>
+			<Length>4</Length>
+			<AccessMode>WO</AccessMode>
+			<pPort>Device</pPort>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<Integer Name="DeviceTimestampIncrement" NameSpace="Custom">
+			<ToolTip>Timestamp increment in ns/tick.</ToolTip>
+			<Description>Timestamp increment in ns/tick.</Description>
+			<DisplayName>Device Timestamp Increment</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<pIsImplemented>TimestampSupported_Inq</pIsImplemented>
+			<ImposedAccessMode>RW</ImposedAccessMode>
+			<pValue>DeviceTimestampIncrement_Reg</pValue>
+			<Unit>ns/tick</Unit>
+		</Integer>
+		<IntReg Name="DeviceTimestampIncrement_Reg" NameSpace="Custom">
+			<Address>0x01fc</Address>
+			<Length>8</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<Integer Name="DeviceAccessPrivilege" NameSpace="Standard">
+			<ToolTip>Access Privilege.</ToolTip>
+			<Description>Access Privilege.</Description>
+			<DisplayName>Device Access Privilege</DisplayName>
+			<Visibility>Expert</Visibility>
+			<pIsImplemented>AccessPrivilegeAbailable_Inq</pIsImplemented>
+			<ImposedAccessMode>RW</ImposedAccessMode>
+			<pValue>AccessPrivilege_Reg</pValue>
+		</Integer>
+		<MaskedIntReg Name="AccessPrivilege_Reg" NameSpace="Custom">
+			<Visibility>Expert</Visibility>
+			<Address>0x0204</Address>
+			<Length>4</Length>
+			<AccessMode>RW</AccessMode>
+			<pPort>Device</pPort>
+			<LSB>0</LSB>
+			<MSB>2</MSB>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</MaskedIntReg>
+		<Integer Name="DeviceProtocolEndianess" NameSpace="Custom">
+			<ToolTip>Endianess of the protocol implementation.</ToolTip>
+			<Description>Endianess of the protocol implementation.</Description>
+			<DisplayName>Device Protocol Endianess</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<pIsImplemented>EndianessRegistersSupported_Inq</pIsImplemented>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>DeviceProtocolEndianess_Reg</pValue>
+		</Integer>
+		<IntReg Name="DeviceProtocolEndianess_Reg" NameSpace="Custom">
+			<Address>0x0208</Address>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+			<Representation>HexNumber</Representation>
+		</IntReg>
+		<Integer Name="DeviceImplementationEndianess" NameSpace="Custom">
+			<ToolTip>Endianess of the device implementation.</ToolTip>
+			<Description>Endianess of the device implementation.</Description>
+			<DisplayName>Device Implementation Endianess</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<pIsImplemented>EndianessRegistersSupported_Inq</pIsImplemented>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>DeviceImplementationEndianess_Reg</pValue>
+		</Integer>
+		<IntReg Name="DeviceImplementationEndianess_Reg" NameSpace="Custom">
+			<Address>0x020c</Address>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+			<Representation>HexNumber</Representation>
+		</IntReg>
+		<Integer Name="DeviceUptime" NameSpace="Custom">
+			<ToolTip>Time of Device boot.</ToolTip>
+			<Description>Time of Device boot.</Description>
+			<DisplayName>Device Uptime(s)</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>DeviceUptime_Reg</pValue>
+			<!--<Unit>s</Unit>-->
+		</Integer>
+		<IntReg Name="DeviceUptime_Reg" NameSpace="Custom">
+			<pAddress>DeviceUptime_RegAddr</pAddress>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Cachable>NoCache</Cachable>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<Integer Name="BoardDeviceType" NameSpace="Custom">
+			<DisplayName>Board Device Type</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>BoardDeviceType_Reg</pValue>
+			<Representation>HexNumber</Representation>
+		</Integer>
+		<Enumeration Name="USBSpeedMode" NameSpace="Custom">
+			<DisplayName>USB Speed Mode</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<EnumEntry Name="HighSpeed">
+				<DisplayName>High Speed</DisplayName>
+				<Value>0x4</Value>
+			</EnumEntry>
+			<EnumEntry Name="SuperSpeed">
+				<DisplayName>Super Speed</DisplayName>
+				<Value>0x8</Value>
+			</EnumEntry>
+			<pValue>U3VCurrentSpeed_Reg</pValue>
+		</Enumeration>
+		<IntReg Name="BoardDeviceType_Reg" NameSpace="Custom">
+			<pAddress>BoardDeviceType_RegAddr</pAddress>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<StructReg Comment="DeviceControl Inq">
+			<pAddress>DeviceControlInq_RegAddr</pAddress>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Endianess>LittleEndian</Endianess>
+			<StructEntry Name="DeviceTemperatureSelector_Inq">
+				<Bit>0</Bit>
+			</StructEntry>
+			<StructEntry Name="DeviceTemperatureSelector_Sensor_Inq">
+				<Bit>1</Bit>
+			</StructEntry>
+			<StructEntry Name="DeviceTemperatureSelector_Mainboard_Inq">
+				<Bit>2</Bit>
+			</StructEntry>
+			<StructEntry Name="DeviceLinkThroughputLimit_Inq">
+				<Bit>3</Bit>
+			</StructEntry>
+			<StructEntry Name="DeviceMaxThroughput_Inq">
+				<Bit>4</Bit>
+			</StructEntry>
+			<StructEntry Name="DeviceLinkHeartbeatTimeout_Inq">
+				<Bit>5</Bit>
+			</StructEntry>
+			<StructEntry Name="DeviceConnectionStatus_Inq">
+				<Bit>6</Bit>
+			</StructEntry>
+		</StructReg>
+		<Integer Name="DeviceMaxThroughput" NameSpace="Standard">
+			<ToolTip>Indicates max data in bits from the camera each second.</ToolTip>
+			<Description>Indicates max data in bits from the camera each second.</Description>
+			<DisplayName>Device Max Throughput(bps)</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>DeviceMaxThroughput_Reg</pValue>
+			<!--<Unit>bps</Unit>-->
+		</Integer>
+		<IntReg Name="DeviceMaxThroughput_Reg" NameSpace="Custom">
+			<pAddress>DeviceMaxThroughput_RegAddr</pAddress>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<Integer Name="DeviceConnectionSpeedAddressOffset">
+			<Value>0</Value>
+		</Integer>
+		<Enumeration Name="DeviceConnectionStatus" NameSpace="Standard">
+			<!-- Optional element -->
+			<ToolTip>Indicates the status of the specified Connection.</ToolTip>
+			<Description>Indicates the status of the specified Connection.</Description>
+			<DisplayName>Device Connection Status</DisplayName>
+			<Visibility>Expert</Visibility>
+			<pIsImplemented>DeviceConnectionStatus_Inq</pIsImplemented>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<EnumEntry Name="Active" NameSpace="Standard">
+				<ToolTip>Connection is in use.</ToolTip>
+				<Description>Connection is in use.</Description>
+				<DisplayName>Active</DisplayName>
+				<Value>0</Value>
+			</EnumEntry>
+			<EnumEntry Name="Inactive" NameSpace="Standard">
+				<ToolTip>Connection is not in use.</ToolTip>
+				<Description>Connection is not in use.</Description>
+				<DisplayName>Inactive</DisplayName>
+				<Value>1</Value>
+			</EnumEntry>
+			<pValue>DeviceConnectionStatus_Reg</pValue>
+		</Enumeration>
+		<IntReg Name="DeviceConnectionStatus_Reg" NameSpace="Custom">
+			<pAddress>DeviceConnectionStatus_RegAddr</pAddress>
+			<pAddress>DeviceConnectionSpeedAddressOffset</pAddress>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<Integer Name="DeviceLinkSpeedAddressOffset">
+			<Value>0</Value>
+		</Integer>
+		<Enumeration Name="DeviceLinkThroughputLimitMode" NameSpace="Standard">
+			<ToolTip>Controls if the DeviceLinkThroughputLimit is active.</ToolTip>
+			<Description>Controls if the DeviceLinkThroughputLimit is active. When disabled, lower level TL specific features are expected to control the throughput. When enabled, DeviceLinkThroughputLimit controls the overall throughput.</Description>
+			<DisplayName>Device Link Throughput Limit Mode</DisplayName>
+			<Visibility>Expert</Visibility>
+			<pIsImplemented>DeviceLinkThroughputLimit_Inq</pIsImplemented>
+			<ImposedAccessMode>RW</ImposedAccessMode>
+			<EnumEntry Name="On" NameSpace="Standard">
+				<ToolTip>Enables the DeviceLinkThroughputLimit feature.</ToolTip>
+				<Description>Enables the DeviceLinkThroughputLimit feature.</Description>
+				<DisplayName>On</DisplayName>
+				<Value>1</Value>
+			</EnumEntry>
+			<EnumEntry Name="Off" NameSpace="Standard">
+				<ToolTip>Disables the DeviceLinkThroughputLimit feature.</ToolTip>
+				<Description>Disables the DeviceLinkThroughputLimit feature.</Description>
+				<DisplayName>Off</DisplayName>
+				<Value>0</Value>
+			</EnumEntry>
+			<pValue>DeviceLinkThroughputLimitMode_Reg</pValue>
+		</Enumeration>
+		<IntReg Name="DeviceLinkThroughputLimitMode_Reg" NameSpace="Custom">
+			<pAddress>DeviceLinkThroughputLimitMode_RegAddr</pAddress>
+			<pAddress>DeviceLinkSpeedAddressOffset</pAddress>
+			<Length>4</Length>
+			<AccessMode>RW</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<IntSwissKnife Name="DeviceLinkThroughputLimitAvail_Inq">
+			<pVariable Name="VAL">DeviceLinkThroughputLimitMode_Reg</pVariable>
+			<Formula>(VAL = 1)? 1:0</Formula>
+		</IntSwissKnife>
+		<Integer Name="DeviceLinkThroughputLimit" NameSpace="Standard">
+			<ToolTip>Limits the maximum bandwidth of the data that will be streamed out by the device on the selected Link.</ToolTip>
+			<Description>Limits the maximum bandwidth of the data that will be streamed out by the device on the selected Link. If necessary, delays will be uniformly inserted between transport layer packets in order to control the peak bandwidth.</Description>
+			<DisplayName>Device Link Throughput Limit(Mbps)</DisplayName>
+			<Visibility>Expert</Visibility>
+			<pIsImplemented>DeviceLinkThroughputLimit_Inq</pIsImplemented>
+			<pIsAvailable>DeviceLinkThroughputLimitAvail_Inq</pIsAvailable>
+			<ImposedAccessMode>RW</ImposedAccessMode>
+			<pValue>DeviceLinkThroughputLimit_Reg</pValue>
+			<!--<Unit>Mbps</Unit>-->
+		</Integer>
+		<IntReg Name="DeviceLinkThroughputLimit_Reg" NameSpace="Custom">
+			<pAddress>DeviceLinkThroughputLimit_RegAddr</pAddress>
+			<pAddress>DeviceLinkSpeedAddressOffset</pAddress>
+			<Length>4</Length>
+			<AccessMode>RW</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<Float Name="DeviceCommandTimeout" NameSpace="Standard">
+			<ToolTip>Indicates the command timeout of the specified Link.</ToolTip>
+			<Description>Indicates the command timeout of the specified Link. This corresponds to the maximum response time of the device for a command sent on that link.</Description>
+			<DisplayName>Device Command Timeout</DisplayName>
+			<Visibility>Guru</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>DeviceCommandTimeout_Float</pValue>
+			<Unit>ms</Unit>
+		</Float>
+		<IntReg Name="DeviceCommandTimeout_Reg" NameSpace="Custom">
+			<pAddress>DeviceCommandTimeout_RegAddr</pAddress>
+			<pAddress>DeviceLinkSpeedAddressOffset</pAddress>
+			<Length>4</Length>
+			<AccessMode>RW</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<SwissKnife Name="DeviceCommandTimeout_Float">
+			<pVariable Name="VAL">DeviceCommandTimeout_Reg</pVariable>
+			<Formula>VAL</Formula>
+		</SwissKnife>
+		<Integer Name="DeviceStreamChannelCount" NameSpace="Standard">
+			<!-- Optional element -->
+			<ToolTip>Indicates the number of streaming channels supported by the device.</ToolTip>
+			<Description>Indicates the number of streaming channels supported by the device.</Description>
+			<DisplayName>Device Stream Channel Count</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>DeviceStreamChannelCount_Reg</pValue>
+		</Integer>
+		<IntReg Name="DeviceStreamChannelCount_Reg" NameSpace="Custom">
+			<pAddress>DeviceStreamChannelCount_RegAddr</pAddress>
+			<pAddress>SBRMRegBaseAddress</pAddress>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<Enumeration Name="DeviceTemperatureSelector" NameSpace="Standard">
+			<ToolTip>Selects the location within the device, where the temperature will be measured.</ToolTip>
+			<Description>Selects the location within the device, where the temperature will be measured.</Description>
+			<DisplayName>Device Temperature Selector</DisplayName>
+			<Visibility>Expert</Visibility>
+			<pIsImplemented>DeviceTemperatureSelector_Inq</pIsImplemented>
+			<ImposedAccessMode>RW</ImposedAccessMode>
+			<EnumEntry Name="Sensor" NameSpace="Standard">
+				<ToolTip>Temperature of the image sensor of the camera.</ToolTip>
+				<Description>Temperature of the image sensor of the camera.</Description>
+				<DisplayName>Sensor</DisplayName>
+				<pIsImplemented>DeviceTemperatureSelector_Sensor_Inq</pIsImplemented>
+				<Value>0</Value>
+			</EnumEntry>
+			<EnumEntry Name="Mainboard" NameSpace="Standard">
+				<ToolTip>Temperature of the device`s mainboard.</ToolTip>
+				<Description>Temperature of the device`s mainboard.</Description>
+				<DisplayName>Mainboard</DisplayName>
+				<pIsImplemented>DeviceTemperatureSelector_Mainboard_Inq</pIsImplemented>
+				<Value>1</Value>
+			</EnumEntry>
+			<pValue>DeviceTemperatureSelector_Int</pValue>
+			<pSelected>DeviceTemperature</pSelected>
+		</Enumeration>
+		<Integer Name="DeviceTemperatureSelector_Int">
+			<Value>0</Value>
+		</Integer>
+		<Float Name="DeviceTemperature">
+			<ToolTip>Device temperature in degrees Celcius (C).</ToolTip>
+			<Description>Device temperature in degrees Celcius (C).</Description>
+			<DisplayName>Device Temperature</DisplayName>
+			<Visibility>Expert</Visibility>
+			<pIsImplemented>DeviceTemperatureSelector_Inq</pIsImplemented>
+			<pValue>TemperatureC_Float</pValue>
+			<Unit>C</Unit>
+		</Float>
+		<SwissKnife Name="TemperatureC_Float">
+			<pVariable Name="DKELVIN">DeviceTemperature_Reg</pVariable>
+			<Formula>DKELVIN /10</Formula>
+		</SwissKnife>
+		<IntReg Name="DeviceTemperature_Reg">
+			<pAddress>DeviceTemperature_RegAddr</pAddress>
+			<IntSwissKnife Name="AddressOffset">
+				<pVariable Name="INDEX">DeviceTemperatureSelector_Int</pVariable>
+				<Formula>INDEX * 4</Formula>
+			</IntSwissKnife>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Cachable>NoCache</Cachable>
+			<PollingTime>10000</PollingTime>
+			<Sign>Signed</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<Command Name="DeviceReset" NameSpace="Standard">
+			<ToolTip>Resets the device to its initial state and default settings.</ToolTip>
+			<Description>Resets the device to its initial state and default settings.</Description>
+			<DisplayName>Device Reset</DisplayName>
+			<Visibility>Guru</Visibility>
+			<ImposedAccessMode>WO</ImposedAccessMode>
+			<pValue>DeviceReset_Reg</pValue>
+			<CommandValue>1</CommandValue>
+		</Command>
+		<IntReg Name="DeviceReset_Reg">
+			<pAddress>DeviceReset_RegAddr</pAddress>
+			<Length>4</Length>
+			<AccessMode>WO</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<Command Name="FindMe" NameSpace="Custom">
+			<ToolTip>Find current device.</ToolTip>
+			<Description>Find current device.</Description>
+			<DisplayName>Find Me</DisplayName>
+			<Visibility>Guru</Visibility>
+			<ImposedAccessMode>WO</ImposedAccessMode>
+			<pValue>FindMe_Reg</pValue>
+			<CommandValue>1</CommandValue>
+		</Command>
+		<IntReg Name="FindMe_Reg">
+			<pAddress>FindMe_RegAddr</pAddress>
+			<Length>4</Length>
+			<AccessMode>WO</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+	</Group>
+	<Group Comment="ImageFormatControl">
+		<Group Comment="ImageFormatControl Inq">
+			<IntReg Name="Hunit_Reg" NameSpace="Custom">
+				<pAddress>Hunit_RegAddr</pAddress>
+				<Length>4</Length>
+				<AccessMode>RO</AccessMode>
+				<pPort>Device</pPort>
+				<Sign>Unsigned</Sign>
+				<Endianess>LittleEndian</Endianess>
+			</IntReg>
+			<IntReg Name="Vunit_Reg" NameSpace="Custom">
+				<pAddress>Vunit_RegAddr</pAddress>
+				<Length>4</Length>
+				<AccessMode>RO</AccessMode>
+				<pPort>Device</pPort>
+				<Sign>Unsigned</Sign>
+				<Endianess>LittleEndian</Endianess>
+			</IntReg>
+			<IntReg Name="Hposunit_Reg" NameSpace="Custom">
+				<pAddress>HOunit_RegAddr</pAddress>
+				<Length>4</Length>
+				<AccessMode>RO</AccessMode>
+				<pPort>Device</pPort>
+				<Sign>Unsigned</Sign>
+				<Endianess>LittleEndian</Endianess>
+			</IntReg>
+			<IntReg Name="Vposunit_Reg" NameSpace="Custom">
+				<pAddress>VOunit_RegAddr</pAddress>
+				<Length>4</Length>
+				<AccessMode>RO</AccessMode>
+				<pPort>Device</pPort>
+				<Sign>Unsigned</Sign>
+				<Endianess>LittleEndian</Endianess>
+			</IntReg>
+			<StructReg Comment="Reverse Inq">
+				<pAddress>ReverseInq_RegAddr</pAddress>
+				<Length>4</Length>
+				<AccessMode>RO</AccessMode>
+				<pPort>Device</pPort>
+				<!---->
+				<Endianess>LittleEndian</Endianess>
+				<StructEntry Name="ReverseXInq_Reg">
+					<Bit>0</Bit>
+				</StructEntry>
+				<StructEntry Name="ReverseYInq_Reg">
+					<Bit>1</Bit>
+				</StructEntry>
+				<StructEntry Name="Deinterlacing_Off_Inq">
+					<Bit>4</Bit>
+				</StructEntry>
+				<StructEntry Name="Deinterlacing_lineDup_Inq">
+					<Bit>5</Bit>
+				</StructEntry>
+				<StructEntry Name="Deinterlacing_Weave_Inq">
+					<Bit>6</Bit>
+				</StructEntry>
+				<StructEntry Name="Sensor_Taps_Inq">
+					<Bit>7</Bit>
+				</StructEntry>
+				<StructEntry Name="Sensor_Dig_Taps_Inq">
+					<Bit>8</Bit>
+				</StructEntry>
+				<StructEntry Name="RegionMode_Inq">
+					<Bit>9</Bit>
+				</StructEntry>
+				<StructEntry Name="LinePitch_Inq">
+					<Bit>10</Bit>
+				</StructEntry>
+				<StructEntry Name="PixelCoding_Inq">
+					<Bit>11</Bit>
+				</StructEntry>
+				<StructEntry Name="PixelColorFilter_Inq">
+					<Bit>12</Bit>
+				</StructEntry>
+				<StructEntry Name="PixelDynamicRangeMin_Inq">
+					<Bit>13</Bit>
+				</StructEntry>
+				<StructEntry Name="PixelDynamicRangeMax_Inq">
+					<Bit>14</Bit>
+				</StructEntry>
+				<StructEntry Name="Decimation_Horizontal_Inq">
+					<Bit>15</Bit>
+				</StructEntry>
+				<StructEntry Name="Decimation_Vertical_Inq">
+					<Bit>16</Bit>
+				</StructEntry>
+				<StructEntry Name="Video_Mode_Inq">
+					<Bit>17</Bit>
+				</StructEntry>
+			</StructReg>
+			<StructReg Comment="Video Mode Inquiry Register">
+				<pAddress>VideoModeInq_RegAddr</pAddress>
+				<Length>4</Length>
+				<AccessMode>RO</AccessMode>
+				<pPort>Device</pPort>
+				<Endianess>LittleEndian</Endianess>
+				<StructEntry Name="VideoMode0Inq_Bit">
+					<Bit>0</Bit>
+				</StructEntry>
+				<StructEntry Name="VideoMode1Inq_Bit">
+					<Bit>1</Bit>
+				</StructEntry>
+				<StructEntry Name="VideoMode2Inq_Bit">
+					<Bit>2</Bit>
+				</StructEntry>
+				<StructEntry Name="VideoMode3Inq_Bit">
+					<Bit>3</Bit>
+				</StructEntry>
+				<StructEntry Name="VideoMode4Inq_Bit">
+					<Bit>4</Bit>
+				</StructEntry>
+				<StructEntry Name="VideoMode5Inq_Bit">
+					<Bit>5</Bit>
+				</StructEntry>
+				<StructEntry Name="VideoMode6Inq_Bit">
+					<Bit>6</Bit>
+				</StructEntry>
+				<StructEntry Name="VideoMode7Inq_Bit">
+					<Bit>7</Bit>
+				</StructEntry>
+				<StructEntry Name="VideoMode8Inq_Bit">
+					<Bit>8</Bit>
+				</StructEntry>
+				<StructEntry Name="VideoMode9Inq_Bit">
+					<Bit>9</Bit>
+				</StructEntry>
+				<StructEntry Name="VideoMode10Inq_Bit">
+					<Bit>10</Bit>
+				</StructEntry>
+				<StructEntry Name="VideoMode11Inq_Bit">
+					<Bit>11</Bit>
+				</StructEntry>
+				<StructEntry Name="VideoMode12Inq_Bit">
+					<Bit>12</Bit>
+				</StructEntry>
+				<StructEntry Name="VideoMode13Inq_Bit">
+					<Bit>13</Bit>
+				</StructEntry>
+				<StructEntry Name="VideoMode14Inq_Bit">
+					<Bit>14</Bit>
+				</StructEntry>
+				<StructEntry Name="VideoMode15Inq_Bit">
+					<Bit>15</Bit>
+				</StructEntry>
+			</StructReg>
+			<StructReg Comment="PixelFormat Inquiry 0 Register">
+				<pAddress>PixelFormatInq0_RegAddr</pAddress>
+				<Length>4</Length>
+				<AccessMode>RO</AccessMode>
+				<pPort>Device</pPort>
+				<Endianess>LittleEndian</Endianess>
+				<StructEntry Name="Mono8Inq_Reg" NameSpace="Custom">
+					<Bit>0</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="YUV411PackedInq_Reg" NameSpace="Custom">
+					<Bit>1</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="YUV422PackedInq_Reg" NameSpace="Custom">
+					<Bit>2</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="YUV444PackedInq_Reg" NameSpace="Custom">
+					<Bit>3</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="RGB8Inq_Reg" NameSpace="Custom">
+					<Bit>4</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="Mono16Inq_Reg" NameSpace="Custom">
+					<Bit>5</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="Mono12PackedInq_Reg" NameSpace="Custom">
+					<Bit>6</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="YUV422YUYVPackedInq_Reg" NameSpace="Custom">
+					<Bit>7</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="Mono10Inq_Reg" NameSpace="Custom">
+					<Bit>8</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="Mono12Inq_Reg" NameSpace="Custom">
+					<Bit>9</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="Mono10PackedInq_Reg" NameSpace="Custom">
+					<Bit>10</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="Mono14Inq_Reg" NameSpace="Custom">
+					<Bit>11</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+			</StructReg>
+			<StructReg Comment="PixelFormat Inquiry Register">
+				<pAddress>PixelFormatInq_RegAddr</pAddress>
+				<Length>4</Length>
+				<AccessMode>RO</AccessMode>
+				<pPort>Device</pPort>
+				<Endianess>LittleEndian</Endianess>
+				<StructEntry Name="BayerGR8Inq_Reg" NameSpace="Custom">
+					<Bit>0</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerGB8Inq_Reg" NameSpace="Custom">
+					<Bit>1</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerBG8Inq_Reg" NameSpace="Custom">
+					<Bit>2</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerRG8Inq_Reg" NameSpace="Custom">
+					<Bit>3</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerGR16Inq_Reg" NameSpace="Custom">
+					<Bit>4</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerRG16Inq_Reg" NameSpace="Custom">
+					<Bit>5</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerBG16Inq_Reg" NameSpace="Custom">
+					<Bit>6</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerGB16Inq_Reg" NameSpace="Custom">
+					<Bit>7</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerGR12PackedInq_Reg" NameSpace="Custom">
+					<Bit>8</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerGB12PackedInq_Reg" NameSpace="Custom">
+					<Bit>9</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerBG12PackedInq_Reg" NameSpace="Custom">
+					<Bit>10</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerRG12PackedInq_Reg" NameSpace="Custom">
+					<Bit>11</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerGR12Inq_Reg" NameSpace="Custom">
+					<Bit>12</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerRG12Inq_Reg" NameSpace="Custom">
+					<Bit>13</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerBG12Inq_Reg" NameSpace="Custom">
+					<Bit>14</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerGB12Inq_Reg" NameSpace="Custom">
+					<Bit>15</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerGR10Inq_Reg" NameSpace="Custom">
+					<Bit>16</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerRG10Inq_Reg" NameSpace="Custom">
+					<Bit>17</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerGB10Inq_Reg" NameSpace="Custom">
+					<Bit>18</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerBG10Inq_Reg" NameSpace="Custom">
+					<Bit>19</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerGR10PackedInq_Reg" NameSpace="Custom">
+					<Bit>20</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerRG10PackedInq_Reg" NameSpace="Custom">
+					<Bit>21</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerGB10PackedInq_Reg" NameSpace="Custom">
+					<Bit>22</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="BayerBG10PackedInq_Reg" NameSpace="Custom">
+					<Bit>23</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+			</StructReg>
+			<StructReg Comment="Decimation Max Register">
+				<pAddress>DecimationMax_RegAddr</pAddress>
+				<Length>4</Length>
+				<AccessMode>RW</AccessMode>
+				<pPort>Device</pPort>
+				<Endianess>LittleEndian</Endianess>
+				<StructEntry Name="DecimationHorizontal_1_Inq" NameSpace="Custom">
+					<Bit>0</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="DecimationHorizontal_2_Inq" NameSpace="Custom">
+					<Bit>1</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="DecimationHorizontal_3_Inq" NameSpace="Custom">
+					<Bit>2</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="DecimationHorizontal_4_Inq" NameSpace="Custom">
+					<Bit>3</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="DecimationVertical_1_Inq" NameSpace="Custom">
+					<Bit>16</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="DecimationVertical_2_Inq" NameSpace="Custom">
+					<Bit>17</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="DecimationVertical_3_Inq" NameSpace="Custom">
+					<Bit>18</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="DecimationVertical_4_Inq" NameSpace="Custom">
+					<Bit>19</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+			</StructReg>
+			<StructReg Comment="RegionSelector Inquiry Register">
+				<pAddress>RegionSelectorInq_RegAddr</pAddress>
+				<Length>4</Length>
+				<AccessMode>RO</AccessMode>
+				<pPort>Device</pPort>
+				<Endianess>LittleEndian</Endianess>
+				<StructEntry Name="Region_All_Inq" NameSpace="Custom">
+					<Bit>31</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="Region_Sensor_Inq" NameSpace="Custom">
+					<Bit>30</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="Region_0_Inq" NameSpace="Custom">
+					<Bit>0</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="Region_1_Inq" NameSpace="Custom">
+					<Bit>1</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="Region_2_Inq" NameSpace="Custom">
+					<Bit>2</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+			</StructReg>
+			<StructReg Comment="TestPattern Inquiry Register">
+				<pAddress>TestPatternInq_RegAddr</pAddress>
+				<Length>4</Length>
+				<AccessMode>RO</AccessMode>
+				<pPort>Device</pPort>
+				<Endianess>LittleEndian</Endianess>
+				<StructEntry Name="TestPattern_Black_Inq" NameSpace="Custom">
+					<Bit>0</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="TestPattern_White_Inq" NameSpace="Custom">
+					<Bit>1</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="TestPattern_GreyHRamp_Inq" NameSpace="Custom">
+					<Bit>2</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="TestPattern_GreyVRamp_Inq" NameSpace="Custom">
+					<Bit>3</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="TestPattern_GreyHMoving_Inq" NameSpace="Custom">
+					<Bit>4</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="TestPattern_GreyVMoving_Inq" NameSpace="Custom">
+					<Bit>5</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="TestPattern_HLineMoving_Inq" NameSpace="Custom">
+					<Bit>6</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="TestPattern_VLineMoving_Inq" NameSpace="Custom">
+					<Bit>7</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="TestPattern_ColorBar_Inq" NameSpace="Custom">
+					<Bit>8</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="TestPattern_FrameCounter_Inq" NameSpace="Custom">
+					<Bit>9</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="TestPattern_MonoBar_Inq" NameSpace="Custom">
+					<Bit>10</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="TestPattern_TestImage12_Inq" NameSpace="Custom">
+					<Bit>11</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="TestPattern_TestImage13_Inq" NameSpace="Custom">
+					<Bit>12</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="TestPattern_ObliqueMonoBar_Inq" NameSpace="Custom">
+					<Bit>13</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="TestPattern_ObliqueColorBar_Inq" NameSpace="Custom">
+					<Bit>14</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+				<StructEntry Name="TestPattern_GradualMonoBar_Inq" NameSpace="Custom">
+					<Bit>15</Bit>
+					<Sign>Unsigned</Sign>
+				</StructEntry>
+			</StructReg>
+		</Group>
+		<Enumeration Name="VideoMode" NameSpace="Custom">
+			<ToolTip>Selects the mode of video.</ToolTip>
+			<Description>Selects the mode of video.</Description>
+			<DisplayName>Video Mode</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<pIsImplemented>Video_Mode_Inq</pIsImplemented>
+			<pIsLocked>TLParamsLocked</pIsLocked>
+			<ImposedAccessMode>RW</ImposedAccessMode>
+			<EnumEntry Name="ZROT" NameSpace="Custom">
+				<ToolTip>mode of video is ZROT</ToolTip>
+				<Description>mode of video is ZROT</Description>
+				<DisplayName>ZROT</DisplayName>
+				<Value>1</Value>
+			</EnumEntry>
+			<EnumEntry Name="NROT" NameSpace="Custom">
+				<ToolTip>mode of video is NROT</ToolTip>
+				<Description>mode of video is NROT</Description>
+				<DisplayName>NROT</DisplayName>
+				<Value>2</Value>
+			</EnumEntry>
+			<pValue>VideoMode_Reg</pValue>
+		</Enumeration>
+		<IntReg Name="VideoMode_Reg">
+			<pAddress>VideoMode_RegAddr</pAddress>
+			<Length>4</Length>
+			<AccessMode>RW</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<Enumeration Name="SensorDigitizationTaps" NameSpace="Standard">
+			<!-- Optional element -->
+			<ToolTip>Number of digitized samples outputted simultaneously by the camera A/D conversion stage.</ToolTip>
+			<Description>Number of digitized samples outputted simultaneously by the camera A/D conversion stage.</Description>
+			<DisplayName>Sensor Digitization Taps</DisplayName>
+			<Visibility>Expert</Visibility>
+			<pIsImplemented>Sensor_Dig_Taps_Inq</pIsImplemented>
+			<ImposedAccessMode>RW</ImposedAccessMode>
+			<EnumEntry Name="One" NameSpace="Standard">
+				<ToolTip>1 tap.</ToolTip>
+				<Description>1 tap.</Description>
+				<DisplayName>One</DisplayName>
+				<Value>0</Value>
+			</EnumEntry>
+			<EnumEntry Name="Two" NameSpace="Standard">
+				<ToolTip>2 taps.</ToolTip>
+				<Description>2 taps.</Description>
+				<DisplayName>Two</DisplayName>
+				<Value>1</Value>
+			</EnumEntry>
+			<EnumEntry Name="Three" NameSpace="Standard">
+				<ToolTip>3 taps.</ToolTip>
+				<Description>3 taps.</Description>
+				<DisplayName>Three</DisplayName>
+				<Value>2</Value>
+			</EnumEntry>
+			<EnumEntry Name="Four" NameSpace="Standard">
+				<ToolTip>4 taps.</ToolTip>
+				<Description>4 taps.</Description>
+				<DisplayName>Four</DisplayName>
+				<Value>3</Value>
+			</EnumEntry>
+			<EnumEntry Name="Eight" NameSpace="Standard">
+				<ToolTip>8 taps.</ToolTip>
+				<Description>8 taps.</Description>
+				<DisplayName>Eight</DisplayName>
+				<Value>4</Value>
+			</EnumEntry>
+			<EnumEntry Name="Ten" NameSpace="Standard">
+				<ToolTip>10 taps.</ToolTip>
+				<Description>10 taps.</Description>
+				<DisplayName>Ten</DisplayName>
+				<Value>5</Value>
+			</EnumEntry>
+			<pValue>SensorDigitizationTaps_Reg</pValue>
+		</Enumeration>
+		<IntReg Name="SensorDigitizationTaps_Reg" NameSpace="Custom">
+			<pAddress>SensorDigitizationTaps_RegAddr</pAddress>
+			<Length>4</Length>
+			<AccessMode>RW</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<Enumeration Name="PixelSize" NameSpace="Standard">
+			<ToolTip>Size of a pixel in bits.</ToolTip>
+			<Description>Size of a pixel in bits.</Description>
+			<DisplayName>Pixel Size</DisplayName>
+			<Visibility>Expert</Visibility>
+			<EnumEntry Name="Bpp8" NameSpace="Standard">
+				<DisplayName>8 Bits/Pixel</DisplayName>
+				<Value>8</Value>
+			</EnumEntry>
+			<EnumEntry Name="Bpp10" NameSpace="Standard">
+				<DisplayName>10 Bits/Pixel</DisplayName>
+				<Value>10</Value>
+			</EnumEntry>
+			<EnumEntry Name="Bpp12" NameSpace="Standard">
+				<DisplayName>12 Bits/Pixel</DisplayName>
+				<Value>12</Value>
+			</EnumEntry>
+			<EnumEntry Name="Bpp16" NameSpace="Standard">
+				<DisplayName>16 Bits/Pixel</DisplayName>
+				<Value>16</Value>
+			</EnumEntry>
+			<EnumEntry Name="Bpp24" NameSpace="Standard">
+				<DisplayName>24 Bits/Pixel</DisplayName>
+				<Value>24</Value>
+			</EnumEntry>
+			<EnumEntry Name="Bpp32" NameSpace="Standard">
+				<DisplayName>32 Bits/Pixel</DisplayName>
+				<Value>32</Value>
+			</EnumEntry>
+			<pValue>PixelSize_Int</pValue>
+		</Enumeration>
+		<IntSwissKnife Name="PixelSize_Int">
+			<pVariable Name="PF">PixelFormatRegister</pVariable>
+			<Formula>(PF &gt;&gt; 16) &amp; 0xFF</Formula>
+		</IntSwissKnife>
+		<IntReg Name="TestPatternReg">
+			<Address>0x2070C</Address>
+			<Length>4</Length>
+			<AccessMode>RW</AccessMode>
+			<pPort>Device</pPort>
+			<Cachable>WriteThrough</Cachable>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<Enumeration Name="TestPattern" NameSpace="Standard">
+			<ToolTip>Selects the type of test pattern that is generated by the device as image source.</ToolTip>
+			<Description>Selects the type of test pattern that is generated by the device as image source.</Description>
+			<DisplayName>Test Pattern</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<pIsLocked>TLParamsLocked</pIsLocked>
+			<Streamable>Yes</Streamable>
+			<EnumEntry Name="Off" NameSpace="Standard">
+				<Value>0</Value>
+			</EnumEntry>
+			<EnumEntry Name="iPORTTestPattern">
+				<Value>2147483648</Value>
+			</EnumEntry>
+			<pValue>TestPatternReg</pValue>
+		</Enumeration>
+		<Enumeration Name="DecimationHorizontal" NameSpace="Standard">
+			<!-- Optional element -->
+			<ToolTip>Horizontal sub-sampling of the image.</ToolTip>
+			<Description>Horizontal sub-sampling of the image.</Description>
+			<DisplayName>Decimation Horizontal</DisplayName>
+			<Visibility>Expert</Visibility>
+			<pIsImplemented>Decimation_Horizontal_Inq</pIsImplemented>
+			<!--<pIsAvailable>Decimation_Horizontal_Ava</pIsAvailable>-->
+			<pIsLocked>TLParamsLocked</pIsLocked>
+			<EnumEntry Name="DecimationHorizontal1" NameSpace="Custom">
+				<ToolTip>1 horizontal decimation.</ToolTip>
+				<Description>1 horizontal decimation.</Description>
+				<DisplayName>1</DisplayName>
+				<pIsImplemented>DecimationHorizontal_1_Inq</pIsImplemented>
+				<Value>1</Value>
+			</EnumEntry>
+			<EnumEntry Name="DecimationHorizontal2" NameSpace="Custom">
+				<ToolTip>2 horizontal decimation.</ToolTip>
+				<Description>2 horizontal decimation.</Description>
+				<DisplayName>2</DisplayName>
+				<pIsImplemented>DecimationHorizontal_2_Inq</pIsImplemented>
+				<Value>2</Value>
+			</EnumEntry>
+			<EnumEntry Name="DecimationHorizontal3" NameSpace="Custom">
+				<ToolTip>3 horizontal decimation.</ToolTip>
+				<Description>3 horizontal decimation.</Description>
+				<DisplayName>3</DisplayName>
+				<pIsImplemented>DecimationHorizontal_3_Inq</pIsImplemented>
+				<Value>3</Value>
+			</EnumEntry>
+			<EnumEntry Name="DecimationHorizontal4" NameSpace="Custom">
+				<ToolTip>4 horizontal decimation.</ToolTip>
+				<Description>4 horizontal decimation.</Description>
+				<DisplayName>4</DisplayName>
+				<pIsImplemented>DecimationHorizontal_4_Inq</pIsImplemented>
+				<Value>4</Value>
+			</EnumEntry>
+			<pValue>DecimationHorizontal_Val</pValue>
+		</Enumeration>
+		<IntConverter Name="DecimationHorizontal_Val">
+			<pVariable Name="TYPE">BoardDeviceType_Reg</pVariable>
+			<pVariable Name="OLD">Decimation_Reg</pVariable>
+			<FormulaTo>
+				((TYPE = 0x7) || (TYPE = 0x8) || (TYPE = 0xa) || (TYPE = 0x1000) || (TYPE = 0x1002))?
+				((FROM &lt;&gt; (OLD &amp; 0xffff)) ? (((OLD &amp; 0xffff) = 0x1)? 0x00020002 : 0x00010001) : ( FROM | (OLD &amp; 0xffff0000)))
+				: FROM | (OLD &amp; 0xffff0000)
+			</FormulaTo>
+			<FormulaFrom>TO &amp; 0x0000ffff</FormulaFrom>
+			<pValue>Decimation_Reg</pValue>
+			<Slope>Varying</Slope>
+		</IntConverter>
+		<Enumeration Name="DecimationVertical" NameSpace="Standard">
+			<!-- Optional element -->
+			<ToolTip>Vertical sub-sampling of the image.</ToolTip>
+			<Description>Vertical sub-sampling of the image.</Description>
+			<DisplayName>Decimation Vertical</DisplayName>
+			<Visibility>Expert</Visibility>
+			<pIsImplemented>Decimation_Vertical_Inq</pIsImplemented>
+			<!--<pIsAvailable>Decimation_Vertical_Ava</pIsAvailable>-->
+			<pIsLocked>TLParamsLocked</pIsLocked>
+			<EnumEntry Name="DecimationVertical1" NameSpace="Custom">
+				<ToolTip>1 Vertical decimation.</ToolTip>
+				<Description>1 Vertical decimation.</Description>
+				<DisplayName>1</DisplayName>
+				<pIsImplemented>DecimationVertical_1_Inq</pIsImplemented>
+				<Value>1</Value>
+			</EnumEntry>
+			<EnumEntry Name="DecimationVertical2" NameSpace="Custom">
+				<ToolTip>2 Vertical decimation.</ToolTip>
+				<Description>2 Vertical decimation.</Description>
+				<DisplayName>2</DisplayName>
+				<pIsImplemented>DecimationVertical_2_Inq</pIsImplemented>
+				<Value>2</Value>
+			</EnumEntry>
+			<EnumEntry Name="DecimationVertical3" NameSpace="Custom">
+				<ToolTip>3 Vertical decimation.</ToolTip>
+				<Description>3 Vertical decimation.</Description>
+				<DisplayName>3</DisplayName>
+				<pIsImplemented>DecimationVertical_3_Inq</pIsImplemented>
+				<Value>3</Value>
+			</EnumEntry>
+			<EnumEntry Name="DecimationVertical4" NameSpace="Custom">
+				<ToolTip>4 Vertical decimation.</ToolTip>
+				<Description>4 Vertical decimation.</Description>
+				<DisplayName>4</DisplayName>
+				<pIsImplemented>DecimationVertical_4_Inq</pIsImplemented>
+				<Value>4</Value>
+			</EnumEntry>
+			<pValue>DecimationVertical_Val</pValue>
+		</Enumeration>
+		<IntConverter Name="DecimationVertical_Val">
+			<pVariable Name="TYPE">BoardDeviceType_Reg</pVariable>
+			<pVariable Name="OLD">Decimation_Reg</pVariable>
+			<FormulaTo>
+				((TYPE = 0x7) || (TYPE = 0x8) || (TYPE = 0xa) || (TYPE = 0x1000) || (TYPE = 0x1002))?
+				((OLD &amp; 0xffff) | ((OLD &amp; 0xffff) &lt;&lt; 16) )
+				: (FROM &lt;&lt; 16)| (OLD &amp; 0xffff)
+			</FormulaTo>
+			<FormulaFrom>TO  &gt;&gt; 16</FormulaFrom>
+			<pValue>Decimation_Reg</pValue>
+			<Slope>Varying</Slope>
+		</IntConverter>
+		<IntReg Name="Decimation_Reg">
+			<pAddress>Decimation_RegAddr</pAddress>
+			<Length>4</Length>
+			<AccessMode>RW</AccessMode>
+			<pPort>Device</pPort>
+			<pInvalidator>DecimationHorizontal</pInvalidator>
+			<pInvalidator>DecimationVertical</pInvalidator>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<StructReg Comment="Decimation Control Register">
+			<pAddress>Decimation_RegAddr</pAddress>
+			<Length>4</Length>
+			<AccessMode>RW</AccessMode>
+			<pPort>Device</pPort>
+			<pInvalidator>DecimationHorizontal</pInvalidator>
+			<pInvalidator>DecimationVertical</pInvalidator>
+			<Endianess>LittleEndian</Endianess>
+			<StructEntry Name="DecimationHorizontal_Reg" NameSpace="Custom">
+				<LSB>16</LSB>
+				<MSB>31</MSB>
+				<Sign>Unsigned</Sign>
+			</StructEntry>
+			<StructEntry Name="DecimationVertical_Reg" NameSpace="Custom">
+				<LSB>0</LSB>
+				<MSB>15</MSB>
+				<Sign>Unsigned</Sign>
+			</StructEntry>
+		</StructReg>
+		<Integer Name="PixelDynamicRangeMin" NameSpace="Standard">
+			<ToolTip>Indicates the minimum pixel value transferred from the camera.</ToolTip>
+			<Description>Indicates the minimum pixel value transferred from the camera.</Description>
+			<DisplayName>Dynamic Range Min</DisplayName>
+			<pIsImplemented>PixelDynamicRangeMin_Inq</pIsImplemented>
+			<pValue>PixelDynamicRangeMin_Value</pValue>
+			<Representation>PureNumber</Representation>
+		</Integer>
+		<Integer Name="PixelDynamicRangeMax" NameSpace="Standard">
+			<ToolTip>Indicates the maximum pixel value transferred from the camera</ToolTip>
+			<Description>Indicates the maximum pixel value transferred from the camera.</Description>
+			<DisplayName>Dynamic Range Max</DisplayName>
+			<pIsImplemented>PixelDynamicRangeMax_Inq</pIsImplemented>
+			<pValue>PixelDynamicRangeMax_Value</pValue>
+			<Representation>PureNumber</Representation>
+		</Integer>
+		<IntSwissKnife Name="PixelDynamicRangeMin_Value">
+			<Formula>0</Formula>
+		</IntSwissKnife>
+		<IntSwissKnife Name="PixelDynamicRangeMax_Value">
+			<Formula>255</Formula>
+		</IntSwissKnife>
+		<Enumeration Name="Deinterlacing" NameSpace="Standard">
+			<!-- Optional element -->
+			<ToolTip>Controls how the device performs de-interlacing.</ToolTip>
+			<Description>Controls how the device performs de-interlacing.</Description>
+			<DisplayName>Deinterlacing</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<pIsImplemented>Deinterlacing_Inq</pIsImplemented>
+			<ImposedAccessMode>RW</ImposedAccessMode>
+			<EnumEntry Name="Off" NameSpace="Standard">
+				<ToolTip>The device doesn`t perform de-interlacing.</ToolTip>
+				<Description>The device doesn`t perform de-interlacing.</Description>
+				<DisplayName>Off</DisplayName>
+				<pIsImplemented>Deinterlacing_Off_Inq</pIsImplemented>
+				<Value>0</Value>
+			</EnumEntry>
+			<EnumEntry Name="LineDuplication" NameSpace="Standard">
+				<ToolTip>The device performs de-interlacing by outputting each line of each field twice.</ToolTip>
+				<Description>The device performs de-interlacing by outputting each line of each field twice.</Description>
+				<DisplayName>Line Duplication</DisplayName>
+				<pIsImplemented>Deinterlacing_lineDup_Inq</pIsImplemented>
+				<Value>1</Value>
+			</EnumEntry>
+			<EnumEntry Name="Weave" NameSpace="Standard">
+				<ToolTip>The device performs de-interlacing by interleaving the lines of all fields.</ToolTip>
+				<Description>The device performs de-interlacing by interleaving the lines of all fields.</Description>
+				<DisplayName>Weave</DisplayName>
+				<pIsImplemented>Deinterlacing_Weave_Inq</pIsImplemented>
+				<Value>2</Value>
+			</EnumEntry>
+			<pValue>Deinterlacing_Reg</pValue>
+		</Enumeration>
+		<IntSwissKnife Name="Deinterlacing_Inq">
+			<pVariable Name="OFF">Deinterlacing_Off_Inq</pVariable>
+			<pVariable Name="LINEDUP">Deinterlacing_lineDup_Inq</pVariable>
+			<pVariable Name="WEAVE">Deinterlacing_Weave_Inq</pVariable>
+			<Formula>(OFF || LINEDUP || WEAVE) ?1:0</Formula>
+		</IntSwissKnife>
+		<IntReg Name="Deinterlacing_Reg">
+			<pAddress>Deinterlacing_RegAddr</pAddress>
+			<Length>4</Length>
+			<AccessMode>RW</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<Group Comment="embedded image info">
+			<StructReg Comment="embedded image info Inquiry Register">
+				<pAddress>FrameSpecInfoInq_RegAddr</pAddress>
+				<Length>4</Length>
+				<AccessMode>RO</AccessMode>
+				<pPort>Device</pPort>
+				<Endianess>LittleEndian</Endianess>
+				<StructEntry Name="FrameSpecInfoInq_Bit" NameSpace="Custom">
+					<Bit>0</Bit>
+				</StructEntry>
+				<StructEntry Name="FrameSpecInfoTimestampInq_Bit" NameSpace="Custom">
+					<Bit>1</Bit>
+				</StructEntry>
+				<StructEntry Name="FrameSpecInfoGainInq_Bit" NameSpace="Custom">
+					<Bit>2</Bit>
+				</StructEntry>
+				<StructEntry Name="FrameSpecInfoExposureInq_Bit" NameSpace="Custom">
+					<Bit>3</Bit>
+				</StructEntry>
+				<StructEntry Name="FrameSpecInfoBrightnessInfoInq_Bit" NameSpace="Custom">
+					<Bit>4</Bit>
+				</StructEntry>
+				<StructEntry Name="FrameSpecInfoWhiteBalanceInq_Bit" NameSpace="Custom">
+					<Bit>5</Bit>
+				</StructEntry>
+				<StructEntry Name="FrameSpecInfoFramecounterInq_Bit" NameSpace="Custom">
+					<Bit>6</Bit>
+				</StructEntry>
+				<StructEntry Name="FrameSpecInfoExtTriggerCountInq_Bit" NameSpace="Custom">
+					<Bit>7</Bit>
+				</StructEntry>
+				<StructEntry Name="FrameSpecInfoLineInputOutputInq_Bit" NameSpace="Custom">
+					<Bit>8</Bit>
+				</StructEntry>
+				<StructEntry Name="FrameSpecInfoROIPositionInq_Bit" NameSpace="Custom">
+					<Bit>9</Bit>
+				</StructEntry>
+			</StructReg>
+			<Enumeration Name="FrameSpecInfoSelector" NameSpace="Custom">
+				<ToolTip>Selects the frame-specific information.</ToolTip>
+				<Description>Selects the frame-specific information.</Description>
+				<DisplayName>Embedded Image Info Selector</DisplayName>
+				<Visibility>Guru</Visibility>
+				<pIsImplemented>FrameSpecInfoInq_Bit</pIsImplemented>
+				<ImposedAccessMode>RW</ImposedAccessMode>
+				<EnumEntry Name="Timestamp" NameSpace="Custom">
+					<DisplayName>Timestamp</DisplayName>
+					<pIsImplemented>FrameSpecInfoTimestampInq_Bit</pIsImplemented>
+					<Value>0</Value>
+				</EnumEntry>
+				<EnumEntry Name="Gain" NameSpace="Custom">
+					<DisplayName>Gain</DisplayName>
+					<pIsImplemented>FrameSpecInfoGainInq_Bit</pIsImplemented>
+					<Value>1</Value>
+				</EnumEntry>
+				<EnumEntry Name="Exposure" NameSpace="Custom">
+					<DisplayName>Exposure</DisplayName>
+					<pIsImplemented>FrameSpecInfoExposureInq_Bit</pIsImplemented>
+					<Value>2</Value>
+				</EnumEntry>
+				<EnumEntry Name="BrightnessInfo" NameSpace="Custom">
+					<DisplayName>Brightness Info</DisplayName>
+					<pIsImplemented>FrameSpecInfoBrightnessInfoInq_Bit</pIsImplemented>
+					<Value>3</Value>
+				</EnumEntry>
+				<EnumEntry Name="WhiteBalance" NameSpace="Custom">
+					<DisplayName>White Balance</DisplayName>
+					<pIsImplemented>FrameSpecInfoWhiteBalanceInq_Bit</pIsImplemented>
+					<Value>4</Value>
+				</EnumEntry>
+				<EnumEntry Name="Framecounter" NameSpace="Custom">
+					<DisplayName>Frame Counter</DisplayName>
+					<pIsImplemented>FrameSpecInfoFramecounterInq_Bit</pIsImplemented>
+					<Value>5</Value>
+				</EnumEntry>
+				<EnumEntry Name="ExtTriggerCount" NameSpace="Custom">
+					<DisplayName>Ext Trigger Count</DisplayName>
+					<pIsImplemented>FrameSpecInfoExtTriggerCountInq_Bit</pIsImplemented>
+					<Value>6</Value>
+				</EnumEntry>
+				<EnumEntry Name="LineInputOutput" NameSpace="Custom">
+					<DisplayName>Line Input Output</DisplayName>
+					<pIsImplemented>FrameSpecInfoLineInputOutputInq_Bit</pIsImplemented>
+					<Value>7</Value>
+				</EnumEntry>
+				<EnumEntry Name="ROIPosition" NameSpace="Custom">
+					<DisplayName>ROI Position</DisplayName>
+					<pIsImplemented>FrameSpecInfoROIPositionInq_Bit</pIsImplemented>
+					<Value>8</Value>
+				</EnumEntry>
+				<pValue>FrameSpecInfoSelector_Int</pValue>
+				<pSelected>FrameSpecInfo</pSelected>
+			</Enumeration>
+			<Integer Name="FrameSpecInfoSelector_Int" NameSpace="Custom">
+				<Value>0</Value>
+			</Integer>
+			<Boolean Name="FrameSpecInfo" NameSpace="Custom">
+				<ToolTip>the frame-specific information.</ToolTip>
+				<Description>the frame-specific information.</Description>
+				<DisplayName>Frame Spec Info</DisplayName>
+				<Visibility>Guru</Visibility>
+				<pIsImplemented>FrameSpecInfoInq_Bit</pIsImplemented>
+				<ImposedAccessMode>RW</ImposedAccessMode>
+				<pValue>FrameSpecInfo_Bit</pValue>
+			</Boolean>
+			<IntReg Name="FrameSpecInfo_Reg">
+				<pAddress>FrameSpecInfo_RegAddr</pAddress>
+				<Length>4</Length>
+				<AccessMode>RW</AccessMode>
+				<pPort>Device</pPort>
+				<pInvalidator>FrameSpecInfoSelector</pInvalidator>
+				<Sign>Unsigned</Sign>
+				<Endianess>LittleEndian</Endianess>
+			</IntReg>
+			<IntConverter Name="FrameSpecInfo_Bit">
+				<pVariable Name="SEL1">FrameSpecInfoSelector_Int</pVariable>
+				<pVariable Name="OLD">FrameSpecInfo_Reg</pVariable>
+				<FormulaTo><![CDATA[( FROM  << SEL1 )| (OLD & (~( 1 << SEL1 )))]]></FormulaTo>
+				<FormulaFrom><![CDATA[(TO >> SEL1)& 1]]></FormulaFrom>
+				<pValue>FrameSpecInfo_Reg</pValue>
+				<Slope>Varying</Slope>
+			</IntConverter>
+		</Group>
+	</Group>
+	<Group Comment="AcquisitionControl">
+		<Group Comment="Inq">
+			<IntSwissKnife Name="NOT_TLParamsLocked">
+				<ToolTip>Negation of the TLParamsLocked</ToolTip>
+				<Visibility>Invisible</Visibility>
+				<pVariable Name="TLPL">TLParamsLocked</pVariable>
+				<Formula>(TLPL = 0) ? 1 : 0</Formula>
+			</IntSwissKnife>
+			<StructReg Comment="Frame Rate Control Inquiry Register">
+				<pAddress>FrameRateControlInq_RegAddr</pAddress>
+				<Length>4</Length>
+				<AccessMode>RO</AccessMode>
+				<pPort>Device</pPort>
+				<Endianess>LittleEndian</Endianess>
+				<StructEntry Name="AcqModeContinuousInq_Bit" NameSpace="Custom">
+					<Bit>2</Bit>
+				</StructEntry>
+				<StructEntry Name="AcqModeSingleFrameInq_Bit" NameSpace="Custom">
+					<Bit>3</Bit>
+				</StructEntry>
+				<StructEntry Name="AcqModeMultiFrameInq_Bit" NameSpace="Custom">
+					<Bit>4</Bit>
+				</StructEntry>
+			</StructReg>
+			<StructReg Comment="Auto Exposure Inquiry Register">
+				<pAddress>AutoExposureInq_RegAddr</pAddress>
+				<Length>4</Length>
+				<AccessMode>RO</AccessMode>
+				<pPort>Device</pPort>
+				<Endianess>LittleEndian</Endianess>
+				<StructEntry Name="AutoExposureOnOffInq_Reg" NameSpace="Custom">
+					<Bit>2</Bit>
+				</StructEntry>
+				<StructEntry Name="AutoExposureAutoModeInq_Reg" NameSpace="Custom">
+					<Bit>3</Bit>
+				</StructEntry>
+				<StructEntry Name="GainShutPriorInq_Bit" NameSpace="Custom">
+					<Bit>7</Bit>
+				</StructEntry>
+				<StructEntry Name="GainPriorInq_Bit" NameSpace="Custom">
+					<Bit>8</Bit>
+				</StructEntry>
+				<StructEntry Name="ShutPriorInq_Bit" NameSpace="Custom">
+					<Bit>9</Bit>
+				</StructEntry>
+				<StructEntry Name="HDRInq_Bit" NameSpace="Custom">
+					<Bit>10</Bit>
+				</StructEntry>
+			</StructReg>
+		</Group>
+		<Enumeration Name="AcquisitionMode" NameSpace="Standard">
+			<ToolTip>Sets the acquisition mode of the device.</ToolTip>
+			<Description>Sets the acquisition mode of the device.</Description>
+			<DisplayName>Acquisition Mode</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<EnumEntry Name="Continuous" NameSpace="Standard">
+				<pIsImplemented>AcqModeContinuousInq_Bit</pIsImplemented>
+				<Value>2</Value>
+			</EnumEntry>
+			<EnumEntry Name="SingleFrame" NameSpace="Standard">
+				<pIsImplemented>AcqModeSingleFrameInq_Bit</pIsImplemented>
+				<Value>0</Value>
+			</EnumEntry>
+			<EnumEntry Name="MultiFrame" NameSpace="Standard">
+				<pIsImplemented>AcqModeMultiFrameInq_Bit</pIsImplemented>
+				<Value>1</Value>
+			</EnumEntry>
+			<pValue>AcquisitionMode_Reg</pValue>
+		</Enumeration>
+		<IntReg Name="AcquisitionMode_Reg" NameSpace="Custom">
+			<pAddress>AcquisitionMode_RegAddr</pAddress>
+			<Length>4</Length>
+			<AccessMode>RW</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<Command Name="AcquisitionStart" NameSpace="Standard">
+			<ToolTip>Starts the Acquisition of the device.</ToolTip>
+			<Description>Starts the Acquisition of the device.</Description>
+			<DisplayName>Acquisition Start</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<pIsLocked>NOT_TLParamsLocked</pIsLocked>
+			<pValue>AcquisitionStart_Reg</pValue>
+			<CommandValue>1</CommandValue>
+		</Command>
+		<MaskedIntReg Name="AcquisitionStart_Reg" NameSpace="Custom">
+			<pAddress>AcquisitionStart_RegAddr</pAddress>
+			<Length>4</Length>
+			<AccessMode>RW</AccessMode>
+			<pPort>Device</pPort>
+			<Cachable>NoCache</Cachable>
+			<Bit>0</Bit>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</MaskedIntReg>
+		<Command Name="AcquisitionStop" NameSpace="Custom">
+			<ToolTip>Stops the acquisition of the device at the end of the current frame.</ToolTip>
+			<Description>Stops the acquisition of the device at the end of the current frame.</Description>
+			<DisplayName>Acquisition Stop</DisplayName>
+			<Visibility>Beginner</Visibility>
+			<pValue>AcquisitionStop_Reg</pValue>
+			<CommandValue>0</CommandValue>
+		</Command>
+		<MaskedIntReg Name="AcquisitionStop_Reg" NameSpace="Custom">
+			<pAddress>AcquisitionStop_RegAddr</pAddress>
+			<Length>4</Length>
+			<AccessMode>RW</AccessMode>
+			<pPort>Device</pPort>
+			<Cachable>NoCache</Cachable>
+			<Bit>0</Bit>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</MaskedIntReg>
+		<Group Comment="Exposure">
+			<Enumeration Name="GainShutPrior" NameSpace="Custom">
+				<ToolTip>Sets the priority of the Exposure and Gain.</ToolTip>
+				<Description>Sets the priority of the Exposure and Gain.</Description>
+				<DisplayName>Gain Shut prior</DisplayName>
+				<Visibility>Guru</Visibility>
+				<pIsImplemented>GainShutPriorInq_Bit</pIsImplemented>
+				<ImposedAccessMode>RW</ImposedAccessMode>
+				<EnumEntry Name="Gain" NameSpace="Custom">
+					<DisplayName>Gain priority</DisplayName>
+					<pIsImplemented>GainPriorInq_Bit</pIsImplemented>
+					<Value>1</Value>
+				</EnumEntry>
+				<EnumEntry Name="Shut" NameSpace="Custom">
+					<DisplayName>Shut priority</DisplayName>
+					<pIsImplemented>ShutPriorInq_Bit</pIsImplemented>
+					<Value>0</Value>
+				</EnumEntry>
+				<pValue>GainShutPrior_Int</pValue>
+			</Enumeration>
+			<IntConverter Name="GainShutPrior_Int">
+				<FormulaTo>( FROM = 1 ) ? 1 : 0</FormulaTo>
+				<FormulaFrom>( TO = 1 ) ? 1 : 0</FormulaFrom>
+				<pValue>GainShutPrior_Reg</pValue>
+				<Slope>Varying</Slope>
+			</IntConverter>
+			<IntReg Name="GainShutPrior_Reg" NameSpace="Custom">
+				<pAddress>GainShutPrior_RegAddr</pAddress>
+				<Length>4</Length>
+				<AccessMode>RW</AccessMode>
+				<pPort>Device</pPort>
+				<Sign>Unsigned</Sign>
+				<Endianess>LittleEndian</Endianess>
+			</IntReg>
+		</Group>
+	</Group>
+	<Group Comment="TransportLayerControl">
+		<StructReg Comment="GenCP Version Register">
+			<Visibility>Expert</Visibility>
+			<Address>0x0</Address>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Endianess>LittleEndian</Endianess>
+			<StructEntry Name="GenCPVersionMajor_Reg" NameSpace="Standard">
+				<LSB>16</LSB>
+				<MSB>31</MSB>
+				<Sign>Unsigned</Sign>
+			</StructEntry>
+			<StructEntry Name="GenCPVersionMinor_Reg" NameSpace="Standard">
+				<LSB>0</LSB>
+				<MSB>15</MSB>
+				<Sign>Unsigned</Sign>
+			</StructEntry>
+		</StructReg>
+		<StructReg Comment="U3V Version Register">
+			<Visibility>Expert</Visibility>
+			<pAddress>U3VVersion_RegAddrOffset</pAddress>
+			<pAddress>SBRMRegBaseAddress</pAddress>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Endianess>LittleEndian</Endianess>
+			<StructEntry Name="U3VVersionMajor_Reg" NameSpace="Standard">
+				<LSB>16</LSB>
+				<MSB>31</MSB>
+				<Sign>Unsigned</Sign>
+			</StructEntry>
+			<StructEntry Name="U3VVersionMinor_Reg" NameSpace="Standard">
+				<LSB>0</LSB>
+				<MSB>15</MSB>
+				<Sign>Unsigned</Sign>
+			</StructEntry>
+		</StructReg>
+		<StructReg Comment="U3VCP Capability Register">
+			<Visibility>Invisible</Visibility>
+			<pAddress>U3VCPCapability_RegAddrOffset</pAddress>
+			<pAddress>SBRMRegBaseAddress</pAddress>
+			<Length>8</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Endianess>LittleEndian</Endianess>
+			<StructEntry Name="U3VCPSIRMAvailable_Bit">
+				<Bit>0</Bit>
+			</StructEntry>
+			<StructEntry Name="U3VCPEIRMAvailable_Bit">
+				<Bit>1</Bit>
+			</StructEntry>
+			<StructEntry Name="U3VCPIIDC2Available_Bit">
+				<Bit>2</Bit>
+			</StructEntry>
+		</StructReg>
+		<Integer Name="PayloadSize" NameSpace="Standard">
+			<ToolTip>Number of bytes transferred for each image or chunk on the stream channel.</ToolTip>
+			<Description>Number of bytes transferred for each image or chunk on the stream channel.</Description>
+			<DisplayName>Payload Size</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>PayloadSize_Reg</pValue>
+			<Unit>B</Unit>
+		</Integer>
+		<Integer Name="GenCPVersionMajor" NameSpace="Standard">
+			<ToolTip>Major version of the specification.</ToolTip>
+			<Description>Major version of the specification.</Description>
+			<DisplayName>GenCP Version Major</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>GenCPVersionMajor_Reg</pValue>
+		</Integer>
+		<Integer Name="GenCPVersionMinor" NameSpace="Standard">
+			<ToolTip>Minor version of the specification.</ToolTip>
+			<Description>Minor version of the specification.</Description>
+			<DisplayName>GenCP Version Minor</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>GenCPVersionMinor_Reg</pValue>
+		</Integer>
+		<Integer Name="U3VVersionMajor" NameSpace="Standard">
+			<ToolTip>Major version of USB3 Vision.</ToolTip>
+			<Description>Major version of USB3 Vision.</Description>
+			<DisplayName>U3V Version Major</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VVersionMajor_Reg</pValue>
+		</Integer>
+		<Integer Name="U3VVersionMinor" NameSpace="Standard">
+			<ToolTip>Minor version of USB3 Vision.</ToolTip>
+			<Description>Minor version of USB3 Vision.</Description>
+			<DisplayName>U3V Version Minor</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VVersionMinor_Reg</pValue>
+		</Integer>
+		<Boolean Name="U3VCPSIRMAvailable" NameSpace="Standard">
+			<ToolTip>Set if the device supports at least one device streaming interface.</ToolTip>
+			<Description>Set if the device supports at least one device streaming interface.</Description>
+			<DisplayName>U3VCP SIRM Available</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VCPSIRMAvailable_Bit</pValue>
+		</Boolean>
+		<Boolean Name="U3VCPEIRMAvailable" NameSpace="Standard">
+			<ToolTip>Set if the device supports at least one device event interface.</ToolTip>
+			<Description>Set if the device supports at least one device event interface.</Description>
+			<DisplayName>U3VCP EIRM Available</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VCPEIRMAvailable_Bit</pValue>
+		</Boolean>
+		<Boolean Name="U3VCPIIDC2Available" NameSpace="Standard">
+			<ToolTip>Set if the device supports IIDC2 register map.</ToolTip>
+			<Description>Set if the device supports IIDC2 register map.</Description>
+			<DisplayName>U3VCP IIDC2 Available</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VCPIIDC2Available_Bit</pValue>
+		</Boolean>
+		<Integer Name="U3VMaxCommandTransferLength" NameSpace="Standard">
+			<ToolTip>Specifies the maximum supported command length of the device in bytes.</ToolTip>
+			<Description>Specifies the maximum supported command length of the device in bytes.</Description>
+			<DisplayName>U3V Max Command Transfer Length</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VMaxCommandTransferLength_Reg</pValue>
+		</Integer>
+		<Integer Name="U3VMaxAcknowledgeTransferLength" NameSpace="Standard">
+			<ToolTip>Specifies the maximum supported acknowledge length of the device in bytes.</ToolTip>
+			<Description>Specifies the maximum supported acknowledge length of the device in bytes.</Description>
+			<DisplayName>U3V Max Acknowledge Transfer Length</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VMaxAcknowledgeTransferLength_Reg</pValue>
+		</Integer>
+		<Integer Name="U3VNumberOfStreamChannels" NameSpace="Standard">
+			<ToolTip>Specifies the number of Stream Channels. 0, if no stream channel is supported</ToolTip>
+			<Description>Specifies the number of Stream Channels. 0, if no stream channel is supported</Description>
+			<DisplayName>U3V Number Of Stream Channels</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VNumberOfStreamChannels_Reg</pValue>
+		</Integer>
+		<Integer Name="U3VSIRMAddress" NameSpace="Standard">
+			<ToolTip>Address of the first Streaming Interface Register Map.</ToolTip>
+			<Description>Address of the first Streaming Interface Register Map.</Description>
+			<DisplayName>U3V SIRM Address</DisplayName>
+			<Visibility>Expert</Visibility>
+			<pIsImplemented>U3VCPSIRMAvailable_Bit</pIsImplemented>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VSIRMAddress_Reg</pValue>
+			<Representation>HexNumber</Representation>
+		</Integer>
+		<Integer Name="U3VSIRMLength" NameSpace="Standard">
+			<ToolTip>Specifies the length of each SIRM.</ToolTip>
+			<Description>Specifies the length of each SIRM.</Description>
+			<DisplayName>U3V SIRM Length</DisplayName>
+			<Visibility>Expert</Visibility>
+			<pIsImplemented>U3VCPSIRMAvailable_Bit</pIsImplemented>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VSIRMLength_Reg</pValue>
+		</Integer>
+		<Integer Name="U3VEIRMAddress" NameSpace="Standard">
+			<ToolTip>Address of the Event Interface Register Map.</ToolTip>
+			<Description>Address of the Event Interface Register Map.</Description>
+			<DisplayName>U3V EIRM Address</DisplayName>
+			<Visibility>Expert</Visibility>
+			<pIsImplemented>U3VCPEIRMAvailable_Bit</pIsImplemented>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VEIRMAddress_Reg</pValue>
+			<Representation>HexNumber</Representation>
+		</Integer>
+		<Integer Name="U3VEIRMLength" NameSpace="Standard">
+			<ToolTip>Specifies the length of each EIRM.</ToolTip>
+			<Description>Specifies the length of each EIRM.</Description>
+			<DisplayName>U3V EIRM Length</DisplayName>
+			<Visibility>Expert</Visibility>
+			<pIsImplemented>U3VCPEIRMAvailable_Bit</pIsImplemented>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VEIRMLength_Reg</pValue>
+		</Integer>
+		<Integer Name="U3VIIDC2Address" NameSpace="Standard">
+			<ToolTip>Address of the IIDC2 register set.</ToolTip>
+			<Description>Address of the IIDC2 register set.</Description>
+			<DisplayName>U3V IIDC2 Address</DisplayName>
+			<Visibility>Expert</Visibility>
+			<pIsImplemented>U3VCPIIDC2Available_Bit</pIsImplemented>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VIIDC2Address_Reg</pValue>
+			<Representation>HexNumber</Representation>
+		</Integer>
+		<Integer Name="U3VCurrentSpeed" NameSpace="Standard">
+			<ToolTip>Specifies the current speed of the USB link.</ToolTip>
+			<Description>Specifies the current speed of the USB link.</Description>
+			<DisplayName>U3V Current Speed</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VCurrentSpeed_Reg</pValue>
+		</Integer>
+		<IntReg Name="PayloadSize_Reg" NameSpace="Custom">
+			<pAddress>PayloadSize_RegAddr</pAddress>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<pInvalidator>WidthRegister</pInvalidator>
+			<pInvalidator>HeightRegister</pInvalidator>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<IntReg Name="U3VMaxCommandTransferLength_Reg" NameSpace="Custom">
+			<pAddress>U3VMaxCommandTransferLength_RegAddrOffset</pAddress>
+			<pAddress>SBRMRegBaseAddress</pAddress>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<IntReg Name="U3VMaxAcknowledgeTransferLength_Reg" NameSpace="Custom">
+			<pAddress>U3VMaxAcknowledgeTransferLength_RegAddrOffset</pAddress>
+			<pAddress>SBRMRegBaseAddress</pAddress>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<IntReg Name="U3VNumberOfStreamChannels_Reg" NameSpace="Custom">
+			<pAddress>U3VNumberOfStreamChannels_RegAddrOffset</pAddress>
+			<pAddress>SBRMRegBaseAddress</pAddress>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<IntReg Name="U3VSIRMAddress_Reg" NameSpace="Custom">
+			<pAddress>U3VSIRMAddress_RegAddrOffset</pAddress>
+			<pAddress>SBRMRegBaseAddress</pAddress>
+			<Length>8</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<IntReg Name="U3VSIRMLength_Reg" NameSpace="Custom">
+			<pAddress>U3VSIRMLength_RegAddrOffset</pAddress>
+			<pAddress>SBRMRegBaseAddress</pAddress>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<IntReg Name="U3VEIRMAddress_Reg" NameSpace="Custom">
+			<pAddress>U3VEIRMAddress_RegAddrOffset</pAddress>
+			<pAddress>SBRMRegBaseAddress</pAddress>
+			<Length>8</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<IntReg Name="U3VEIRMLength_Reg" NameSpace="Custom">
+			<pAddress>U3VEIRMLength_RegAddrOffset</pAddress>
+			<pAddress>SBRMRegBaseAddress</pAddress>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<IntReg Name="U3VIIDC2Address_Reg" NameSpace="Custom">
+			<pAddress>U3VIIDC2Address_RegAddrOffset</pAddress>
+			<pAddress>SBRMRegBaseAddress</pAddress>
+			<Length>8</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<IntReg Name="U3VCurrentSpeed_Reg" NameSpace="Custom">
+			<pAddress>U3VCurrentSpeed_RegAddrOffset</pAddress>
+			<pAddress>SBRMRegBaseAddress</pAddress>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<Integer Name="TLParamsLocked">
+			<ToolTip>Indicates whether a live grab is under way</ToolTip>
+			<Visibility>Invisible</Visibility>
+			<Value>0</Value>
+			<Min>0</Min>
+			<Max>1</Max>
+		</Integer>
+	</Group>
+	<Group Comment="StreamControl">
+		<StructReg Comment="U3V SI Info Register">
+			<Visibility>Expert</Visibility>
+			<pAddress>U3VSIInfo_RegAddrOffset</pAddress>
+			<pAddress>SIRMRegBaseAddress</pAddress>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Endianess>LittleEndian</Endianess>
+			<StructEntry Name="U3VSIPayloadSizeAlignment_Reg" NameSpace="Standard">
+				<LSB>24</LSB>
+				<MSB>31</MSB>
+				<Sign>Unsigned</Sign>
+			</StructEntry>
+		</StructReg>
+		<StructReg Comment="U3V SI Control Register">
+			<Visibility>Expert</Visibility>
+			<pAddress>U3VSIControl_RegAddrOffset</pAddress>
+			<pAddress>SIRMRegBaseAddress</pAddress>
+			<Length>4</Length>
+			<AccessMode>RW</AccessMode>
+			<pPort>Device</pPort>
+			<Endianess>LittleEndian</Endianess>
+			<StructEntry Name="U3VSIStreamEnable_Bit" NameSpace="Standard">
+				<Bit>0</Bit>
+			</StructEntry>
+		</StructReg>
+		<Integer Name="U3VSIPayloadSizeAlignment" NameSpace="Standard">
+			<ToolTip>Limit SI Streaming Size.</ToolTip>
+			<Description>Limit SI Streaming Size.</Description>
+			<DisplayName>U3V SI Payload Size Alignment</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VSIPayloadSizeAlignment_Reg</pValue>
+		</Integer>
+		<Integer Name="U3VSIRequiredPayloadSize" NameSpace="Standard">
+			<ToolTip>Minimum required payload size in bytes with current settings required by the device.</ToolTip>
+			<Description>Minimum required payload size in bytes with current settings required by the device.</Description>
+			<DisplayName>U3V SI Required Payload Size</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VSIRequiredPayloadSize_Reg</pValue>
+			<Unit>B</Unit>
+		</Integer>
+		<Integer Name="U3VSIRequiredLeaderSize" NameSpace="Standard">
+			<ToolTip>Device reports its minimum required size in bytes it needs for the leader transfer.</ToolTip>
+			<Description>Device reports its minimum required size in bytes it needs for the leader transfer.</Description>
+			<DisplayName>U3V SI Required Leader Size</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VSIRequiredLeaderSize_Reg</pValue>
+			<Unit>B</Unit>
+		</Integer>
+		<Integer Name="U3VSIRequiredTrailerSize" NameSpace="Standard">
+			<ToolTip>Device reports its minimum required size in bytes it needs for the Trailer transfer.</ToolTip>
+			<Description>Device reports its minimum required size in bytes it needs for the Trailer transfer.</Description>
+			<DisplayName>U3V SI Required Trailer Size</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VSIRequiredTrailerSize_Reg</pValue>
+			<Unit>B</Unit>
+		</Integer>
+		<Integer Name="U3VSIMaximumLeaderSize" NameSpace="Standard">
+			<ToolTip>Defines the maximum size of the leader the device may use.</ToolTip>
+			<Description>Defines the maximum size of the leader the device may use.</Description>
+			<DisplayName>U3V SI Maximum Leader Size</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RW</ImposedAccessMode>
+			<pValue>U3VSIMaximumLeaderSize_Reg</pValue>
+			<Min>56</Min>
+			<Max>1024</Max>
+			<Inc>1</Inc>
+			<Unit>B</Unit>
+		</Integer>
+		<Integer Name="U3VSIPayloadTransferSize" NameSpace="Standard">
+			<ToolTip>the size of regular payload bulk transfers.</ToolTip>
+			<Description>the size of regular payload bulk transfers.</Description>
+			<DisplayName>U3V SI Payload Transfer Size</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VSIPayloadTransferSize_Reg</pValue>
+			<Min>1024</Min>
+			<Max>0xffffffff</Max>
+			<Unit>B</Unit>
+		</Integer>
+		<Integer Name="U3VSIPayloadTransferCount" NameSpace="Standard">
+			<ToolTip>the number of regular payload data bulk transfers.</ToolTip>
+			<Description>the number of regular payload data bulk transfers.</Description>
+			<DisplayName>U3V SI Payload Transfer Count</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VSIPayloadTransferCount_Reg</pValue>
+		</Integer>
+		<Integer Name="U3VSIPayloadFinalTransfer1Size" NameSpace="Standard">
+			<ToolTip>the size of the Final Transfer 1 payload bulk transfer.</ToolTip>
+			<Description>the size of the Final Transfer 1 payload bulk transfer.</Description>
+			<DisplayName>U3V SI Payload FinalTransfer1 Size</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VSIPayloadFinalTransfer1Size_Reg</pValue>
+			<Unit>B</Unit>
+		</Integer>
+		<Integer Name="U3VSIMaximumTrailerSize" NameSpace="Standard">
+			<ToolTip>the maximum size of the trailer the device may use.</ToolTip>
+			<Description>the maximum size of the trailer the device may use.</Description>
+			<DisplayName>U3V SI Maximum Trailer Size</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VSIMaximumTrailerSize_Reg</pValue>
+			<Unit>B</Unit>
+		</Integer>
+		<Integer Name="U3VSIPayloadFinalTransfer2Size" NameSpace="Standard">
+			<ToolTip>the size of the Final Transfer 2 payload bulk transfer.</ToolTip>
+			<Description>the size of the Final Transfer 2 payload bulk transfer.</Description>
+			<DisplayName>U3V SI Payload FinalTransfer2 Size</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RO</ImposedAccessMode>
+			<pValue>U3VSIPayloadFinalTransfer2Size_Reg</pValue>
+			<Unit>B</Unit>
+		</Integer>
+		<Boolean Name="U3VSIStreamEnable" NameSpace="Standard">
+			<ToolTip>Controls streaming operation.</ToolTip>
+			<Description>Controls streaming operation.</Description>
+			<DisplayName>U3V SI Stream Enable</DisplayName>
+			<Visibility>Expert</Visibility>
+			<ImposedAccessMode>RW</ImposedAccessMode>
+			<pValue>U3VSIStreamEnable_Bit</pValue>
+		</Boolean>
+		<IntReg Name="U3VSIRequiredPayloadSize_Reg" NameSpace="Custom">
+			<pAddress>U3VSIRequiredPayloadSize_RegAddrOffset</pAddress>
+			<pAddress>SIRMRegBaseAddress</pAddress>
+			<Length>8</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<IntReg Name="U3VSIRequiredLeaderSize_Reg" NameSpace="Custom">
+			<pAddress>U3VSIRequiredLeaderSize_RegAddrOffset</pAddress>
+			<pAddress>SIRMRegBaseAddress</pAddress>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<IntReg Name="U3VSIRequiredTrailerSize_Reg" NameSpace="Custom">
+			<pAddress>U3VSIRequiredTrailerSize_RegAddrOffset</pAddress>
+			<pAddress>SIRMRegBaseAddress</pAddress>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<IntReg Name="U3VSIMaximumLeaderSize_Reg" NameSpace="Custom">
+			<pAddress>U3VSIMaximumLeaderSize_RegAddrOffset</pAddress>
+			<pAddress>SIRMRegBaseAddress</pAddress>
+			<Length>4</Length>
+			<AccessMode>RW</AccessMode>
+			<pPort>Device</pPort>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<IntReg Name="U3VSIPayloadTransferSize_Reg" NameSpace="Custom">
+			<pAddress>U3VSIPayloadTransferSize_RegAddrOffset</pAddress>
+			<pAddress>SIRMRegBaseAddress</pAddress>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<pInvalidator>AcquisitionStart</pInvalidator>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<IntReg Name="U3VSIPayloadTransferCount_Reg" NameSpace="Custom">
+			<pAddress>U3VSIPayloadTransferCount_RegAddrOffset</pAddress>
+			<pAddress>SIRMRegBaseAddress</pAddress>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<pInvalidator>AcquisitionStart</pInvalidator>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<IntReg Name="U3VSIPayloadFinalTransfer1Size_Reg" NameSpace="Custom">
+			<pAddress>U3VSIPayloadFinalTransfer1Size_RegAddrOffset</pAddress>
+			<pAddress>SIRMRegBaseAddress</pAddress>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<pInvalidator>AcquisitionStart</pInvalidator>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<IntReg Name="U3VSIPayloadFinalTransfer2Size_Reg" NameSpace="Custom">
+			<pAddress>U3VSIPayloadFinalTransfer2Size_RegAddrOffset</pAddress>
+			<pAddress>SIRMRegBaseAddress</pAddress>
+			<Length>4</Length>
+			<AccessMode>RO</AccessMode>
+			<pPort>Device</pPort>
+			<pInvalidator>AcquisitionStart</pInvalidator>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+		<IntReg Name="U3VSIMaximumTrailerSize_Reg" NameSpace="Custom">
+			<pAddress>U3VSIMaximumTrailerSize_RegAddrOffset</pAddress>
+			<pAddress>SIRMRegBaseAddress</pAddress>
+			<Length>4</Length>
+			<AccessMode>RW</AccessMode>
+			<pPort>Device</pPort>
+			<pInvalidator>AcquisitionStart</pInvalidator>
+			<Sign>Unsigned</Sign>
+			<Endianess>LittleEndian</Endianess>
+		</IntReg>
+	</Group>
+</RegisterDescription>
+

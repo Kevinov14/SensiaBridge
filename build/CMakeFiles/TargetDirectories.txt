@@ -1,0 +1,5 @@
+C:/CODE/videoaravis-main/build/CMakeFiles/proyectoSensiaBridge.dir
+C:/CODE/videoaravis-main/build/CMakeFiles/videotest.dir
+C:/CODE/videoaravis-main/build/CMakeFiles/test.dir
+C:/CODE/videoaravis-main/build/CMakeFiles/ALL_BUILD.dir
+C:/CODE/videoaravis-main/build/CMakeFiles/ZERO_CHECK.dir

@@ -1,0 +1,10 @@
+^C:\CODE\VIDEOARAVIS-MAIN\BUILD\CMAKEFILES\AA597E67EE9EF69351A81177EBD6B69C\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/CODE/videoaravis-main -BC:/CODE/videoaravis-main/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/CODE/videoaravis-main/build/test.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

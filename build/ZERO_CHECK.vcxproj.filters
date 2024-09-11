@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\CODE\videoaravis-main\build\CMakeFiles\aa597e67ee9ef69351a81177ebd6b69c\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{B6F25B8D-435D-3E8F-AEF6-AD824068B36E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
