@@ -292,7 +292,7 @@ namespace proyectoSensiaBridge {
         buffer = arv_stream_pop_buffer (stream);
         width = arv_buffer_get_image_width (buffer);
         height = arv_buffer_get_image_height(buffer);
-        
+
         cv::VideoWriter video_writer(ruta, cv::VideoWriter::fourcc('M','J','P','G'), 30, cv::Size(width, height), false);                
 
             //buffer = arv_camera_acquisition(camera,10,NULL);
@@ -313,7 +313,6 @@ namespace proyectoSensiaBridge {
         }
         //copiarArvBufferABuffer(buff, buffer);
         arv_camera_stop_acquisition (camera, &error);
-        
         // Liberar recursos
         g_object_unref(stream);
         //g_object_unref(buffer);
