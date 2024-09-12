@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['dosomething_0',['doSomething',['../classproyecto_sensia_bridge_1_1_sensia_bridge.html#adc0a83561a600a7a08d50ee0ff613cbe',1,'proyectoSensiaBridge::SensiaBridge::doSomething(const std::map&lt; std::string, std::string &gt; &amp;arguments)'],['../classproyecto_sensia_bridge_1_1_sensia_bridge.html#ab1a85c5403fef0d76aa4b056c28ecf58',1,'proyectoSensiaBridge::SensiaBridge::doSomething()'],['../classproyecto_sensia_bridge_1_1_sensia_bridge.html#adc0a83561a600a7a08d50ee0ff613cbe',1,'proyectoSensiaBridge::SensiaBridge::doSomething(const std::map&lt; std::string, std::string &gt; &amp;arguments)'],['../classproyecto_sensia_bridge_1_1_sensia_bridge.html#adc0a83561a600a7a08d50ee0ff613cbe',1,'proyectoSensiaBridge::SensiaBridge::doSomething(const std::map&lt; std::string, std::string &gt; &amp;arguments)']]]
+];

@@ -1,0 +1,14 @@
+# Doxyfile.in configuration for Doxygen
+
+PROJECT_NAME           = @PROJECT_NAME@
+OUTPUT_DIRECTORY       = @CMAKE_CURRENT_BINARY_DIR@/docs
+INPUT                  = @CMAKE_SOURCE_DIR@
+RECURSIVE              = YES
+EXTRACT_ALL            = YES
+GENERATE_LATEX         = NO
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+GENERATE_XML           = NO
+DOT_PATH               = @DOXYGEN_DOT_EXECUTABLE@
+HAVE_DOT               = YES
+DOT_GRAPH_MAX_NODES    = 50

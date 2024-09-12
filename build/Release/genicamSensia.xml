@@ -10,7 +10,218 @@
 		<pFeature>AcquisitionControl</pFeature>
 		<pFeature>TransportLayerControl</pFeature>
 		<pFeature>StreamControl</pFeature>
+		<pFeature>ChunkDataControl</pFeature>
 	</Category>
+	<Category Name="ChunkDataControl" NameSpace="Standard">
+		<ToolTip>Category that contains the Chunk Data control features.</ToolTip>
+		<Description>Category that contains the Chunk Data control features.</Description>
+		<DisplayName>Chunk Data Control</DisplayName>
+		<pFeature>ChunkDataSensorParamsBool</pFeature>
+		<pFeature>ChunkGain</pFeature>
+		<pFeature>ChunkGSK</pFeature>
+		<pFeature>ChunkGFID</pFeature>
+		<pFeature>ChunkTint</pFeature>
+		<pFeature>ChunkVDET</pFeature>
+		<pFeature>ChunkVSK</pFeature>
+		<pFeature>ChunkVTEMP</pFeature>
+		<pFeature>ChunkTBNUC</pFeature>
+		<pFeature>ChunkDetectorSN</pFeature>
+		<pFeature>ChunkDACB</pFeature>
+		<pFeature>ChunkB0</pFeature>
+		<pFeature>ChunkB1</pFeature>
+	</Category> 
+	<IntReg Name="ChunkDataSensorParamsBoolReg">
+		<Address>0x1840004</Address>
+		<Length>4</Length>
+		<AccessMode>RW</AccessMode>
+		<pPort>Device</pPort>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Boolean Name="ChunkDataSensorParamsBool" NameSpace="Standard">
+		<Visibility>Expert</Visibility>
+		<pValue>ChunkDataSensorParamsBoolReg</pValue>
+	</Boolean>
+	<IntReg Name="ChunkGainReg">
+		<Address>0</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>ChunkSensorParameters</pPort>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="ChunkGain">
+		<DisplayName>Gain</DisplayName>
+		<Visibility>Expert</Visibility>
+		<pValue>ChunkGainReg</pValue>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<IntReg Name="ChunkGSKReg">
+		<Address>4</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>ChunkSensorParameters</pPort>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="ChunkGSK">
+		<DisplayName>GSK</DisplayName>
+		<Visibility>Expert</Visibility>
+		<pValue>ChunkGSKReg</pValue>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<IntReg Name="ChunkGFIDReg">
+		<Address>8</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>ChunkSensorParameters</pPort>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="ChunkGFID">
+		<DisplayName>GFID</DisplayName>
+		<Visibility>Expert</Visibility>
+		<pValue>ChunkGFIDReg</pValue>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<IntReg Name="ChunkTintReg">
+		<Address>12</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>ChunkSensorParameters</pPort>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="ChunkTint">
+		<DisplayName>Tint</DisplayName>
+		<Visibility>Expert</Visibility>
+		<pValue>ChunkTintReg</pValue>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<IntReg Name="ChunkVDETReg">
+		<Address>16</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>ChunkSensorParameters</pPort>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="ChunkVDET">
+		<DisplayName>VDET</DisplayName>
+		<Visibility>Expert</Visibility>
+		<pValue>ChunkVDETReg</pValue>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<IntReg Name="ChunkVSKReg">
+		<Address>20</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>ChunkSensorParameters</pPort>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="ChunkVSK">
+		<DisplayName>VSK</DisplayName>
+		<Visibility>Expert</Visibility>
+		<pValue>ChunkVSKReg</pValue>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<IntReg Name="ChunkVTEMPReg">
+		<Address>24</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>ChunkSensorParameters</pPort>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="ChunkVTEMP">
+		<DisplayName>VTEMP</DisplayName>
+		<Visibility>Expert</Visibility>
+		<pValue>ChunkVTEMPReg</pValue>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<IntReg Name="ChunkTBNUCReg">
+		<Address>28</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>ChunkSensorParameters</pPort>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="ChunkTBNUC">
+		<DisplayName>TBNUC</DisplayName>
+		<Visibility>Expert</Visibility>
+		<pValue>ChunkTBNUCReg</pValue>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<IntReg Name="ChunkDetectorSNReg">
+		<Address>32</Address>
+		<Length>4</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>ChunkSensorParameters</pPort>
+		<Sign>Unsigned</Sign>
+		<Endianess>LittleEndian</Endianess>
+	</IntReg>
+	<Integer Name="ChunkDetectorSN">
+		<DisplayName>DetectorSN</DisplayName>
+		<Visibility>Expert</Visibility>
+		<pValue>ChunkDetectorSNReg</pValue>
+		<Inc>1</Inc>
+		<Representation>Linear</Representation>
+	</Integer>
+	<FloatReg Name="ChunkDACBRegister">
+		<Address>0</Address>
+		<Length>8</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>ChunkDetectorCompensationParameters</pPort>
+		<Cachable>NoCache</Cachable>
+		<Endianess>BigEndian</Endianess>
+	</FloatReg>
+	<Float Name="ChunkDACB">
+		<Description>Shows GSK value as a function of VTEMP for calibration purposes.</Description>
+		<DisplayName>DACB</DisplayName>
+		<Visibility>Expert</Visibility>
+		<pValue>ChunkDACBRegister</pValue>
+		<Representation>Linear</Representation>
+	</Float>
+	<FloatReg Name="B0Register">
+		<Address>0</Address>
+		<Length>8</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>ChunkImageCompensationParameters</pPort>
+		<Cachable>NoCache</Cachable>
+		<Endianess>BigEndian</Endianess>
+	</FloatReg>
+	<Float Name="ChunkB0">
+		<Description>Shows B0 weight for image compensation purposes.</Description>
+		<DisplayName>B0</DisplayName>
+		<Visibility>Expert</Visibility>
+		<pValue>B0Register</pValue>
+		<Representation>Linear</Representation>
+	</Float>
+	<FloatReg Name="B1Register">
+		<Address>8</Address>
+		<Length>8</Length>
+		<AccessMode>RO</AccessMode>
+		<pPort>ChunkImageCompensationParameters</pPort>
+		<Cachable>NoCache</Cachable>
+		<Endianess>BigEndian</Endianess>
+	</FloatReg>
+	<Float Name="ChunkB1">
+		<Description>Shows B1 weight for image compensation purposes.</Description>
+		<DisplayName>B1</DisplayName>
+		<Visibility>Expert</Visibility>
+		<pValue>B1Register</pValue>
+		<Representation>Linear</Representation>
+	</Float>
 	<Category Name="DeviceControl" NameSpace="Standard">
 		<ToolTip>Category for device information and control.</ToolTip>
 		<Description>Category for device information and control.</Description>
@@ -126,6 +337,7 @@
 		<Description>Camera Information Structure.</Description>
 		<Visibility>Beginner</Visibility>
 		<pFeature>SensorType</pFeature>
+		<pFeature>IsSensorType8Implemented</pFeature>
 		<pFeature>DeviceSerialNumber</pFeature>
 		<!--<pFeature>CameraCapabilities</pFeature>-->
 		<pFeature>PixelPitch</pFeature>
@@ -1039,7 +1251,7 @@
 	</IntSwissKnife>
 	<IntSwissKnife Name="IsSensorType8Implemented">
 		<pVariable Name="SENSORTYPE">SensorType</pVariable>
-		<Formula>(SENSORTYPE = 3)</Formula>
+		<Formula>(SENSORTYPE = 3)||(SENSORTYPE = 8)</Formula>
 	</IntSwissKnife>
 	<IntSwissKnife Name="IsSensorType9Implemented">
 		<pVariable Name="SENSORTYPE">SensorType</pVariable>
@@ -4062,6 +4274,7 @@
 			<Visibility>Expert</Visibility>
 			<ImposedAccessMode>RO</ImposedAccessMode>
 			<pValue>PayloadSize_Reg</pValue>
+			<!-- <Cachable>NoCache</Cachable> -->
 			<Unit>B</Unit>
 		</Integer>
 		<Integer Name="GenCPVersionMajor" NameSpace="Standard">
@@ -4205,6 +4418,7 @@
 			<Length>4</Length>
 			<AccessMode>RO</AccessMode>
 			<pPort>Device</pPort>
+			<Cachable>NoCache</Cachable>
 			<pInvalidator>WidthRegister</pInvalidator>
 			<pInvalidator>HeightRegister</pInvalidator>
 			<Sign>Unsigned</Sign>
@@ -4514,5 +4728,14 @@
 			<Endianess>LittleEndian</Endianess>
 		</IntReg>
 	</Group>
+	<Port Name="ChunkSensorParameters">
+		<ChunkID>00000001</ChunkID>
+	</Port>
+	<Port Name="ChunkDetectorCompensationParameters">
+		<ChunkID>00000002</ChunkID>
+	</Port>	
+	<Port Name="ChunkImageCompensationParameters">
+		<ChunkID>00000003</ChunkID>
+	</Port>		
 </RegisterDescription>
-
+Õ77X:!

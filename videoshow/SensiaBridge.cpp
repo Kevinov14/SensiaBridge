@@ -246,6 +246,7 @@ namespace proyectoSensiaBridge {
         ArvCamera *camera;
         ArvStream *stream;
         ArvBuffer *buffer;
+        ArvDevice *device;
         GError *error = nullptr;
         int height;
         int width;
@@ -261,10 +262,17 @@ namespace proyectoSensiaBridge {
 
         // Abrir la cámara
         camera = arv_camera_new_with_device(cam->device, &error);
+        device = arv_camera_get_device(camera);
+        arv_device_set_boolean_feature_value(device, "ChunkDataSensorParamsBool", true, &error);
         //camera = arv_camera_new (NULL, &error);
-        
-
-
+        if(arv_camera_are_chunks_available(camera, &error)){
+            printf("disponible");
+        } else {
+            printf("no disponible");
+        }
+        //arv_camera_set_chunk_mode(camera, true, &error);
+        //arv_camera_set_chunks (camera, "Gain", &error);
+        //arv_camera_get_chunk_mode(camera, &error);
         if (camera == NULL) {
             g_error("No se pudo abrir la cámara\n");
             return -1;
@@ -292,6 +300,7 @@ namespace proyectoSensiaBridge {
         buffer = arv_stream_pop_buffer (stream);
         width = arv_buffer_get_image_width (buffer);
         height = arv_buffer_get_image_height(buffer);
+		ArvChunkParser *parser = arv_camera_create_chunk_parser (camera);
 
         cv::VideoWriter video_writer(ruta, cv::VideoWriter::fourcc('M','J','P','G'), 30, cv::Size(width, height), false);                
 
@@ -299,6 +308,7 @@ namespace proyectoSensiaBridge {
         for (int i = 0; i < 240; i++) {
             buffer = arv_stream_pop_buffer (stream);
             if (buffer != NULL) {
+                printf("ChunkGain = %d\n", (int) arv_chunk_parser_get_integer_value (parser, buffer, "ChunkGain", NULL));
                 img = aravis_to_opencv(buffer);
                 video_writer.write(img);
                 arv_stream_push_buffer (stream, buffer);
