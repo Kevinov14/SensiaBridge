@@ -10,6 +10,7 @@ endif()
 project(proyectoSensiaBridge)
 project(videotest)
 project(test)
+project(feature)
 
 # Habilitar C++17
 set(CMAKE_CXX_STANDARD 17)
@@ -111,6 +112,11 @@ add_executable(test
 
 )
 
+add_executable(features
+    features/main.cpp
+    features/features.cpp  
+)
+
 # Configurar las rutas de inclusión y bibliotecas según el sistema operativo
 if(WIN32)
     target_include_directories(proyectoSensiaBridge PRIVATE ${CONAN_INCLUDE_DIRS})
@@ -119,6 +125,8 @@ if(WIN32)
     target_link_libraries(videotest PRIVATE ${CONAN_LIBS} aravis::aravis ${OpenCV_LIBS})
     target_include_directories(test PRIVATE ${CONAN_INCLUDE_DIRS})
     target_link_libraries(test PRIVATE ${CONAN_LIBS} doctest::doctest aravis::aravis)
+    target_include_directories(features PRIVATE ${CONAN_INCLUDE_DIRS})
+    target_link_libraries(features PRIVATE ${CONAN_LIBS} aravis::aravis)
 
 elseif(UNIX)
     target_include_directories(proyectoSensiaBridge PUBLIC ${CONAN_INCLUDE_DIRS})

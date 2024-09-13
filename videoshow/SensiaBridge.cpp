@@ -321,11 +321,9 @@ namespace proyectoSensiaBridge {
         } else {
             std::cout << "Error al guardar la imagen." << std::endl;
         }
-        //copiarArvBufferABuffer(buff, buffer);
         arv_camera_stop_acquisition (camera, &error);
         // Liberar recursos
         g_object_unref(stream);
-        //g_object_unref(buffer);
         g_object_unref(camera);
 
         return 0;
