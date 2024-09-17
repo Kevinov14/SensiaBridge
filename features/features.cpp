@@ -7,6 +7,23 @@ namespace camera_features{
         ArvCamera *camera = arv_camera_new(arv_get_device_id(0),nullptr);
         ArvDevice *device = arv_camera_get_device(camera);
         ArvGc *genicam = arv_device_get_genicam(device);
+        //int value = arv_device_get_integer_feature_value(device, "Height", nullptr);
+        //printf("value of Height: %d\n", value);
+        ArvGcNode *node = arv_gc_get_node(genicam, "Height");
+       // ArvGcFeatureNode *featurenode =arv_get_feature
+        if (ARV_IS_GC_INTEGER(node)){
+            ArvGcVisibility visibility = arv_gc_feature_node_get_visibility(ARV_GC_FEATURE_NODE(node));
+            ArvGcAccessMode accesmode = arv_gc_feature_node_get_imposed_access_mode(ARV_GC_FEATURE_NODE(node));
+            printf("Acces mode: %d\n",accesmode);
+            //ArvGcAccessMode accesmode = arv_gc_feature_node_get_imposed_access_mode(ARV_GC_FEATURE_NODE(node));
+            printf("Visibility: %d\n",visibility);
+            //ArvGcAccessMode accesmode = arv_gc_feature_node_get_imposed_access_mode(ARV_GC_FEATURE_NODE(node));
+            printf("Description: %s\n",arv_gc_feature_node_get_description(ARV_GC_FEATURE_NODE(node)));
+            printf("Tooltip: %s\n",arv_gc_feature_node_get_tooltip(ARV_GC_FEATURE_NODE(node)));
+            printf("Value: %s\n",arv_gc_feature_node_get_value_as_string(ARV_GC_FEATURE_NODE(node),nullptr));
+
+
+        }
         if (camera == NULL) {
             std::cerr << "No se encontró ninguna cámara" << std::endl;
         }
@@ -37,7 +54,7 @@ namespace camera_features{
                 if (end_pos != std::string::npos) {
                     // Extraemos el contenido entre <pFeature>...</pFeature>
                     std::string pfeature_name = xml_content.substr(start_pos, end_pos - start_pos);
-                    std::cout << pfeature_name << std::endl;  // Imprime el nombre de la feature
+                    //std::cout << pfeature_name << std::endl;  // Imprime el nombre de la feature
                     pos = end_pos + pfeature_end_tag.length();  // Avanzamos a la siguiente búsqueda
                 } else {
                     break;  // Si no hay cierre de etiqueta, salimos
