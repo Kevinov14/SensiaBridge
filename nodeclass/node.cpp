@@ -68,33 +68,64 @@ void Node::getNodeType(ArvGcNode *node, const char **type) {
 
 // Función para configurar las propiedades del nodo (sin parámetros)
 void Node::setProperties() {
-   
     ArvGcNode *node = arv_gc_get_node(genicam, name);
-    ArvGcIntegerNode *property = ARV_GC_INTEGER_NODE(node);
-    ArvGcAccessMode access_mode = arv_gc_feature_node_get_imposed_access_mode(ARV_GC_FEATURE_NODE(node));
+    //name = name_char;
+    //ArvGcIntegerNode *property = ARV_GC_INTEGER_NODE(node);
+    ArvGcAccessMode access_mode = arv_gc_feature_node_get_actual_access_mode(ARV_GC_FEATURE_NODE(node));
+    
     //const node_type = arv_gc_property_node_get_node_type(ARV_GC_FEATURE_NODE(node));
-    const char *node_type = nullptr;
-    Node::getNodeType(node, &node_type);
-    const char *descript = arv_gc_feature_node_get_description(ARV_GC_FEATURE_NODE(node));
-    const char *tool_tip = arv_gc_feature_node_get_tooltip(ARV_GC_FEATURE_NODE(node));
-    const char *val = arv_gc_feature_node_get_value_as_string(ARV_GC_FEATURE_NODE(node),nullptr);
-    printf("Access Mode: %d\n",access_mode);
-    printf("Type: %s\n",node_type);
-    printf("Description: %s\n",descript);
-    printf("Access Mode: %s\n",tool_tip);
-    printf("Value: %s\n",val);
+    //Node::getNodeAccesMode(node, &accessMode);
+    Node::getNodeType(node, &type);
+    accessMode = arv_gc_access_mode_to_string(access_mode);
+    description = arv_gc_feature_node_get_description(ARV_GC_FEATURE_NODE(node));
+    tooltip = arv_gc_feature_node_get_tooltip(ARV_GC_FEATURE_NODE(node));
+    value = arv_gc_feature_node_get_value_as_string(ARV_GC_FEATURE_NODE(node),nullptr);
+    //printf("Access Mode: %d\n",access_mode);
+    /*printf("Type: %s\n",type);
+    printf("Description: %s\n",description);
+    printf("Access Mode: %s\n",tooltip);
+    printf("Value: %s\n",value);*/
 
+}
+void Node::printProperty(const char *property_name, const char *property){
+    if(property != NULL){
+        printf("%s: %s\n",property_name,property);
+    }
 }
 
 // Método para imprimir las propiedades del nodo
-void Node::printNode() const {
-    /*std::cout << "Node Properties:" << std::endl;
-    std::cout << "Name: " << name << std::endl;
-    std::cout << "Access Mode: " << accessMode << std::endl;
-    std::cout << "Type: " << type << std::endl;
-    std::cout << "Description: " << description << std::endl;
-    std::cout << "Tooltip: " << tooltip << std::endl;
-    std::cout << "Value: " << value << std::endl;*/
+void Node::printNode()  {
+    Node::printProperty("Name", name);
+    Node::printProperty("AccesMode", accessMode);
+    Node::printProperty("Type", type);
+    Node::printProperty("Description", description);
+    Node::printProperty("ToolTip", tooltip);
+    Node::printProperty("Value", value);
+    /*printf("Name: %s\n",name);
+    printf("Access Mode: %s\n",accessMode);
+    printf("Type: %s\n",type);
+    printf("Description: %s\n",description);
+    printf("ToolTip: %s\n",tooltip);
+    printf("Value: %s\n",value);*/
+}
 
+// Función estática para buscar todos los nodos
+std::vector<const char*> Node::findAllNodes(ArvGc *genicam) {
+    std::vector<const char *> nodeNames;
+    const char *height = "HeightRegister";
+    const char *width = "Width";
+    const char *pixelformat = "PixelFormat";
+    // Aquí implementarás la lógica para buscar todos los nodos. Por ejemplo:
+    // Lógica de búsqueda de nodos (se deja vacía)
+    // for (cada nodo encontrado) {
+    //     Node newNode(nombre_del_nodo, algún_valor_int);
+    //     nodes.push_back(newNode);
+    // }
 
+    // Por ahora, añadiré algunos nodos de ejemplo para mostrar cómo funcionaría
+    nodeNames.push_back(height);
+    nodeNames.push_back(width);
+    nodeNames.push_back(pixelformat);
+
+    return nodeNames;
 }

@@ -3,10 +3,12 @@
 
 #include <string>
 #include <arv.h>
+#include <vector>
+
 
 class Node {
 private:
-    int accessMode;
+    const char *accessMode;
     const char *name;
     const char *type;
     const char *description;
@@ -25,8 +27,19 @@ public:
     // Función para configurar las propiedades del nodo (sin parámetros)
     void setProperties();
 
+    void printProperty(const char *property_name,const char *property);
+
     // Método para imprimir las propiedades del nodo
-    void printNode() const;
+    void printNode();
+
+    static std::vector<const char*> findAllNodes(ArvGc *genicam);
+
+    //getters
+    const char *get_name(){return name;}
+
+
+    //setters
+
 };
 
 #endif // NODE_H
