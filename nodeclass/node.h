@@ -32,6 +32,8 @@ public:
     // Método para imprimir las propiedades del nodo
     void printNode();
 
+    //void list_features (ArvGc *genicam, const char *feature, int list_mode, GRegex *regex, int level);
+
     static std::vector<const char*> findAllNodes(ArvGc *genicam);
 
     //getters

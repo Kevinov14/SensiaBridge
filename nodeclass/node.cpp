@@ -72,7 +72,6 @@ void Node::setProperties() {
     //name = name_char;
     //ArvGcIntegerNode *property = ARV_GC_INTEGER_NODE(node);
     ArvGcAccessMode access_mode = arv_gc_feature_node_get_actual_access_mode(ARV_GC_FEATURE_NODE(node));
-    
     //const node_type = arv_gc_property_node_get_node_type(ARV_GC_FEATURE_NODE(node));
     //Node::getNodeAccesMode(node, &accessMode);
     Node::getNodeType(node, &type);
@@ -109,23 +108,128 @@ void Node::printNode()  {
     printf("Value: %s\n",value);*/
 }
 
+
+std::vector<const char*> list_features (ArvGc *genicam, const char *feature, int list_mode, GRegex *regex, int level)
+{
+    ArvGcNode *node;
+    std::vector<const char*> list;
+    node = arv_gc_get_node(genicam, feature);
+    if (ARV_IS_GC_FEATURE_NODE (node) && arv_gc_feature_node_is_implemented (ARV_GC_FEATURE_NODE (node), NULL)) {
+                gboolean match;
+
+                match = regex == NULL || g_regex_match (regex, arv_gc_feature_node_get_name (ARV_GC_FEATURE_NODE (node)), G_REGEX_MATCH_DEFAULT, NULL);
+
+        if (ARV_IS_GC_CATEGORY (node)) 
+        {
+            const GSList *features;
+            const GSList *iter;
+            GError *error;
+
+            features = arv_gc_category_get_features (ARV_GC_CATEGORY (node));
+
+            for (iter = features; iter != NULL; iter = iter->next) {
+                //std::cout << "list_XXXXX: " << (const char *) iter->data << std::endl;
+                list.push_back((const char*)iter->data);
+                list_features (genicam, (const char *) iter->data, list_mode, match ? NULL : regex, level + 1);
+            }
+        }
+    }
+    return list;
+}
+
+GRegex *arv_regex_new_from_glob_pattern (const char *glob, gboolean caseless)
+{
+        GRegex *regex;
+    GString *regex_pattern;
+    const char *iter;
+    char **globs;
+    gunichar character;
+    unsigned int i;
+
+    g_return_val_if_fail (g_utf8_validate (glob, -1, NULL), NULL);
+
+    regex_pattern = g_string_new ("");
+
+    globs = g_strsplit (glob, "|", -1);
+
+    for (i = 0; globs[i] != NULL; i++) {
+        /* Ignore empty strings */
+        if (globs[i][0] == '\0')
+            continue;
+
+        if (i > 0)
+            g_string_append (regex_pattern, "|^");
+        else
+            g_string_append (regex_pattern, "^");
+
+        iter = g_strstrip (globs[i]);
+        while (iter != NULL && *iter != '\0') {
+            character = g_utf8_get_char (iter);
+            switch (character) {
+                case '\\':
+                    g_string_append (regex_pattern, "\\\\");
+                    break;
+                case '^':
+                    g_string_append (regex_pattern, "\\^");
+                    break;
+                case '$':
+                    g_string_append (regex_pattern, "\\$");
+                    break;
+                case '.':
+                    g_string_append (regex_pattern, "\\.");
+                    break;
+                case '[':
+                    g_string_append (regex_pattern, "\\[");
+                    break;
+                case '|':
+                    g_string_append (regex_pattern, "\\|");
+                    break;
+                case '(':
+                    g_string_append (regex_pattern, "\\(");
+                    break;
+                case ')':
+                    g_string_append (regex_pattern, "\\)");
+                    break;
+                case '?':
+                    g_string_append (regex_pattern, ".");
+                    break;
+                case '*':
+                    g_string_append (regex_pattern, ".*");
+                    break;
+                case '+':
+                    g_string_append (regex_pattern, "\\+");
+                    break;
+                case '{':
+                    g_string_append (regex_pattern, "\\{");
+                    break;
+                default:
+                    g_string_append_unichar (regex_pattern, character);
+                    break;
+            }
+            iter = g_utf8_find_next_char (iter, NULL);
+        }
+
+        g_string_append (regex_pattern, "$");
+    }
+
+    g_strfreev (globs);
+
+    regex = g_regex_new (regex_pattern->str, G_REGEX_OPTIMIZE, G_REGEX_MATCH_DEFAULT, NULL);
+    g_string_free (regex_pattern, TRUE);
+
+    return regex;
+}
+
+
 // Función estática para buscar todos los nodos
 std::vector<const char*> Node::findAllNodes(ArvGc *genicam) {
     std::vector<const char *> nodeNames;
-    const char *height = "HeightRegister";
-    const char *width = "Width";
-    const char *pixelformat = "PixelFormat";
-    // Aquí implementarás la lógica para buscar todos los nodos. Por ejemplo:
-    // Lógica de búsqueda de nodos (se deja vacía)
-    // for (cada nodo encontrado) {
-    //     Node newNode(nombre_del_nodo, algún_valor_int);
-    //     nodes.push_back(newNode);
-    // }
-
-    // Por ahora, añadiré algunos nodos de ejemplo para mostrar cómo funcionaría
-    nodeNames.push_back(height);
-    nodeNames.push_back(width);
-    nodeNames.push_back(pixelformat);
-
+    GRegex *regex;
+    //std::cout << "Entramos en getFeature: " << nam << std::endl;
+    regex = arv_regex_new_from_glob_pattern ("Root", TRUE);
+    nodeNames = list_features (genicam, "Root", 1,  regex, 0);
+    g_regex_unref (regex);
+   
     return nodeNames;
 }
+
