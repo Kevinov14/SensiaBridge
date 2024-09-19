@@ -9,7 +9,7 @@ if(CLANG_TIDY_EXE)
         CXX_CLANG_TIDY "${CLANG_TIDY_EXE}"
     )
 else()
-    message(WARNING "clang-tidy not found")
+    #message(WARNING "clang-tidy not found")
 endif()
 
 # Configuración de clang-format
@@ -28,5 +28,5 @@ if(CLANG_FORMAT_EXE)
         COMMENT "Running clang-format on source files"
     )
 else()
-    message(WARNING "clang-format not found")
+    #message(WARNING "clang-format not found")
 endif()
