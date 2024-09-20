@@ -9,29 +9,12 @@ int main() {
     
     //Node myNode("Root",genicam);
     //myNode.findNodes(genicam);
-    Node my("Root",genicam);
-    my.findNodes();
+    
     
     std::vector<Node> nodes;
-    for (auto& names : my.getNamelist()){
-        Node myNode(names,genicam);
-        myNode.findNodes();
-        for (auto& namechilds : myNode.getChildNames()){
-            Node subNode(namechilds, genicam);
-            subNode.findNodes();
-            myNode.setNodeChilds(subNode);
-            
-        }
-        nodes.push_back(myNode);
-    }
+    getNodes(&nodes, genicam);
+    
 
-    int pos = 0;
-    for (int i = 0; i<nodes.size()-1 ; i++){
-        if (strcmp(nodes[i].getName(), "PeripheralControl") == 0){
-            break;
-        }
-        pos = i+1;
-    }
-    nodes[pos].printNode(0);
+    findNode(nodes , "ChunkDataControl");
     return 0;
 }

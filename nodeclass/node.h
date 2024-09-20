@@ -5,6 +5,7 @@
 #include <arv.h>
 #include <vector>
 
+
 class Node {
     
 private:
@@ -47,10 +48,14 @@ public:
 
     void printAllNodes();
 
+    void findNode();
+
     // Funcion que busca los nodos (llama a list_features)
     void findNodes();
 
     void findChilds();
+
+    //void getNodes(std::vector<Node> nodes);
 
     //getters
     const char *getName(){return name;}
@@ -70,5 +75,7 @@ public:
     void setNodeChilds(Node nodechilds){ node_childs.push_back(nodechilds);}
 
 };
+void getNodes(std::vector<Node> *nodes, ArvGc *genicam);
+void findNode(std::vector<Node> nodes, const char *feature);
 
 #endif // NODE_H

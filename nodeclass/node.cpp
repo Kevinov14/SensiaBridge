@@ -366,6 +366,17 @@ void Node::findNodes() {
     //return nodeNames;
 }
 
+void findNode(std::vector<Node> nodes, const char *feature){
+    int pos = 0;
+    for (int i = 0; i<nodes.size() ; i++){
+        if (strcmp(nodes[i].getName(), feature) == 0){
+            break;
+        }
+        pos = i+1;
+    }
+    nodes[pos].printNode(0);
+}
+
 void Node::findChilds(){
     std::vector<const char *> childNames;
     GRegex *regex;
@@ -377,5 +388,20 @@ void Node::findChilds(){
 
 }
 
+void getNodes(std::vector<Node> *nodes, ArvGc *genicam){
+    Node my("Root",genicam);
+    my.findNodes();
+    for (auto& names : my.getNamelist()){
+        Node myNode(names,genicam);
+        myNode.findNodes();
+        for (auto& namechilds : myNode.getChildNames()){
+            Node subNode(namechilds, genicam);
+            subNode.findNodes();
+            myNode.setNodeChilds(subNode);
+            
+        }
+        nodes->push_back(myNode);
+    }
+}
 
 
